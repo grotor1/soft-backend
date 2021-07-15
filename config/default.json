@@ -1,0 +1,6 @@
+{
+  "port" : 5000,
+  "mongoUri" : "mongodb+srv://grotor:V23v10a2004@grotor0.kcsbq.mongodb.net/soft?retryWrites=true&w=majority",
+  "adminPassword" : "@#V10v2004",
+  "jwtSecret": "@#V10v2004"
+}
