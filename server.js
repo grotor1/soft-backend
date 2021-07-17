@@ -1,4 +1,3 @@
-const bodyParser = require("body-parser");
 const path = require("path");
 const express = require("express");
 const logger = require("morgan");
@@ -9,11 +8,12 @@ const app = express();
 
 require('dotenv').config()
 
-app.use(express.json({extended: true}))
+app.use(express.json({limit: "50mb", extended: true}))
 app.use(logger('dev'))
 
 app.use(express.static(path.resolve('client', 'build')));
 app.use("/api/fetch", require("./routes/fetch.route"))
+app.use("/api/auth", require("./routes/auth.route"))
 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve('client', 'build', 'index.html'));

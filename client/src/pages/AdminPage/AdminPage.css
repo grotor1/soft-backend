@@ -1,0 +1,8 @@
+.admin-page-wrapper{
+    display: flex;
+    align-items: flex-start;
+}
+
+.right-section-wrapper{
+    padding: 0 15px;
+}

@@ -1,8 +1,8 @@
-const {Schema, model, Types} = require("mongoose");
+const {Schema, model} = require("mongoose");
 
 const TrainingTypesSchema = new Schema({
     name: String,
-    image: String
+    img: String
 }, {
     collection: "trainingTypes"
 })

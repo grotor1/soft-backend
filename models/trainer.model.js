@@ -6,20 +6,18 @@ const TrainersSchema = new Schema({
     isVacant: Boolean,
     avatar: String,
     workExp: String,
-    contacts: String,
+    contacts: [{
+        name: String,
+        link: String
+    }],
     trainingTypes: [
         {
             _id_training: Types.ObjectId
         }
     ],
     aboutMyself: String,
-    educations: [String],
-    certificates: [
-        {
-            name: String,
-            img: String
-        }
-    ],
+    educations: String,
+    certificates: [String],
     price: String,
     specialOffers: String
 })

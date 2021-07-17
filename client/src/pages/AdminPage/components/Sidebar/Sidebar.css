@@ -1,0 +1,33 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar-wrapper{
+    margin: 0;
+    display: flex;
+    width: 250px;
+    background-color: #282c34;
+    height: 100vh;
+    flex-flow: column;
+}
+
+.sidebar-header{
+    color: white;
+    align-self: center;
+}
+
+.sidebar-button{
+    padding-left: 20px;
+    background-color: #282c34;
+    color: white;
+}
+
+.sidebar-button:hover{
+    background-color: white;
+    color: #282c34;
+}
+
+.sidebar-button__exit{
+    margin-top: auto;
+}
