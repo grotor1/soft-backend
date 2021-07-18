@@ -5,32 +5,18 @@ const router = Router()
 
 router.post("/addTrainer", (req, res) => {
     const trainer = new Trainer
-    const {
-        name, surname, avatar, workExp,
-        contacts, trainingTypes, aboutMyself,
-        educations, certificates, price, specialOffers
-    } = req.body
+    const { certificates } = req.body
     console.log(req.body)
-    if (!name || !surname || !avatar || !workExp
-        || !contacts || !trainingTypes || !aboutMyself
-        || !educations || !price || !specialOffers) {
+    if (Object.keys(req.body).every(key => {return (key === "certificates" ? true : req.body[key])})) {
         return res.status(400).json({
             success: false,
             message: 'You must provide every parameter'
         })
     }
-    trainer.name = name
-    trainer.surname = surname
+    // maybe use spread operator like: trainer = {...trainer, ...req.body}?
+    Object.keys(req.body).forEach(key => {trainer[key] = req.body[key]})
     trainer.isVacant = true
-    trainer.avatar = avatar
-    trainer.workExp = workExp
-    trainer.contacts = contacts
-    trainer.trainingTypes = trainingTypes
-    trainer.aboutMyself = aboutMyself
-    trainer.educations = educations
     trainer.certificates = certificates || []
-    trainer.price = price
-    trainer.specialOffers = specialOffers
     trainer.save(err => {
         if (err) return res.json({success: false, message: err})
         return res.json({success: true})
@@ -46,6 +32,7 @@ router.post("/addTrainingType", (req, res) => {
             message: 'You must provide name, img'
         })
     }
+    //maybe use spread operator?
     trainingType.name = name
     trainingType.img = img
     console.log(trainingType)
@@ -97,32 +84,17 @@ router.patch('/updateTrainer/:_id_trainer', (req, res) => {
     const {_id_trainer} = req.params
     Trainer.deleteOne({_id: _id_trainer}, (err) => {if (err) return res.json({success: false, message: err})})
     const trainer = new Trainer
-    const {
-        name, surname, avatar, workExp,
-        contacts, trainingTypes, aboutMyself,
-        educations, certificates, price, specialOffers
-    } = req.body
-    console.log(req.body)
-    if (!name || !surname || !avatar || !workExp
-        || !contacts || !trainingTypes || !aboutMyself
-        || !educations || !price || !specialOffers) {
+    const { certificates } = req.body
+    if (Object.keys(req.body).every(key => {return (key === "certificates" ? true : req.body[key])})) {
         return res.status(400).json({
             success: false,
             message: 'You must provide every parameter'
         })
     }
-    trainer.name = name
-    trainer.surname = surname
+    // maybe use spread operator like: trainer = {...trainer, ...req.body}?
+    Object.keys(req.body).forEach(key => {trainer[key] = req.body[key]})
     trainer.isVacant = true
-    trainer.avatar = avatar
-    trainer.workExp = workExp
-    trainer.contacts = contacts
-    trainer.trainingTypes = trainingTypes
-    trainer.aboutMyself = aboutMyself
-    trainer.educations = educations
     trainer.certificates = certificates || []
-    trainer.price = price
-    trainer.specialOffers = specialOffers
     trainer.save(err => {
         if (err) return res.json({success: false, message: err})
         return res.json({success: true})
