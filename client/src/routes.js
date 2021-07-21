@@ -2,16 +2,25 @@ import React from 'react'
 import {Switch, Route, Redirect} from "react-router-dom"
 import {AdminLoginPage} from "./pages/AdminLoginPage/AdminLoginPage";
 import {AdminPage} from "./pages/AdminPage/AdminPage";
+import MainPage from "./components/MainPage";
+import TrainersPage from "./components/TrainersPage";
+import TrainerPage from "./components/TrainersPage/TrainerPage";
 
 
 export const useRoutes = (isAuthAdmin) => {
     return (
         <Switch>
-            {isAuthAdmin ? <Route path="/admin" component={AdminPage}/> : <Route path="/adminLogin" component={AdminLoginPage}/>}
-            <Route path="/main">
-                {/*main page*/}
+            {isAuthAdmin ? <Route path="/admin" component={AdminPage}/> :
+                <Route path="/adminLogin" component={AdminLoginPage}/>}
+            <Route exact path="/">
+                <MainPage/>
             </Route>
-            {isAuthAdmin ? <Redirect to="/admin"/> : <Redirect to="/adminLogin"/>}
+            <Route path="/trainers">
+                <TrainersPage/>
+            </Route>
+            <Route path="/trainer-page">
+                <TrainerPage/>
+            </Route>
         </Switch>
     );
 }

@@ -1,0 +1,61 @@
+.faq-list__item{
+    margin-top: -1px;
+}
+.faq{
+    padding-bottom: 159px;
+}
+.faq-list{
+  margin-top: 40px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 82px;
+    padding: 105px 79px;
+}
+.faq-list__title{
+  background-color: transparent;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding-top: 39px;
+  padding-bottom: 39px;
+  padding-right: 80px;
+  font-weight: bold;
+    font-size: 36px;
+    line-height: 44px;
+    color: #373737;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='22' viewBox='0 0 40 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M39 1L20 20L1 1' stroke='%23136000' stroke-width='2'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: top 50px right 10px;
+  border: none;
+
+}
+.faq-list__item:not(:first-child){
+    border-top: 1px solid #929292;
+    margin-top: 54px;
+}
+.faq-item__content p{
+    font-size: 25px;
+    line-height: 30px;
+    color: #878787;
+}
+
+.faq-list__title:hover{
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='22' viewBox='0 0 40 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 21L20 2L39 21' stroke='%23136000' stroke-width='2'/%3E%3C/svg%3E%0A");
+    transition:  1 ease-in
+}
+.faq-item__content{
+    font-size: 25px;
+    line-height: 30px;
+    color: #878787;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.1, 0.1);
+}
+.faq-item__content.show{
+    height: auto;
+    max-height: 9999px;
+    transition: all 0.5s cubic-bezier(0.1, 0.1);
+}
+.content{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

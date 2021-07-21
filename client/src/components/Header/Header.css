@@ -1,0 +1,28 @@
+.header{
+    background: #F4F4F4;
+    padding: 32px;
+}
+.header__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    height: 46px;
+    width: 77px;
+}
+.navbar{
+    margin: 0;
+    min-height: 0;
+}
+.nav__list{
+    display: flex;
+    align-items: center;
+}
+.list-item:not(:last-child){
+    margin-right: 98px;
+}
+.nav__list-item{
+    font-size: 15px;
+    color: #000000;
+}

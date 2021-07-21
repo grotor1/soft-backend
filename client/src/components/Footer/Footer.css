@@ -1,0 +1,21 @@
+.footer{
+    background: #F6F6F6;
+    padding-top: 95px;
+    padding-bottom: 95px;
+}
+.footer__title{
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 44px;
+    color: #353535;
+}
+.social-sites__list{
+    margin-top: 36px;
+}
+.social-list__item{
+    margin-bottom: 33px;
+}
+.social__link{
+    color: #353535;
+    margin-left: 21px;
+}

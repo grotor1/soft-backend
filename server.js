@@ -15,7 +15,7 @@ app.use(express.static(path.resolve('client', 'build')));
 app.use("/api/fetch", require("./routes/fetch.route"))
 app.use("/api/auth", require("./routes/auth.route"))
 
-app.get('/', (req, res) => {
+app.get('/*', (req, res) => {
     res.sendFile(path.resolve('client', 'build', 'index.html'));
 });
 

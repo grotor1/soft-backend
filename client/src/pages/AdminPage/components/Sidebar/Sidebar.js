@@ -33,11 +33,13 @@ export const Sidebar = ({match}) => {
                     Список тренировок
                 </h2>
             </Link>
-            <div className="sidebar-button sidebar-button__exit" onClick={auth.logout}>
-                <h2>
-                    Выйти
-                </h2>
-            </div>
+            <Link to={`/adminLogin`} className="sidebar-button sidebar-button__exit">
+                <div onClick={auth.logout}>
+                    <h2>
+                        Выйти
+                    </h2>
+                </div>
+            </Link>
         </div>
     )
 }

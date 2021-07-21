@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+  p, h1, h2, h3, img, a, ul, li{
+    margin: 0;
+    padding: 0;
+  }
+  a{
+    text-decoration: none;
+  }
+  a:hover{
+    cursor: pointer;
+  }
+  ul{
+    list-style: none;
+  }
+  body{
+    font-family: 'Montserrat', sans-serif;
+  }
+  .container{
+    width: 1188px;
+    margin: 0 auto;
+  }
+
+
+
+.header{
+    background: #F4F4F4;
+    padding: 32px;
+}
+.header__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    height: 46px;
+    width: 77px;
+}
+.navbar{
+    margin: 0;
+    min-height: 0;
+}
+.nav__list{
+    display: flex;
+    align-items: center;
+}
+.list-item:not(:last-child){
+    margin-right: 98px;
+}
+.nav__list-item{
+    font-size: 15px;
+    color: #000000;
+}
+
+
+
+.hero{
+    background-color: #F4F4F4;
+    display: flex;
+    padding-bottom: 40px;
+}
+.hero__content{
+    display: flex;
+}
+.social-sites-list{
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    background-position: top 100px left 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.ul{
+    align-items: center;
+    display: flex;
+    flex-direction: column; 
+}
+.social-item{
+    margin-top: 26px;
+}
+.hero-texts{
+    margin-top: 180px;
+}
+.hero-title{
+    font-size: 48px;
+    line-height: 59px;
+    color: #000000;
+    font-weight: 800;
+    margin-bottom: 88px;
+}
+.hero-description{
+    font-size: 25px;
+    line-height: 30px;
+}
+.green-text{
+    color: #62EA0F;
+}
+.hero-images{
+    position: relative;
+    background-image: url('../../assets/Soft.svg');
+    background-repeat: no-repeat;
+    background-position: bottom 0 right -20px;
+    
+}
+.ell-1{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.ell-2{
+    position: absolute;
+    top: 30px;
+    left: 50px;
+}
+
+
+
+.about-soft{
+    background-image: url('../../assets/Soft\ \(2\).svg');
+    background-repeat: no-repeat;
+    background-position: top 0 right 0;
+}
+.about-soft__content{
+    padding-top: 48px;
+    padding-bottom: 106px;
+}
+.section__title{
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 74px;
+    color: #353535;
+}
+.about-us__list, .results__list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.about-us__item, .result__item{
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 28px;
+    padding: 24px 43px 36px 43px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 192px;
+    height: 216px;
+}
+.about-us__image{
+    padding: 15px;
+    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #F9F9F9 100%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    margin-bottom: 35px;
+}
+.about-us__desc{
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+}
+
+
+
+/* Mission Section */
+
+.mission{
+    padding-top: 102px;
+    background-color: #F3F3F3;
+    position: relative;
+    padding-bottom: 80px;
+    z-index: -2;
+}
+
+.mission-black-rectangle{
+    position: absolute;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    background-color: #454545;
+    z-index: -1;
+}
+.mission-background-image{
+    top: 0;
+    position: absolute;
+    z-index: -1;
+}
+.line{
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+}
+.mission-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.section__title-white{
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 51px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    margin-bottom: 83px;
+    z-index: 1000;
+}
+.mission-text{
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.green-2{
+    color: #C8FF2D;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Steps Section */
+
+.steps{
+    padding-top: 132px;
+    padding-bottom: 132px;
+}
+.steps__list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.steps__item{
+    background-image: url('../../assets/steps-ball.png');
+    background-repeat: no-repeat;
+    background-position: top 10px left 0;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    width: 245px;
+    height: 183px;
+    padding: 29px;
+}
+.steps__title{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    padding-bottom: 16px;
+}
+.steps__text{
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+
+
+
+/* Training Types Section */
+
+.training-types{
+    background: #F3F3F3;
+    padding-top: 58px;
+    padding-bottom: 140px;
+}
+.train__heading{
+    font-weight: 500;
+    font-size: 22px;
+    color: #000000;
+    text-align: center;
+}
+.train-list{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.train-list__item{
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+    padding: 16px;
+    background-color: #fff;
+    width: 219px;
+    height: 258px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.train__img{
+    border-radius: 26px;
+    margin: 0 auto;
+    width: 152px;
+    height: 185px;
+}
+
+
+
+/* Trainers Section */
+
+.trainers{
+    padding-top: 72px;
+}
+.trainers .section__title{
+    margin-bottom: 0;
+}
+.trainers-list{
+    margin-top: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.trainers-list__item{
+    width: 310px;
+    height: 385px;
+    display: flex;
+    align-items: flex-end;
+}
+.kraynov{
+    background-image: url('../../assets/kraynov.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
+    border-radius: 28px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.isaeva{
+    background-image: url('../../assets/isaeva.png');
+    background-repeat: no-repeat;
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
+    border-radius: 28px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-size: cover;
+}
+.krasnova{
+    background-image: url('../../assets/krasnova.png');
+    background-repeat: no-repeat;
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
+    border-radius: 28px;
+    padding-left: 20px;
+    background-size: cover;
+    padding-right: 20px;
+}
+
+.trainer-heading{
+    font-weight: bold;
+    font-size: 18px;
+    color: #FFFFFF;
+
+}
+.trainer-desc{
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+.more{
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+.trainer__content{
+    background: radial-gradient(112.61% 100% at 0% 0%, rgba(198, 198, 198, 0.24) 0%, rgba(182, 182, 182, 0) 100%);
+    backdrop-filter: blur(40px);
+    border-radius: 28px;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 278px;
+}
+.button-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.show-tr{
+    background: linear-gradient(95.6deg, #8DE885 14.17%, rgba(109, 255, 106, 0) 80.27%), #6ED98B;
+    box-shadow: 0px 7px 35px rgba(119, 219, 129, 0.6);
+    border-radius: 110px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFFFFF;
+    border: none;
+    padding: 21px 70px;
+    align-items: center;
+    margin-top: 56px;
+    margin-bottom: 81px;
+}
+
+
+/* Results Section */
+
+.getters{
+    background: #F8F8F8;
+    padding-top: 71px;
+    padding-bottom: 96px;
+    
+}
+.result__image{
+    margin-bottom: 23px;
+    width: 105px;
+    height: 105px;
+}

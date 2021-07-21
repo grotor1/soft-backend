@@ -1,0 +1,73 @@
+.trainers-list__item{
+    width: 310px;
+    height: 385px;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 100px;
+}
+.bg-image{
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
+    border-radius: 28px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.kraynov{
+    background-image: url('../../../assets/kraynov.png');
+}
+.isaeva{
+    background-image: url('../../../assets/isaeva.png');
+}
+.krasnova{
+    background-image: url('../../../assets/krasnova.png');    
+}
+.timofeev{
+    background-image: url('../../../assets/timofeev.png');    
+}
+.bortnik{
+    background-image: url('../../../assets/bortnik.png');    
+}
+.samoylova{
+    background-image: url('../../../assets/samoylova.png');    
+}
+.tsikhorsky{
+    background-image: url('../../../assets/tsikhovsky.png');    
+}
+.pavlov{
+    background-image: url('../../../assets/pavlov.png');    
+}
+.govrova{
+    background-image: url('../../../assets/govrova.png');    
+}
+.trainer-heading{
+    font-weight: bold;
+    font-size: 18px;
+    color: #FFFFFF;
+
+}
+.trainer-desc{
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+.more{
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+.more:hover{
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.trainer__content{
+    background: radial-gradient(112.61% 100% at 0% 0%, rgba(198, 198, 198, 0.24) 0%, rgba(182, 182, 182, 0) 100%);
+    backdrop-filter: blur(40px);
+    border-radius: 28px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 278px;
+}

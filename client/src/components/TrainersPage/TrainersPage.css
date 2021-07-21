@@ -1,0 +1,41 @@
+.trainers{
+    background: #F4F4F4;
+    padding-bottom: 183px;
+}
+.trainers__title{
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 59px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 43px;
+}
+.trainers__list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-top: 41px; */
+    flex-wrap: wrap;
+}
+.trainers__description{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.trainers__text{
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+    margin-right: 60px;
+}
+.btn__apply{
+    font-weight: 600;
+    font-size: 13px;
+    color: #FFFFFF;
+    background: linear-gradient(95.6deg, #8DE885 14.17%, rgba(109, 255, 106, 0) 80.27%), #6ED98B;
+    box-shadow: 0px 7px 35px #77DB81;
+    border-radius: 110px;
+    border: none;
+    padding: 14px 41px;
+}

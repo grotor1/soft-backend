@@ -2,6 +2,7 @@ import React, {useContext, useState} from "react"
 import {useMessage} from "../../hooks/message.hook";
 import {AuthContext} from "../../context/AuthContext";
 import {useHttp} from "../../hooks/http.hook";
+import {Link} from "react-router-dom";
 
 export const AdminLoginPage = () => {
     const [password, setPassword] = useState()
@@ -33,9 +34,11 @@ export const AdminLoginPage = () => {
                     placeholder="Пароль"
                     onChange={changeHandler}
                 />
-                <button className="login-container__button" onClick={clickHandle}>
-                    Войти
-                </button>
+                <Link to={`/admin`}>
+                    <button className="login-container__button" onClick={clickHandle}>
+                        Войти
+                    </button>
+                </Link>
             </div>
         </div>
     )
