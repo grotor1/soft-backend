@@ -5,14 +5,26 @@ import {useMessage} from "../../../../hooks/message.hook";
 export const TrainingTypesAddMenu = () => {
     const {request, error, clearError} = useHttp()
     const message = useMessage()
+
     const [form, setForm] = useState({
         name: "",
         img: ""
     })
+
+    useEffect(() => {
+        message(error)
+        clearError()
+    }, [error, message, clearError])
+
+    const changeHandler = event => {
+        setForm({...form, [event.target.name]: event.target.value})
+    }
+
     const _handleReaderLoaded = readerEvt => {
         let binaryString = readerEvt.target.result
         setForm({...form, img: btoa(binaryString)})
     }
+
     const photoChangeHandler = event => {
         const file = event.target.files[0]
         if (file) {
@@ -21,22 +33,18 @@ export const TrainingTypesAddMenu = () => {
             reader.readAsBinaryString(file)
         }
     }
-    useEffect(() => {
-        message(error)
-        clearError()
-    }, [error, message, clearError])
-    const changeHandler = event => {
-        setForm({...form, [event.target.name]: event.target.value})
-    }
-    const submitHandler = async () =>{
+
+    const submitHandler = async () => {
         try {
             const {name, img} = form
             const {success} = await request('/api/fetch/addTrainingType', 'POST', {name, img})
-            if(success){
+            if (success) {
                 message("Новый тип тренировок добавлен")
             }
-        } catch (e) {}
+        } catch (e) {
+        }
     }
+
     return (
         <div>
             <h1>

@@ -7,22 +7,12 @@ export const TrainingTypesEditMenu = () => {
     const {_id_trainingType} = useParams()
     const {request, error, clearError} = useHttp()
     const message = useMessage()
+
     const [form, setForm] = useState({
         name: "",
         img: ""
     })
-    const _handleReaderLoaded = readerEvt => {
-        let binaryString = readerEvt.target.result
-        setForm({...form, img: btoa(binaryString)})
-    }
-    const photoChangeHandler = event => {
-        const file = event.target.files[0]
-        if (file) {
-            const reader = new FileReader()
-            reader.onload = _handleReaderLoaded.bind(this)
-            reader.readAsBinaryString(file)
-        }
-    }
+
     useEffect(() => {
         const dataFromServer = async () => {
             try {
@@ -32,13 +22,30 @@ export const TrainingTypesEditMenu = () => {
         }
         dataFromServer()
     }, [request])
+
     useEffect(() => {
         message(error)
         clearError()
     }, [error, message, clearError])
+
     const changeHandler = event => {
         setForm({...form, [event.target.name]: event.target.value})
     }
+
+    const _handleReaderLoaded = readerEvt => {
+        let binaryString = readerEvt.target.result
+        setForm({...form, img: btoa(binaryString)})
+    }
+
+    const photoChangeHandler = event => {
+        const file = event.target.files[0]
+        if (file) {
+            const reader = new FileReader()
+            reader.onload = _handleReaderLoaded.bind(this)
+            reader.readAsBinaryString(file)
+        }
+    }
+
     const submitHandler = async () =>{
         try {
             const {name, img} = form
@@ -48,6 +55,7 @@ export const TrainingTypesEditMenu = () => {
             }
         } catch (e) {}
     }
+
     return (
         <div>
             <h1>

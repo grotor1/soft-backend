@@ -9,7 +9,9 @@ const Header = () => {
         <header className="header">
             <div className="container">
                 <div className="header__content">
-                    <a href=""><img src="/SoftLogo.png" alt="" className="logo"/></a>
+                    <Link to={"/"}>
+                        <img src="/SoftLogo.png" alt="" className="logo"/>
+                    </Link>
                     <nav className="navbar">
                         <ul className="nav__list">
                             <li className="list-item">

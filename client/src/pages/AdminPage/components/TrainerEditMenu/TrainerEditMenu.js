@@ -7,22 +7,111 @@ export const TrainerEditMenu = () => {
     const {_id_trainer} = useParams()
     const {request, error, clearError} = useHttp()
     const message = useMessage()
-    const [form, setForm] = useState(
-        {
-            name: "",
-            surname: "",
-            avatar: "",
-            workExp: "",
-            contacts: [{},{},{},{}],
-            trainingTypes: [],
-            aboutMyself: "",
-            educations: "",
-            certificates: [],
-            price: "",
-            specialOffers: ""
-        }
-    )
+
     const [trainingTypes, setTrainingTypes] = useState([])
+    const [form, setForm] = useState({
+        name: "",
+        surname: "",
+        avatar: "",
+        workExp: "",
+        contacts: [{},{},{},{}],
+        trainingTypes: [],
+        aboutMyself: "",
+        educations: "",
+        certificates: [],
+        price: "",
+        specialOffers: ""
+    })
+
+    useEffect(() => {
+        const dataFromServer = async () => {
+            try {
+                const {data} = await request(`/api/fetch/getTrainingTypeList`, 'GET')
+                setTrainingTypes(data)
+            } catch (e) {
+            }
+        }
+        dataFromServer();
+    }, [request])
+
+    useEffect(() => {
+        const dataFromServer = async () => {
+            try {
+                const {data} = await request(`/api/fetch/getTrainer/${_id_trainer}`, 'GET')
+                setForm(data)
+            } catch (e) {}
+        }
+        dataFromServer()
+    }, [request])
+
+    useEffect(() => {
+        message(error)
+        clearError()
+    }, [error, message, clearError])
+
+    useEffect(()=>{
+        form.trainingTypes.map(element =>
+            document.getElementById(element._id_training).checked = true
+        )
+    })
+
+    const changeHandler = event => {
+        setForm({...form, [event.target.name]: event.target.value})
+    }
+
+    const checkboxChangeHandler = (event, element) => {
+        if (event.target.checked) {
+            const trainingTypes = form.trainingTypes
+            trainingTypes.push({_id_training: element._id})
+            setForm({
+                ...form, trainingTypes: trainingTypes
+            })
+        } else {
+            const trainingTypes = form.trainingTypes.filter(e => e._id_training !== element._id)
+            setForm({
+                ...form, trainingTypes: trainingTypes
+            })
+        }
+    }
+
+    const _handleReaderLoaded = readerEvt => {
+        let binaryString = readerEvt.target.result
+        setForm({...form, avatar: btoa(binaryString)})
+    }
+
+    const _handleReaderLoadedMultiple = readerEvt => {
+        let binaryString = readerEvt.target.result
+        const certificates = form.certificates
+        certificates.push(btoa(binaryString))
+        setForm({...form, certificates: certificates})
+    }
+
+    const photoChangeHandler = event => {
+        const file = event.target.files[0]
+        if (file) {
+            const reader = new FileReader()
+            reader.onload = _handleReaderLoaded.bind(this)
+            reader.readAsBinaryString(file)
+        }
+    }
+
+    const photoChangeHandlerMultiple = event => {
+        for (let i = 0; i < event.target.files.length; i++) {
+            const file = event.target.files[i]
+            if (file) {
+                const reader = new FileReader()
+                reader.onload = _handleReaderLoadedMultiple.bind(this)
+                reader.readAsBinaryString(file)
+            }
+        }
+    }
+
+    const contactChangeHandler = event => {
+        const contacts = form.contacts.filter(element => element.name !== event.target.name)
+        contacts.push({name: event.target.name, link: event.target.value})
+        setForm({...form, contacts: contacts})
+    }
+
     const submitHandler = async () => {
         try {
             const {
@@ -70,85 +159,7 @@ export const TrainerEditMenu = () => {
         } catch (e) {
         }
     }
-    useEffect(() => {
-        const dataFromServer = async () => {
-            try {
-                const {data} = await request(`/api/fetch/getTrainingTypeList`, 'GET')
-                setTrainingTypes(data)
-            } catch (e) {
-            }
-        }
-        dataFromServer();
-    }, [request])
-    useEffect(() => {
-        const dataFromServer = async () => {
-            try {
-                const {data} = await request(`/api/fetch/getTrainer/${_id_trainer}`, 'GET')
-                setForm(data)
-            } catch (e) {}
-        }
-        dataFromServer()
-    }, [request])
-    useEffect(() => {
-        message(error)
-        clearError()
-    }, [error, message, clearError])
-    useEffect(()=>{
-        form.trainingTypes.map(element =>
-            document.getElementById(element._id_training).checked = true
-        )
-    })
-    const changeHandler = event => {
-        setForm({...form, [event.target.name]: event.target.value})
-    }
-    const checkboxChangeHandler = (event, element) => {
-        if (event.target.checked) {
-            const trainingTypes = form.trainingTypes
-            trainingTypes.push({_id_training: element._id})
-            setForm({
-                ...form, trainingTypes: trainingTypes
-            })
-        } else {
-            const trainingTypes = form.trainingTypes.filter(e => e._id_training !== element._id)
-            setForm({
-                ...form, trainingTypes: trainingTypes
-            })
-        }
-    }
-    const _handleReaderLoaded = readerEvt => {
-        let binaryString = readerEvt.target.result
-        setForm({...form, avatar: btoa(binaryString)})
-    }
-    const _handleReaderLoadedMultiple = readerEvt => {
-        let binaryString = readerEvt.target.result
-        const certificates = form.certificates
-        certificates.push(btoa(binaryString))
-        setForm({...form, certificates: certificates})
-    }
-    const photoChangeHandler = event => {
-        const file = event.target.files[0]
-        if (file) {
-            const reader = new FileReader()
-            reader.onload = _handleReaderLoaded.bind(this)
-            reader.readAsBinaryString(file)
-        }
-    }
-    const photoChangeHandlerMultiple = event => {
-        for (let i = 0; i < event.target.files.length; i++) {
-            const file = event.target.files[i]
-            console.log(file)
-            if (file) {
-                const reader = new FileReader()
-                reader.onload = _handleReaderLoadedMultiple.bind(this)
-                reader.readAsBinaryString(file)
-            }
-        }
-    }
-    const contactChangeHandler = event => {
-        const contacts = form.contacts.filter(element => element.name !== event.target.name)
-        contacts.push({name: event.target.name, link: event.target.value})
-        setForm({...form, contacts: contacts})
-    }
+
     return (
         <div>
             <h1>
@@ -201,7 +212,7 @@ export const TrainerEditMenu = () => {
                     name="inst"
                     placeholder="Инстаграмм"
                     onChange={contactChangeHandler}
-                    value={form.contacts[0].link}
+                    value={form.contacts[0] ? form.contacts[0].link : ""}
                 />
                 <input
                     type="text"
@@ -209,7 +220,7 @@ export const TrainerEditMenu = () => {
                     name="whatsApp"
                     placeholder="WhatsApp"
                     onChange={contactChangeHandler}
-                    value={form.contacts[1].link}
+                    value={form.contacts[1] ? form.contacts[1].link : ""}
                 />
                 <input
                     type="text"
@@ -217,7 +228,7 @@ export const TrainerEditMenu = () => {
                     name="tikTok"
                     placeholder="ТикТок"
                     onChange={contactChangeHandler}
-                    value={form.contacts[2].link}
+                    value={form.contacts[2] ? form.contacts[2].link : ""}
                 />
                 <input
                     type="text"
@@ -225,7 +236,7 @@ export const TrainerEditMenu = () => {
                     name="vk"
                     placeholder="Вконтакте"
                     onChange={contactChangeHandler}
-                    value={form.contacts[3].link}
+                    value={form.contacts[3] ? form.contacts[3].link : ""}
                 />
             </fieldset>
             <fieldset>

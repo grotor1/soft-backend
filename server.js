@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+const fileUpload = require("express-fileupload")
 const logger = require("morgan");
 const config = require("config");
 const mongoose = require("mongoose");
@@ -10,6 +11,7 @@ require('dotenv').config()
 
 app.use(express.json({limit: "50mb", extended: true}))
 app.use(logger('dev'))
+app.use(fileUpload({createParentPath: true}))
 
 app.use(express.static(path.resolve('client', 'build')));
 app.use("/api/fetch", require("./routes/fetch.route"))

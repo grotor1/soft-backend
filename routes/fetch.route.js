@@ -10,7 +10,6 @@ router.post("/addTrainer", (req, res) => {
         contacts, trainingTypes, aboutMyself,
         educations, certificates, price, specialOffers
     } = req.body
-    console.log(req.body)
     if (!name || !surname || !avatar || !workExp
         || !contacts || !trainingTypes || !aboutMyself
         || !educations || !price || !specialOffers) {
@@ -48,7 +47,6 @@ router.post("/addTrainingType", (req, res) => {
     }
     trainingType.name = name
     trainingType.img = img
-    console.log(trainingType)
     trainingType.save(err => {
         if (err) return res.json({success: false, message: err})
         return res.json({success: true})
@@ -102,7 +100,6 @@ router.patch('/updateTrainer/:_id_trainer', (req, res) => {
         contacts, trainingTypes, aboutMyself,
         educations, certificates, price, specialOffers
     } = req.body
-    console.log(req.body)
     if (!name || !surname || !avatar || !workExp
         || !contacts || !trainingTypes || !aboutMyself
         || !educations || !price || !specialOffers) {

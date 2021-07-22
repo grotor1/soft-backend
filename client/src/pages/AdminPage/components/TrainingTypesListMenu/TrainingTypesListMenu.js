@@ -5,8 +5,10 @@ import {useMessage} from "../../../../hooks/message.hook";
 
 export const TrainingTypesListMenu = ({match}) => {
     const {request, error, clearError} = useHttp()
-    const [trainingTypes, setTrainingTypes] = useState([{name: "", surname: ""}])
     const message = useMessage()
+
+    const [trainingTypes, setTrainingTypes] = useState([{name: "", surname: ""}])
+
     useEffect(() => {
         const dataFromServer = async () => {
             try {
@@ -17,19 +19,22 @@ export const TrainingTypesListMenu = ({match}) => {
         }
         dataFromServer();
     }, [request])
-    const deleteHandler = async (element) => {
-        try {
-            const {success} = await request(`/api/fetch/deleteTrainingType/${element._id}`, 'DELETE')
-            if (success) {
-                message('Тренер удален')
-                setTrainingTypes(trainingTypes.filter(e => e._id!== element._id))
-            }
-        } catch (e) {}
-    }
+
     useEffect(() => {
         message(error)
         clearError()
     }, [error, message, clearError])
+
+    const deleteHandler = async (element) => {
+        try {
+            const {success} = await request(`/api/fetch/deleteTrainingType/${element._id}`, 'DELETE')
+            if (success) {
+                message('Тренировка удалена')
+                setTrainingTypes(trainingTypes.filter(e => e._id!== element._id))
+            }
+        } catch (e) {}
+    }
+
     return (
         <div>
             <h1>

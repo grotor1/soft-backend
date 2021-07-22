@@ -6,8 +6,10 @@ import {useMessage} from "../../../../hooks/message.hook";
 export const TrainersListMenu = ({match}) => {
     const {url} = match
     const {request, error, clearError} = useHttp()
-    const [trainers, setTrainers] = useState([{name: "", surname: ""}])
     const message = useMessage()
+
+    const [trainers, setTrainers] = useState([{name: "", surname: ""}])
+
     useEffect(() => {
         const dataFromServer = async () => {
             try {
@@ -18,6 +20,12 @@ export const TrainersListMenu = ({match}) => {
         }
         dataFromServer();
     }, [request])
+
+    useEffect(() => {
+        message(error)
+        clearError()
+    }, [error, message, clearError])
+
     const deleteHandler = async (element) => {
         try {
             const {success} = await request(`/api/fetch/deleteTrainer/${element._id}`, 'DELETE')
@@ -27,10 +35,7 @@ export const TrainersListMenu = ({match}) => {
             }
         } catch (e) {}
     }
-    useEffect(() => {
-        message(error)
-        clearError()
-    }, [error, message, clearError])
+
     return (
         <div>
             <h1>

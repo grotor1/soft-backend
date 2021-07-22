@@ -18,9 +18,6 @@ export const useRoutes = (isAuthAdmin) => {
             <Route path="/trainers">
                 <TrainersPage/>
             </Route>
-            <Route path="/trainer-page">
-                <TrainerPage/>
-            </Route>
         </Switch>
     );
 }
