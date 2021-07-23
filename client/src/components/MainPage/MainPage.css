@@ -1,56 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
-  p, h1, h2, h3, img, a, ul, li{
+*{
+    box-sizing: border-box;
+}
+p, h1, h2, h3, img, a, ul, li{
     margin: 0;
     padding: 0;
-  }
-  a{
+}
+a{
     text-decoration: none;
-  }
-  a:hover{
+}
+a:hover{
     cursor: pointer;
-  }
-  ul{
+}
+button:hover{
+    cursor: pointer;
+}
+ul{
     list-style: none;
-  }
-  body{
+}
+body{
     font-family: 'Montserrat', sans-serif;
-  }
-  .container{
-    width: 1188px;
+}
+.container{
+    max-width: 1188px; 
+    width: 100%;
     margin: 0 auto;
-  }
-
-
-
-.header{
-    background: #F4F4F4;
-    padding: 32px;
+    padding: 0 15px;
 }
-.header__content{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.logo{
-    height: 46px;
-    width: 77px;
-}
-.navbar{
-    margin: 0;
-    min-height: 0;
-}
-.nav__list{
-    display: flex;
-    align-items: center;
-}
-.list-item:not(:last-child){
-    margin-right: 98px;
-}
-.nav__list-item{
-    font-size: 15px;
-    color: #000000;
-}
-
 
 
 .hero{
@@ -400,4 +376,17 @@
     margin-bottom: 23px;
     width: 105px;
     height: 105px;
+}
+
+
+
+
+@media (max-width: 396px) {
+    .social__link{
+        font-size: 14px;
+    }
+    .trainers-list__item{
+        width: 284px;
+
+    }
 }

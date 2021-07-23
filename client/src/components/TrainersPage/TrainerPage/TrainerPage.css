@@ -173,6 +173,9 @@ button.close {
     padding: 0 16px 16px 16px;
 
 }
+.trainer__contacts{
+    padding-bottom: 80px;
+}
 
 
 
@@ -200,4 +203,48 @@ button.close {
     background-image: url('../../../assets/tick.png');
     background-repeat: no-repeat;
     background-position: left -20px top -15px;
+}
+
+
+@media (max-width: 1182px) {
+    .trainer-page__flex{  
+        flex-direction: column;
+        align-items: center;
+    }
+    .trainer-page__information-right{
+        padding: 0;
+    }
+}
+@media (max-width: 898px){
+    .sertificates__list{
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+    .train-list{
+        flex-wrap: wrap;
+    }
+    .train-list__item-page{
+        margin-top: 20px;
+    }
+    .trainer-desc__text{
+        width: auto;
+    }
+}
+
+@media (max-width: 390px){
+    .train-list, .sertificates__list{
+        justify-content: center;
+    }
+    .trainer-desc__text,
+    .trainer-desc__normal{
+        font-size: 14px;
+    }
+    .trainer__kredo {
+        font-size: 14px;
+        padding: 9px 22px;
+    }
+    .serteficates__list-item:not(:last-child){
+        margin-right: 0;
+    }
 }

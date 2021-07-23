@@ -61,3 +61,26 @@
     border: none;
     background-color: transparent;
 }
+
+@media (max-width: 1232px){
+    .apply-flex{
+        flex-direction: column;
+    }
+}
+@media (max-width: 624px){
+    .sign-up__input{
+        width: 424px;
+        font-size: 16px
+    }
+    
+}
+@media (max-width: 434px){
+    .sign-up__input{
+        width: 340px;
+    }
+}
+@media (max-width: 348px){
+    .sign-up__input{
+        width: 280px;
+    }
+}

@@ -8,27 +8,27 @@ const Footer = () => {
                 <h2 className="footer__title">Связаться с нами</h2>
                 <ul className="social-sites__list">
                     <li className="social-list__item">
-                        <img src="/inst (2).png" />
-                        <a className="social__link">
-                            https://www.instagram.com/soft_platform/
+                        
+                        <a className="social__link" href="https://www.instagram.com/soft_platform/">
+                            <img src="/inst (2).png" />
                         </a>
                     </li>
                     <li className="social-list__item">
-                        <img src="/tiktok.png" />
-                        <a className="social__link">
-                            
+                        
+                        <a className="social__link" href="https://vm.tiktok.com/ZSJpP8Tew/">
+                            <img src="/tiktok.png"></img>
                         </a>
                     </li>
                     <li className="social-list__item">
-                        <img src="/mail.png" />
-                        <a className="social__link"> 
-                            soft.platform2020@gmail.com
+                        
+                        <a className="social__link" href="soft.platform2020@gmail.com"> 
+                             <img src="/mail.png" />
                         </a>
                     </li>
                     <li className="social-list__item">
-                        <img src="/phone.png" />
-                        <a className="social__link">
-                            +79774821093
+                        
+                        <a className="social__link" href="+79774821093">
+                            <img src="/phone.png" />
                         </a>
                     </li>
                 </ul>

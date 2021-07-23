@@ -39,3 +39,31 @@
     border: none;
     padding: 14px 41px;
 }
+
+
+@media (max-width: 768px) {
+    .trainers__description{
+        flex-direction: column;
+    }
+    .btn__apply{
+        margin-top: 50px;
+    }
+    .trainers__text{
+        text-align: center;
+        margin-right: 0;
+    }
+}
+@media (max-width: 660px) {
+    .trainers__list{
+        justify-content: center;
+    }
+}
+@media (max-width: 396px) {
+    .social__link{
+        font-size: 14px;
+    }
+    .trainers-list__item{
+        width: 284px;
+
+    }
+}

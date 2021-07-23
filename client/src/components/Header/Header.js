@@ -1,17 +1,41 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import './Header.css'
 import {BrowserRouter as Router} from 'react-router-dom'
 
 
 const Header = () => {
+    const [sidebar, setSidebar] = useState(false)
+    const showSidebar = () => setSidebar
+    (!sidebar)
     return (
         <header className="header">
             <div className="container">
+                <div className={sidebar ? "menu-burger active" : "menu-burger"}>
+                    <div>
+                        <Link to={"/"}>
+                            <img src="/SoftLogo.png" alt="" className="logo-1"/>
+                        </Link>
+                    </div>
+                    <nav className="">
+                        <ul className="nav__list-burger">
+                            <li className="list-item-b">
+                                <Link to="/" className="nav__list-item">Главная</Link>
+                            </li>
+                            <li className="list-item-b">
+                                <Link to="/trainers" className="nav__list-item">Тренировки</Link>
+                            </li>
+                            <li className="list-item-b">
+                                <a href="" className="nav__list-item">Отзывы</a>
+                            </li>
+                            <li className="list-item-b">
+                                <a href="" className="nav__list-item">Стоимость</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
                 <div className="header__content">
-                    <Link to={"/"}>
-                        <img src="/SoftLogo.png" alt="" className="logo"/>
-                    </Link>
+                    <a href=""><img src="/SoftLogo.png" alt="" className="logo"/></a>
                     <nav className="navbar">
                         <ul className="nav__list">
                             <li className="list-item">
@@ -28,6 +52,7 @@ const Header = () => {
                             </li>
                         </ul>
                     </nav>
+                    <div className="menu" onClick={showSidebar}></div>
                 </div>
             </div>
         </header>

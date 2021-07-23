@@ -11,6 +11,9 @@
 }
 .social-sites__list{
     margin-top: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .social-list__item{
     margin-bottom: 33px;
