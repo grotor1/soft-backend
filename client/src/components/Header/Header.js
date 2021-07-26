@@ -26,10 +26,12 @@ const Header = () => {
                                 <Link to="/trainers" className="nav__list-item">Тренировки</Link>
                             </li>
                             <li className="list-item-b">
-                                <a href="" className="nav__list-item">Отзывы</a>
+                                <a href="" className="nav__list-item">Стоимость</a>
                             </li>
                             <li className="list-item-b">
-                                <a href="" className="nav__list-item">Стоимость</a>
+                                <Link to="/signup" className="nav__list-item">
+                                    <button>Регистрация</button>
+                                </Link>
                             </li>
                         </ul>
                     </nav>
@@ -44,11 +46,16 @@ const Header = () => {
                             <li className="list-item">
                                 <Link to="/trainers" className="nav__list-item">Тренировки</Link>
                             </li>
-                            <li className="list-item">
+                            {/* <li className="list-item">
                                 <a href="" className="nav__list-item">Отзывы</a>
-                            </li>
+                            </li> */}
                             <li className="list-item">
                                 <a href="" className="nav__list-item">Стоимость</a>
+                            </li>
+                            <li className="list-item-b">
+                                <Link to="/signup" className="nav__list-item">
+                                    <button>Регистрация</button>
+                                </Link>
                             </li>
                         </ul>
                     </nav>

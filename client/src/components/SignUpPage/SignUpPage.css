@@ -1,0 +1,120 @@
+.signup-page{
+    background: #F4F4F4;
+    padding-bottom: 154px;
+}
+
+.apply-flex{
+    display: flex;
+    align-items: flex-start;
+    padding-top: 48px;
+    justify-content: space-between;
+    /* position: relative; */
+}
+.apply-bg{
+    background: #F4F4F4;
+    background-image: url('../../assets/ball.png');
+    background-repeat: no-repeat;
+    background-position: bottom -90px left -30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.sign__heading{
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 23px;
+}
+.sign__desc{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 80px;
+}
+.signup{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+.sign-up__input-2{
+    background: #FFFFFF;
+    border: 1px solid #D8D8D8;
+    box-sizing: border-box;
+    border-radius: 7px;
+    font-size: 18px;
+    line-height: 22px;
+    color: #DDDDDD;
+    padding-top: 12px;
+    padding-bottom: 13px;
+    padding-left: 67px;
+    width: 496px;
+    margin-bottom: 22px;
+}
+.sign-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.signup-btn-2{
+    background: #7CEC72;
+    border-radius: 33px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 22px 48px;
+    border: none;
+}
+.signup__img{
+    width: 600px;
+}
+.popup-image{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.close-popup{
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+}
+.sign-list{
+    display: flex;
+    flex-direction: column;
+}
+.sign-list__item{
+    margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    text-align: left;
+}
+@media (max-width: 1232px){
+    .apply-flex{
+        flex-direction: column;
+    }
+}
+@media (max-width: 624px){
+    .sign-up__input{
+        width: 424px;
+        font-size: 16px
+    }
+    
+}
+@media (max-width: 434px){
+    .sign-up__input{
+        width: 340px;
+    }
+}
+@media (max-width: 348px){
+    .sign-up__input{
+        width: 280px;
+    }
+}
