@@ -171,24 +171,48 @@
     transform: scale(1);
 }
 @media (max-width: 1232px){
-    .apply-flex{
+    .apply-flex {
         flex-direction: column;
+        align-items: center;
+    }
+    .signup__img{
+        margin-top: 50px;
     }
 }
 @media (max-width: 624px){
-    .sign-up__input{
+    .sign-up__input-2{
         width: 424px;
         font-size: 16px
     }
-    
-}
-@media (max-width: 434px){
-    .sign-up__input{
-        width: 340px;
+    .signup__img{
+        width: 60%;
+    }
+    .popup-image{
+        align-items: center;
     }
 }
-@media (max-width: 348px){
-    .sign-up__input{
+@media (max-width: 514px) {
+    .sign-up__input-2{
         width: 280px;
+    }
+    .signup{
+        align-items: center;
+    }
+    .signup__img{
+        display: none;
+    }
+    .sign-flex{
+        flex-direction: column;
+        align-items: center;
+    }
+    .enter-btn{
+        margin-top: 22px;
+    }
+    .sign__desc{
+        font-size: 16px;
+        width: 300px;
+    }
+    .signup{
+        width: 300px;
     }
 }

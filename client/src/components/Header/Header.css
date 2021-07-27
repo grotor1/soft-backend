@@ -87,7 +87,7 @@
         margin-left: 50px
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 962px){
     .nav__list{
         display: none;
     }
@@ -100,4 +100,7 @@
     .logo-1{
         display: none;
     }
+}
+@media (max-width: 768px) {
+    
 }

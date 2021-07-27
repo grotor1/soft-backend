@@ -1,9 +1,16 @@
 import React from 'react'
+import EnterError from '../EnterError'
 import Header from '../Header'
 import './UserProfile.css'
 
 const UserProfile = () => {
-    return(
+    const state = {
+        loggedIn: false
+    }
+    if (state.loggedIn) {
+        return <EnterError />
+    }
+    return (
         <div className="user-profile">
             <Header />
             <div className="container">

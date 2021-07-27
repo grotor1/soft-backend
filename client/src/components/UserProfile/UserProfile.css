@@ -85,3 +85,21 @@
     border: none;
     margin-top: 42px;
 }
+
+@media (max-width: 908px) {
+    .input-list__item input {
+        width: 508px;
+    }
+}
+
+@media (max-width: 620px) {
+    .input-list__item input {
+        width: 320px;
+    }
+}
+
+@media (max-width: 440px) {
+    .input-list__item input {
+        width: 200px;
+    }
+}
