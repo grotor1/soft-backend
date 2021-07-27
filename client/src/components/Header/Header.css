@@ -50,6 +50,29 @@
 .active{
     display: block;
 }
+.sign-head-btn{
+    background: #7CEC72;
+    border-radius: 33px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 14px 40px;
+    border: none;
+}
+.enter-header{
+    border: 4px solid #7CEC72;
+    box-sizing: border-box;
+    border-radius: 33px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #7CEC72;
+    padding: 14px 40px;
+    margin-left: 22px;
+}
 @media (max-width: 1452px){
     .list-item:not(:last-child){
         margin-right: 50px;

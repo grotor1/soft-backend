@@ -33,6 +33,11 @@ const Header = () => {
                                     <button>Регистрация</button>
                                 </Link>
                             </li>
+                            <li className="list-item-b">
+                                <Link to="/enter" className="nav__list-item">
+                                    <button>Войти</button>
+                                </Link>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -54,7 +59,12 @@ const Header = () => {
                             </li>
                             <li className="list-item-b">
                                 <Link to="/signup" className="nav__list-item">
-                                    <button>Регистрация</button>
+                                    <button className="sign-head-btn">Регистрация</button>
+                                </Link>
+                            </li>
+                            <li className="list-item-b">
+                                <Link to="/enter" className="nav__list-item">
+                                    <button className="enter-header">Войти</button>
                                 </Link>
                             </li>
                         </ul>

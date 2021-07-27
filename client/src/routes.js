@@ -5,7 +5,8 @@ import {AdminPage} from "./pages/AdminPage/AdminPage";
 import MainPage from "./components/MainPage";
 import TrainersPage from "./components/TrainersPage";
 import TrainerPage from "./components/TrainersPage/TrainerPage";
-import SignUpPage from './components/SignUpPage/SignUpPage';
+import SignUpPage from './components/SignUpPage';
+import EnterPage from './components/EnterPage';
 
 
 export const useRoutes = (isAuthAdmin) => {
@@ -21,6 +22,9 @@ export const useRoutes = (isAuthAdmin) => {
             </Route>
             <Route path="/signup">
                 <SignUpPage/>
+            </Route>
+            <Route path="/enter">
+                <EnterPage/>
             </Route>
         </Switch>
     );

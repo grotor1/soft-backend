@@ -1,6 +1,7 @@
 import React from 'react'
 import './SignUpPage.css'
 import Header from '../Header'
+import {Link} from 'react-router-dom'
 
 const SignUpPage = () => {
     return (
@@ -20,31 +21,45 @@ const SignUpPage = () => {
                         <input type="e-mail" placeholder="Электронная почта" className="sign-up__input-2 mail__input" />
                         <input type="date" placeholder="Дата рождения" className="sign-up__input-2 mail__input" />
                         <input type="phone" placeholder="Телефон" className="sign-up__input-2 phone__input" />
-                        <div className="sign-flex">
+                        <div className="sign-flex choice">
                             <div>муж</div>
                             <div>жен</div>
                         </div>
                         <div>
                             <ul className="sign-list">
                                 <li className="sign-list__item">
-                                    <input type="radio" />Похудеть
+                                    <p>
+                                        <input type="radio" id="test1" name="radio-group" checked />
+                                        <label for="test1">Apple</label>
+                                    </p>
                                 </li>
                                 <li className="sign-list__item">
-                                    <input type="radio" />Осанка
+                                    <p>
+                                        <input type="radio" id="test1" name="radio-group" checked />
+                                        <label for="test1">Осанка</label>
+                                    </p>
                                 </li>
                                 <li className="sign-list__item">
-                                    <input type="radio" />Поддерживать форму
+                                    <p>
+                                        <input type="radio" id="test1" name="radio-group" checked />
+                                        <label for="test1">Поддерживать форму</label>
+                                    </p>
                                 </li>
                                 <li className="sign-list__item">
-                                    <input type="radio" />Набрать массу
+                                    <p>
+                                        <input type="radio" id="test1" name="radio-group" checked />
+                                        <label for="test1">Поддерживать форму</label>
+                                    </p>
                                 </li>
                             </ul>
                         </div>
                         <input type="password" placeholder="Пароль" className="sign-up__input-2" />
-                        <input type="password" placeholder="Пароль" className="sign-up__input-2" />
+                        <input type="password" placeholder="Подтвердите пароль" className="sign-up__input-2" />
                         <div className="sign-flex">
                             <button className="signup-btn-2" type="submit" >Завершить</button>
-                            <div>Знакомы? Войдите</div>
+                            <Link to="/enter" className="enter-btn">
+                                    <button className="enter-btn">Знакомы? Войдите</button>
+                            </Link>
                         </div>
                     </form>
                     <div className="popup-image">
