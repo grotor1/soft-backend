@@ -7,6 +7,7 @@ import TrainersPage from "./components/TrainersPage";
 import TrainerPage from "./components/TrainersPage/TrainerPage";
 import SignUpPage from './components/SignUpPage';
 import EnterPage from './components/EnterPage';
+import UserProfile from './components/UserProfile';
 
 
 export const useRoutes = (isAuthAdmin) => {
@@ -25,6 +26,9 @@ export const useRoutes = (isAuthAdmin) => {
             </Route>
             <Route path="/enter">
                 <EnterPage/>
+            </Route>
+            <Route path="/profile">
+                <UserProfile/>
             </Route>
         </Switch>
     );

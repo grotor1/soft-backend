@@ -9,10 +9,6 @@ const SignUpPage = () => {
             <Header />
             <div className="container">
                 <div className="apply-flex">
-                    {/* <div>
-                        <h1 className="sign__heading">Регистрация</h1>
-                        <div className="sign__desc">Добро пожаловать в мир новых тренировок</div>
-                    </div> */}
                     <form className="signup">
                         <h1 className="sign__heading">Регистрация</h1>
                         <div className="sign__desc">Добро пожаловать в мир новых тренировок</div>
@@ -35,20 +31,20 @@ const SignUpPage = () => {
                                 </li>
                                 <li className="sign-list__item">
                                     <p>
-                                        <input type="radio" id="test1" name="radio-group" checked />
+                                        <input type="radio" id="test2" name="radio-group" checked />
                                         <label for="test1">Осанка</label>
                                     </p>
                                 </li>
                                 <li className="sign-list__item">
                                     <p>
-                                        <input type="radio" id="test1" name="radio-group" checked />
+                                        <input type="radio" id="test3" name="radio-group" checked />
                                         <label for="test1">Поддерживать форму</label>
                                     </p>
                                 </li>
                                 <li className="sign-list__item">
                                     <p>
-                                        <input type="radio" id="test1" name="radio-group" checked />
-                                        <label for="test1">Поддерживать форму</label>
+                                        <input type="radio" id="test4" name="radio-group" checked />
+                                        <label for="test1">Набрать массу</label>
                                     </p>
                                 </li>
                             </ul>

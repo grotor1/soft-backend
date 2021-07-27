@@ -1,0 +1,87 @@
+.user-profile{
+    background: #F4F4F4;
+}
+.useritem{
+    padding-top: 105px;
+    padding-bottom: 44px;
+}
+.user-item__first{
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 43px;
+}
+.user-item-flex{
+    display: flex;
+    align-items: center;
+}
+.user-item-image{
+    width: 102px;
+    height: 102px;
+    border-radius: 50%;
+    margin-right: 32px;
+    margin-bottom: 14px;
+}
+.user-item-name{
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000;
+}
+.status-online{
+    font-size: 15px;
+    color: #22A900;
+}
+.status-offline{
+    color: #AAAAAA;
+    font-size: 15px;
+}
+.phone-done{
+    font-size: 15px;
+    color: #000000;
+    padding-left: 44px;
+    background-image: url('../../assets/tick.svg');
+    background-repeat: no-repeat;
+    padding-bottom: 10px;
+}
+
+.user-item__second{
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding-top: 39px;
+    padding-left: 60px;
+    padding-bottom: 72px;
+    margin-top: 28px;
+}
+.bold{
+    font-weight: bold;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 40px;
+}
+.input-list__item input{
+    background: #FFFFFF;
+    border: 1px solid #D8D8D8;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 23px;
+    font-size: 15px;
+    color: #C0C0C0;
+    width: 782px;
+    margin-bottom: 20px;
+}
+.input-list__item span{
+    color: #C0C0C0;
+    display: block;
+    margin-bottom: 20px;
+}
+.save-btn{
+    display: block;
+    font-size: 18px;
+    color: #000000;
+    background-color: transparent;
+    border: none;
+    margin-top: 42px;
+}
