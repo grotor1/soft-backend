@@ -5,12 +5,13 @@ import {BrowserRouter as Router} from "react-router-dom"
 import {useAuth} from "./hooks/auth.hook";
 
 function App() {
-    const {token, login, logout} = useAuth()
-    const isAuthAdmin = !!token
-    const routes = useRoutes(isAuthAdmin);
+    const {token, login, logout, tokenAdmin, logoutAdmin, loginAdmin, userId} = useAuth()
+    const isAuth = !!token
+    const isAuthAdmin = !!tokenAdmin
+    const routes = useRoutes(isAuth, isAuthAdmin);
     return (
         <AuthContext.Provider value={{
-            token, login, logout, isAuthAdmin
+            token, login, logout, isAuth, _id_user: userId, tokenAdmin, loginAdmin, logoutAdmin, isAuthAdmin
         }}>
             <Router>
                 <div className="App">

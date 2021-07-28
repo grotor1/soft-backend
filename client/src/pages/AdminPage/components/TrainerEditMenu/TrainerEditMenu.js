@@ -114,32 +114,8 @@ export const TrainerEditMenu = () => {
 
     const submitHandler = async () => {
         try {
-            const {
-                name,
-                surname,
-                avatar,
-                workExp,
-                contacts,
-                trainingTypes,
-                aboutMyself,
-                educations,
-                certificates,
-                price,
-                specialOffers
-            } = form
-            const {success} = await request(`/api/fetch/updateTrainer/${_id_trainer}`, 'PATCH', {
-                name,
-                surname,
-                avatar,
-                workExp,
-                contacts,
-                trainingTypes,
-                aboutMyself,
-                educations,
-                certificates,
-                price,
-                specialOffers
-            })
+
+            const {success} = await request(`/api/fetch/updateTrainer/${_id_trainer}`, 'PATCH', {...form})
             if (success) {
                 message("Тренер изменен")
                 setForm({

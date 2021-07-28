@@ -36,8 +36,7 @@ export const TrainingTypesAddMenu = () => {
 
     const submitHandler = async () => {
         try {
-            const {name, img} = form
-            const {success} = await request('/api/fetch/addTrainingType', 'POST', {name, img})
+            const {success} = await request('/api/fetch/addTrainingType', 'POST', {...form})
             if (success) {
                 message("Новый тип тренировок добавлен")
             }

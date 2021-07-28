@@ -96,28 +96,7 @@ export const TrainerAddMenu = () => {
 
     const submitHandler = async () => {
         try {
-            const {name,
-                surname,
-                avatar,
-                workExp,
-                contacts,
-                trainingTypes,
-                aboutMyself,
-                educations,
-                certificates,
-                price,
-                specialOffers} = form
-            const {success} = await request('/api/fetch/addTrainer', 'POST', {name,
-                surname,
-                avatar,
-                workExp,
-                contacts,
-                trainingTypes,
-                aboutMyself,
-                educations,
-                certificates,
-                price,
-                specialOffers})
+            const {success} = await request('/api/fetch/addTrainer', 'POST', {...form})
             if(success){
                 message("Тренер создан")
                 setForm({

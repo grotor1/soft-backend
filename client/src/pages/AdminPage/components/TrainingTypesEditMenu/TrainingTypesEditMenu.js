@@ -48,8 +48,7 @@ export const TrainingTypesEditMenu = () => {
 
     const submitHandler = async () =>{
         try {
-            const {name, img} = form
-            const {success} = await request(`/api/fetch/updateTrainingType/${_id_trainingType}`, 'PATCH', {name, img})
+            const {success} = await request(`/api/fetch/updateTrainingType/${_id_trainingType}`, 'PATCH', {...form})
             if(success){
                 message("Тип тренировок изменен")
             }

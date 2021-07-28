@@ -1,15 +1,14 @@
 import React from 'react'
-import {Switch, Route, Redirect} from "react-router-dom"
+import {Switch, Route} from "react-router-dom"
 import {AdminLoginPage} from "./pages/AdminLoginPage/AdminLoginPage";
 import {AdminPage} from "./pages/AdminPage/AdminPage";
 import MainPage from "./components/MainPage";
 import TrainersPage from "./components/TrainersPage";
-import TrainerPage from "./components/TrainersPage/TrainerPage";
 import SignUpPage from './components/SignUpPage';
 import EnterPage from './components/EnterPage';
 
 
-export const useRoutes = (isAuthAdmin) => {
+export const useRoutes = (isAuth, isAuthAdmin) => {
     return (
         <Switch>
             {isAuthAdmin ? <Route path="/admin" component={AdminPage}/> :

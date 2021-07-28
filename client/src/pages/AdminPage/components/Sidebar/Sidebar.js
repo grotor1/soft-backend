@@ -34,7 +34,7 @@ export const Sidebar = ({match}) => {
                 </h2>
             </Link>
             <Link to={`/adminLogin`} className="sidebar-button sidebar-button__exit">
-                <div onClick={auth.logout}>
+                <div onClick={auth.logoutAdmin}>
                     <h2>
                         Выйти
                     </h2>

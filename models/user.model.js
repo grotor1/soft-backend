@@ -9,7 +9,7 @@ const UsersSchema = new Schema({
     birthDate: String,
     phone: String,
     sex: String,
-    targets: [String],
+    target: String,
 })
 
 module.exports = model('User', UsersSchema)

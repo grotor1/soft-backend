@@ -43,7 +43,8 @@ router.post("/regUser",
         check('surname', 'Введите фамилию').exists(),
         check('birthDate', 'Введите дату рождения').exists(),
         check('phone', 'Введите телефон').exists(),
-        check('sex', 'Укажите пол').exists()
+        check('sex', 'Укажите пол').exists(),
+        check('target', 'Выберите цель').exists()
     ],
     async (req, res) => {
         try {
@@ -54,13 +55,14 @@ router.post("/regUser",
                     message: "Некорректные данные при регистрации"
                 })
             }
-            const {email, password, passwordRep, name, surname, birthDate, phone, sex} = req.body;
+            const {email, password, passwordRep, name, surname, birthDate, phone, sex, target} = req.body;
             const candidate = await User.findOne({email})
+            console.log(birthDate)
             if (candidate) return res.status(400).json({message: "По этому адресу уже есть аккаунт"})
             if (password !== passwordRep) return res.status(400).json({message: "Пароли не совпадают"})
-            const user = new User({email, password, name, surname, birthDate, phone, sex})
+            const user = new User({email, password, name, surname, birthDate, phone, sex, target})
             await user.save()
-            res.status(201).json({message: "Новый пользователь создан"})
+            res.status(201).json({message: "Новый пользователь создан", success: true})
         } catch (e) {
             res.status(500).json({message: "Что-то не так", error: e})
         }

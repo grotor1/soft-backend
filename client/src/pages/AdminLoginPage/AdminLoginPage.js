@@ -14,9 +14,8 @@ export const AdminLoginPage = () => {
     }
     const clickHandle = async () => {
         try {
-            console.log(password)
             const data = await request("/api/auth/login", "POST", {password})
-            auth.login(data.token)
+            auth.loginAdmin(data.token)
         } catch (e) {
             message(e)
         }

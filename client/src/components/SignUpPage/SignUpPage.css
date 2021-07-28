@@ -192,3 +192,13 @@
         width: 280px;
     }
 }
+
+.sex-variant{
+    background-color: #dddddd;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.sex-chosen{
+    background-color: #6ed98b;
+}
