@@ -40,10 +40,6 @@ const SignUpPage = () => {
             <Header/>
             <div className="container">
                 <div className="apply-flex">
-                    {/* <div>
-                        <h1 className="sign__heading">Регистрация</h1>
-                        <div className="sign__desc">Добро пожаловать в мир новых тренировок</div>
-                    </div> */}
                     <div className="signup">
                         <h1 className="sign__heading">Регистрация</h1>
                         <div className="sign__desc">Добро пожаловать в мир новых тренировок</div>
@@ -88,7 +84,7 @@ const SignUpPage = () => {
                                     <p>
                                         <input type="radio" id="test4" name="target" value="Поддерживать форму"
                                                onClick={changeHandler}/>
-                                        <label for="test4">Поддерживать форму</label>
+                                        <label for="test4">Набрать массу</label>
                                     </p>
                                 </li>
                             </ul>
