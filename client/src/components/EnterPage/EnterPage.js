@@ -18,7 +18,7 @@ const EnterPage = () => {
     const submitHandler = async event => {
         try {
             const data = await request("/api/auth/loginUser", "POST", {...form})
-            auth.login(data.token)
+            auth.login(data.token, data._id_user)
             message("Вы успешно вошли")
         } catch (e) {
         }
