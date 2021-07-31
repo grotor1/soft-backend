@@ -21,7 +21,7 @@ const MainPage = () => {
                                 </Link>
                             </div>
                             <div className="hero-images">
-                                <img src="/hero-image.png" alt="" />
+                                <img src="/hero-image.png" alt="" className="hero-image"/>
                                 <img src="/Ellipse 22.svg" alt="" className="ell-1" />
                                 <img src="/Ellipse 28.svg" alt="" className="ell-2" />
                             </div>
@@ -34,86 +34,105 @@ const MainPage = () => {
                             <h2 className="section__title">Soft - это</h2>
                             <ul className="about-us__list">
                                 <li className="about-us__item">
-                                    <img src="/house.png" alt="" className="about-us__image" />
-                                    <span className="about-us__desc">Занятия дома</span>
+                                    <div className="about-us__texts">
+                                        <span className="about-us__head">Удобная платформа для спорта все-в-одном</span>
+                                        <p className="about-us__desc">Всё проводится на нашей платформе. Вам не придётся заходить на сторонние сервисы</p>
+                                    </div>
+                                    <img src="/about-image.png" alt="" className="about-img" />
+                                    
                                 </li>
-                                <li className="about-us__item">
-                                    <img src="/clock.png" alt="" className="about-us__image" />
-                                    <span className="about-us__desc">Сэкономленное время</span>
-                                </li>
-                                <li className="about-us__item">
-                                    <img src="/karate.png" alt="" className="about-us__image" />
-                                    <span className="about-us__desc">Профессиональная помощь</span>
-                                </li>
-                                <li className="about-us__item">
-                                    <img src="/shy1.png" alt="" className="about-us__image" />
-                                    <span className="about-us__desc">Комфорт</span>
-                                </li>
+                                
                             </ul>
                         </div>
                     </div>
                 </section>
                 <section className="mission">
-                    <div class="mission-black-rectangle">
-                    </div>
-                    <div className="container mission-flex">
-                        <div>
-                            <h2 className="section__title-white">Наша миссия: </h2>
-                            <span className="mission-text">Дать людям возможность тренироваться <span className="green-2">легче:</span></span>
-                            <p className="mission-text">где угодно и когда угодно</p>
+                    <div className="container">
+                        <div className="mission-flex">
+                            <div>
+                                <h2 className="section__title-black">Наша миссия: </h2>
+                                <span className="mission-text">Дать людям возможность тренироваться <span className="green-2">легче:</span></span>
+                                <p className="mission-text">где угодно и когда угодно</p>
+                            </div>
+                            <div>
+                                <img src="/mission-img.png" className="mission-img"></img>
+                            </div>
                         </div>
-                        <div>
-                            <img src="/mission__image.png"></img>
-                        </div>
-                        <img src="/Rectangle 181.png" class="mission-background-image" />
                     </div>
-                    <img src="/Vector 8.png" className="line"/>
                 </section>
-                <section className="steps container">
-                    <ul className="steps__list">
-                        <li className="steps__item">
-                            <h3 className="steps__title">Шаг 1</h3>
-                            <p className="steps__text">выбрать тренера на нашей платформе, либо оставить заявку.</p>
-                        </li>
-                        <li className="steps__item">
-                            <h3 className="steps__title">Шаг 2</h3>
-                            <p className="steps__text">связаться с тренером, либо ожидать, когда с вами свяжутся. </p>
-                        </li>
-                        <li className="steps__item">
-                            <h3 className="steps__title">Шаг 3</h3>
-                            <p className="steps__text">Обсудить программу тренировок.</p>
-                        </li>
-                        <li className="steps__item">
-                            <h3 className="steps__title">Шаг 4</h3>
-                            <p className="steps__text">Приступить к тренировкам</p>
-                        </li>
-                    </ul>
+                <section className="comfort">
+                    <div className="container">
+                        <h2 className="section__title-black comfort-title">Почему с нами удобно?</h2>
+                        <ul className="comfort-list">
+                            <li className="comfort-list__item">
+                                <img src="/comfort-1.png" />
+                                <p className="comfort-item__heading">Обзор тренировок с нескольких ракурсов.</p>
+                                <span className="comfort-item__desc">Вы сможете подключить дополнительные устройства (телефон или ноутбук) во время занятия и использовать их, как дополнительные камеры для нескольких ракурсов для тренера.</span>
+                            </li>
+                            <li className="comfort-list__item">
+                                <img src="/comfort-2.png" />
+                                <p className="comfort-item__heading">Синхронизация с фитнес-устройствами</p>
+                                <span className="comfort-item__desc">Тренировки не заканчиваются только на звонках. Если у вас есть фитнес-устройство, то мы предлагаем подключить его у нашей платформе для лучшего отслеживания вашего прогресса.</span>
+                            </li>
+                            <li className="comfort-list__item">
+                                <img src="/comfort-3.png" />
+                                <p className="comfort-item__heading">История и рост развития</p>
+                                <span className="comfort-item__desc">Вы можете вести личный профиль  который открыт только вам, и добавлять все результаты, после чего отслеживать свои прогресс. Исходя из этих данных, тренеры смогут подстраивать более эффективные стратегии тренировок.</span>
+                            </li>
+                            <li className="comfort-list__item">
+                                <img src="/comfort-4.png" />
+                                <p className="comfort-item__heading">Музыка для тренировок.и</p>
+                                <span className="comfort-item__desc">Для каждого вида тренировок вас ждет отдельный. С музыкой легче приступать к новым подходам!</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </section>
+                <section className="steps ">
+                    <div className="container">
+                        <h2 className="section__title-black comfort-title">Четыре шага</h2>
+                        <ul className="steps__list">
+                            <li className="steps__item">
+                                <p className="steps__text one">Зарегистрироваться на платформе</p>
+                            </li>
+                            <li className="steps__item">
+                                <p className="steps__text two">Выбрать тренера на нашей платформе или оставить заявку</p>
+                            </li>
+                            <li className="steps__item">
+                                <p className="steps__text three">Обсудить программу тренировок.</p>
+                            </li>
+                            <li className="steps__item">
+                                <p className="steps__text four">Начать тренировки</p>
+                            </li>
+                            
+                        </ul>
+                    </div>
                 </section>
                 <section className="training-types">
                     <div className="">
                         <h2 className="section__title">Виды тренировок</h2>
-                        <ul className="train-list">
+                        <ul className="train-list-l">
                             <li className="train-list__item">
                                 <a>
-                                    <img className="train__img" src="/___ 4.png"></img>
+                                    <img className="train__img" src="/fitness.png"></img>
                                     <h3 className="train__heading">Фитнес</h3>
                                 </a>
                             </li>
                             <li className="train-list__item">
                                 <a>
-                                    <img className="train__img" src="/trenirovki_doma_dlya_muzhchin_56 2.png"></img>
+                                    <img className="train__img" src="/kardio.png"></img>
                                     <h3 className="train__heading">Кардио</h3>
                                 </a>
                             </li>
                             <li className="train-list__item">
                                 <a>
-                                    <img className="train__img" src="/110543504-happy-african-american-woman-showing-ok-sign-while-sitting-on-black-yoga-mat-over-white-wall-backgro 1.png"></img>
+                                    <img className="train__img" src="/yoga.png"></img>
                                     <h3 className="train__heading">Йога</h3>
                                 </a>
                             </li>
                             <li className="train-list__item">
                                 <a>
-                                    <img className="train__img" src="/pilates-man-w760h570 1.png"></img>
+                                    <img className="train__img" src="/pilates.png"></img>
                                     <h3 className="train__heading">Пилатес</h3>
                                 </a>
                             </li>
@@ -131,21 +150,21 @@ const MainPage = () => {
                         <div className="trainers-content">
                             <h2 className="section__title">Тренеры недели</h2>
                             <ul className="trainers-list">
-                                <li className="trainers-list__item kraynov">
+                                <li className="trainers-list__item-l kraynov">
                                         <div className="trainer__content">
                                             <h3 className="trainer-heading">Сергей Крайнов</h3>
                                             <p className="trainer-desc">Фитнеc, кардио, детский фитнес, ЛФК.</p>
                                             <a className="more">Подробнее</a>
                                         </div>
                                 </li>
-                                <li className="trainers-list__item isaeva">
+                                <li className="trainers-list__item-l isaeva">
                                     <div className="trainer__content">
                                         <h3 className="trainer-heading">Екатерина Исаева</h3>
                                         <p className="trainer-desc">фитнес, хореография, Стретчинг, ОФП</p>
                                         <a className="more">Подробнее</a>
                                     </div>
                                 </li>
-                                <li className="trainers-list__item krasnova">
+                                <li className="trainers-list__item-l krasnova">
                                     <div className="trainer__content">
                                         <h3 className="trainer-heading">Наталья Краснова</h3>
                                         <p className="trainer-desc">Фитнеc, кардио, ЛФК, ОФП, для всей семьи</p>
@@ -170,19 +189,19 @@ const MainPage = () => {
                             <ul className="results__list">
                                 <li className="result__item">
                                     <img src="/fire.png" alt="" className="result__image" />
-                                    <span className="about-us__desc">Продуктивные тренировки</span>
+                                    <span className="results__desc">Продуктивные тренировки</span>
                                 </li>
                                 <li className="result__item">
                                     <img src="/wrist.png" alt="" className="result__image" />
-                                    <span className="about-us__desc">Бесконечную мотивацию</span>
+                                    <span className="results__desc">Бесконечную мотивацию</span>
                                 </li>
                                 <li className="result__item">
                                     <img src="/cloud.png" alt="" className="result__image" />
-                                    <span className="about-us__desc">Легкость использования</span>
+                                    <span className="results__desc">Легкость использования</span>
                                 </li>
                                 <li className="result__item">
                                     <img src="/trophy.png" alt="" className="result__image" />
-                                    <span className="about-us__desc">Профессиональных тренеров</span>
+                                    <span className="results__desc">Профессиональных тренеров</span>
                                 </li>
                             </ul>
                         </div>

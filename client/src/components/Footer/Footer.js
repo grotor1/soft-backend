@@ -10,7 +10,7 @@ const Footer = () => {
                     <li className="social-list__item">
                         
                         <a className="social__link" href="https://www.instagram.com/soft_platform/">
-                            <img src="/inst (2).png" />
+                            <img src="/inst.svg" />
                         </a>
                     </li>
                     <li className="social-list__item">
