@@ -6,6 +6,24 @@ import Footer from '../Footer'
 import Accordion from './Accordion'
 
 const MainPage = () => {
+    const displayNextImage = () => {
+        x = (x === images.length - 1) ? 0 : x + 1;
+        document.getElementById("img").src = images[x];
+    }
+
+    const displayPreviousImage = () => {
+        x = (x <= 0) ? images.length - 1 : x - 1;
+        document.getElementById("img").src = images[x];
+    }
+
+    const startTimer = () =>  {
+        setInterval(displayNextImage, 3000);
+    }
+
+    const images = [], x = -1;
+    images[0] = "/about-image.png";
+    images[1] = "/about_2.png";
+    images[2] = "/about_3.png";
     return (
         <div>
             <Header />
@@ -38,7 +56,7 @@ const MainPage = () => {
                                         <span className="about-us__head">Удобная платформа для спорта все-в-одном</span>
                                         <p className="about-us__desc">Всё проводится на нашей платформе. Вам не придётся заходить на сторонние сервисы</p>
                                     </div>
-                                    <img src="/about-image.png" alt="" className="about-img" />
+                                    <img src="/about-image.png" alt="" className="about-img" id="img" />
                                     
                                 </li>
                                 

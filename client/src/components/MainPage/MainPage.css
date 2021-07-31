@@ -241,7 +241,7 @@ body{
     border-radius: 20px;
     padding: 17px 36px 66px;
     width: 388px;
-    height: 508px;
+    height: 100%;
     margin-bottom: 96px;
 }
 .comfort-item__heading{
