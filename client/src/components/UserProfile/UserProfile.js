@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import EnterError from '../EnterError'
 import Header from '../Header'
 import './UserProfile.css'
@@ -45,6 +46,9 @@ const UserProfile = () => {
                         <input type="checkbox" className="check" />
                         <span>Получать рассылку</span>
                         <button className="save-btn">Сохранить</button>
+                        <Link to="/chat">
+                            <button className="save-btn">Сообщения</button>
+                        </Link>
                     </div>
                 </div>
             </div>

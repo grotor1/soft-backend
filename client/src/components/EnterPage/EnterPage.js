@@ -1,6 +1,9 @@
 import React from 'react'
 import './EnterPage.css'
 import Header from '../Header'
+import {Link} from 'react-router-dom'
+
+
 const EnterPage = () => {
     return(
         <div className="signup-page">
@@ -13,7 +16,10 @@ const EnterPage = () => {
                         <input type="e-mail" placeholder="Электронная почта" className="sign-up__input-2 mail__input" />
                         <input type="password" placeholder="Пароль" className="sign-up__input-2" />
                         <input type="password" placeholder="Подтвердите пароль" className="sign-up__input-2" />
-                        <button className="signup-btn-2" type="submit" >Войти</button>
+                        <Link to="/profile" className="nav__list-item">
+                            <button className="signup-btn-2" type="submit" >Войти</button>
+                        </Link>
+                        
                     </form>
                     <div className="popup-image">
                         <img src="/signimg.png" className="signup__img"/>

@@ -32,19 +32,19 @@ const SignUpPage = () => {
                                 <li className="sign-list__item">
                                     <p>
                                         <input type="radio" id="test2" name="radio-group" checked />
-                                        <label for="test1">Осанка</label>
+                                        <label for="test2">Осанка</label>
                                     </p>
                                 </li>
                                 <li className="sign-list__item">
                                     <p>
                                         <input type="radio" id="test3" name="radio-group" checked />
-                                        <label for="test1">Поддерживать форму</label>
+                                        <label for="test3">Поддерживать форму</label>
                                     </p>
                                 </li>
                                 <li className="sign-list__item">
                                     <p>
                                         <input type="radio" id="test4" name="radio-group" checked />
-                                        <label for="test1">Набрать массу</label>
+                                        <label for="test4">Набрать массу</label>
                                     </p>
                                 </li>
                             </ul>

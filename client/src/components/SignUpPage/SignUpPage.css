@@ -105,6 +105,11 @@
     color: #000000;
     align-items: center;
 }
+.choice div:hover{
+    cursor: pointer;
+    font-size: 20px;
+    color: #7CEC72;
+}
 .enter-btn{
     border: none;
     background: transparent;

@@ -15,7 +15,10 @@ const MainPage = () => {
                         <div className="hero__content">
                             <div className="hero-texts">
                                 <h1 className="hero-title">Онлайн спорт с персональным тренером.</h1>
-                                <span className="hero-description">Занимайтесь спортом, не выходя из дома, по любой <span className="green-text">удобной</span> программе</span>
+                                <span className="hero-description">Занимайтесь спортом, <span className="green-text">не выходя из дома,</span> по любой удобной программе</span>
+                                <Link to="/enter" className="nav__list-item">
+                                    <button className="enter-btn-hero">Войти</button>
+                                </Link>
                             </div>
                             <div className="hero-images">
                                 <img src="/hero-image.png" alt="" />

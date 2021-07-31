@@ -8,6 +8,7 @@ import TrainerPage from "./components/TrainersPage/TrainerPage";
 import SignUpPage from './components/SignUpPage';
 import EnterPage from './components/EnterPage';
 import UserProfile from './components/UserProfile';
+import ChatPage from './components/ChatPage';
 
 
 export const useRoutes = (isAuthAdmin) => {
@@ -29,6 +30,9 @@ export const useRoutes = (isAuthAdmin) => {
             </Route>
             <Route path="/profile">
                 <UserProfile/>
+            </Route>
+            <Route path="/chat">
+                <ChatPage/>
             </Route>
         </Switch>
     );
