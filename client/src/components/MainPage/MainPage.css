@@ -6,6 +6,9 @@ p, h1, h2, h3, img, a, ul, li{
     margin: 0;
     padding: 0;
 }
+img{
+    width: 100%;
+}
 a{
     text-decoration: none;
 }
@@ -27,7 +30,9 @@ body{
     margin: 0 auto;
     padding: 0 15px;
 }
-
+.nav__list-item a{
+    display: block;
+}
 
 .hero{
     background-color: #F4F4F4;
@@ -70,7 +75,7 @@ body{
     line-height: 30px;
 }
 .green-text{
-    color: #62EA0F;
+    border-bottom: 4px solid #62EA0F;;
 }
 .hero-images{
     position: relative;
@@ -78,6 +83,9 @@ body{
     background-repeat: no-repeat;
     background-position: bottom 0 right -20px;
     
+}
+.hero-image{
+    width: 100%;
 }
 .ell-1{
     position: absolute;
@@ -89,7 +97,17 @@ body{
     top: 30px;
     left: 50px;
 }
-
+.enter-btn-hero{
+    background: linear-gradient(95.6deg, #8DE885 14.17%, rgba(109, 255, 106, 0) 80.27%), #6ED98B;
+    box-shadow: 0px 7px 35px rgba(119, 219, 129, 0.6);
+    border-radius: 110px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 17px 74px;
+    border: none;
+    margin-top: 42px;
+}
 
 
 .about-soft{
@@ -108,13 +126,28 @@ body{
     margin-bottom: 74px;
     color: #353535;
 }
-.about-us__list, .results__list{
+.about-img{
+    width: 100%;
+    margin-left: 80px;
+}
+ .results__list{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
 }
-.about-us__item, .result__item{
+.about-us__item{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.about-us__head{
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 46px;
+    color: #000000;
+}
+ .result__item{
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 28px;
     padding: 24px 43px 36px 43px;
@@ -132,9 +165,13 @@ body{
     margin-bottom: 35px;
 }
 .about-us__desc{
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
+    font-size: 20px;
+    line-height: 24px;
+    color: #B3B3B3;
+    margin-top: 64px;
+}
+.about-us__texts{
+    max-width: 497px;
 }
 
 
@@ -147,50 +184,72 @@ body{
     position: relative;
     padding-bottom: 80px;
     z-index: -2;
+    background: #F4F4F4;
+    border-radius: 20px;
+    max-width: 1302px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.mission-black-rectangle{
-    position: absolute;
-    top: 0;
-    width: 30%;
-    height: 100%;
-    background-color: #454545;
-    z-index: -1;
-}
-.mission-background-image{
-    top: 0;
-    position: absolute;
-    z-index: -1;
-}
-.line{
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-}
 .mission-flex{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* background: #F4F4F4;
+    border-radius: 20px;
+    max-width: 1302px; */
 }
-.section__title-white{
+.section__title-black{
     font-weight: bold;
-    font-size: 42px;
-    line-height: 51px;
-    color: #FFFFFF;
-    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    font-size: 38px;
+    line-height: 46px;
+    color: #000000;
     margin-bottom: 83px;
     z-index: 1000;
 }
 .mission-text{
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 37px;
-    color: #FFFFFF;
-    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    margin-bottom: 24px;
 }
 .green-2{
     color: #C8FF2D;
-    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+/* Comfortt */
+.comfort{
+    padding-top: 77px;
+}
+.comfort-title{
+    text-align: center;
+}
+.comfort-list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.comfort-list__item{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 17px 36px 66px;
+    width: 388px;
+    height: 100%;
+    margin-bottom: 96px;
+}
+.comfort-item__heading{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    margin-bottom: 20px;
 }
 
 
@@ -199,35 +258,43 @@ body{
 .steps{
     padding-top: 132px;
     padding-bottom: 132px;
+    background: #F4F4F4;
 }
 .steps__list{
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 .steps__item{
-    background-image: url('../../assets/steps-ball.png');
-    background-repeat: no-repeat;
-    background-position: top 10px left 0;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
-    width: 245px;
-    height: 183px;
-    padding: 29px;
-}
-.steps__title{
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 29px;
-    color: #000000;
-    padding-bottom: 16px;
-}
-.steps__text{
-    font-size: 16px;
-    line-height: 20px;
-    color: #000000;
+    max-width: 180px;
+    text-align: center;
 }
 
+.steps__text{
+    font-size: 14px;
+    line-height: 17px;
+    color: #535353;
+    background-repeat: no-repeat;
+    padding-top: 96px;
+    background-position: top center;
+}
+.one{
+    background-image: url('../../assets/one.png');
+}
+.two{
+    background-image: url('../../assets/two.png');
+}
+.three{
+    background-image: url('../../assets/three.png');
+}
+.four{
+    background-image: url('../../assets/four.png');
+}
+.one::after{
+    content: '';
+    width: 223px;
+    height: 0px;
+    border: 1px solid #DADADA;
+}
 
 
 /* Training Types Section */
@@ -243,7 +310,7 @@ body{
     color: #000000;
     text-align: center;
 }
-.train-list{
+.train-list-l{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -284,7 +351,7 @@ body{
     align-items: center;
     justify-content: space-between;
 }
-.trainers-list__item{
+.trainers-list__item-l{
     width: 310px;
     height: 385px;
     display: flex;
@@ -377,16 +444,116 @@ body{
     width: 105px;
     height: 105px;
 }
+.results__desc{
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+}
 
 
-
-
-@media (max-width: 396px) {
-    .social__link{
-        font-size: 14px;
+@media (max-width: 1220px) {
+    .train-list-l{
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
-    .trainers-list__item{
-        width: 284px;
+    .train-list__item{
+        margin-top: 20px;
+    }
+}
 
+@media (max-width: 1026px){
+    .container{
+        max-width: 968px;
+    }
+    .hero__content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .trainers-list{
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 820px) {
+    .comfort-list{
+        justify-content: center;
+    }
+    .results__list{
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .result__item{
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 697px){
+    .about-us__item{
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-img{
+        margin-top: 50px;
+        margin-left: 0;
+    }
+    .mission-flex{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .steps__list{
+        flex-direction: column;
+        align-items: center;
+    }
+    .steps__item{
+        margin-top: 40px;
+    }
+    .hero-image{
+        margin-top: 40px;
+    }
+
+}
+
+@media (max-width: 497px) {
+    .container{
+        max-width: 468px;
+    }
+    .train-list-l{
+        align-items: center;
+        justify-content: center;
+    }
+    .mission-img{
+        width: 100%;
+    }
+}
+@media (max-width: 408px) {
+    .comfort-list__item{
+        width: 318px;
+        height: 100%;
+        margin-bottom: 24px;
+    }
+    .hero-title{
+        font-size: 36px;
+        line-height: 38px;
+    }
+    .about-us__head{
+        font-size: 30px;
+        line-height: 32px;
+    }
+    .section__title-black, .section__title{
+        margin-bottom: 40px;
+        font-size: 30px;
+    }
+    .trainers-list{
+        margin-top: 0;
+    }
+    .trainers-list__item-l{
+        margin-top: 24px;
+    }
+    .comfort-item__heading{
+        font-size: 20px;
     }
 }

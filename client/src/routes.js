@@ -7,7 +7,7 @@ import TrainersPage from "./components/TrainersPage";
 import SignUpPage from './components/SignUpPage';
 import EnterPage from './components/EnterPage';
 import UserProfile from './components/UserProfile';
-import EnterError from "./components/EnterError";
+import ChatPage from './components/ChatPage';
 
 
 export const useRoutes = (isAuth, isAuthAdmin) => {
@@ -33,6 +33,9 @@ export const useRoutes = (isAuth, isAuthAdmin) => {
             </Route>
             <Route path="/profile">
                 {isAuth ? <UserProfile/> : <EnterError/>}
+            </Route>
+            <Route path="/chat">
+                <ChatPage/>
             </Route>
         </Switch>
     );

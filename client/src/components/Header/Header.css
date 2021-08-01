@@ -1,6 +1,7 @@
 .header{
     background: #F4F4F4;
     padding: 32px;
+    /* position: fixed; */
 }
 .header__content{
     display: flex;
