@@ -81,7 +81,7 @@ const SignUpPage = () => {
                                 </li>
                                 <li className="sign-list__item">
                                     <p>
-                                        <input type="radio" id="test4" name="target" value="Поддерживать форму"
+                                        <input type="radio" id="test4" name="target" value="Набрать массу"
                                                onClick={changeHandler}/>
                                         <label for="test4">Набрать массу</label>
                                     </p>

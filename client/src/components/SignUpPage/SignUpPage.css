@@ -105,6 +105,11 @@
     color: #000000;
     align-items: center;
 }
+.choice div:hover{
+    cursor: pointer;
+    font-size: 20px;
+    color: #7CEC72;
+}
 .enter-btn{
     border: none;
     background: transparent;
@@ -180,15 +185,15 @@
     }
 }
 @media (max-width: 624px){
-    .sign-up__input{
+    .sign-up__input-2{
         width: 424px;
         font-size: 16px
     }
-    
-}
-@media (max-width: 434px){
-    .sign-up__input{
-        width: 340px;
+    .signup__img{
+        width: 60%;
+    }
+    .popup-image{
+        align-items: center;
     }
 }
 @media (max-width: 514px) {
