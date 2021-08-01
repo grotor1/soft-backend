@@ -12,7 +12,7 @@ const TrainersSchema = new Schema({
     }],
     trainingTypes: [
         {
-            _id_training: Types.ObjectId
+            _id_training: String
         }
     ],
     aboutMyself: String,

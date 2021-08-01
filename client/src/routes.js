@@ -1,5 +1,5 @@
 import React from 'react'
-import {Switch, Route} from "react-router-dom"
+import {Switch, Route, Redirect} from "react-router-dom"
 import {AdminLoginPage} from "./pages/AdminLoginPage/AdminLoginPage";
 import {AdminPage} from "./pages/AdminPage/AdminPage";
 import MainPage from "./components/MainPage";
@@ -7,12 +7,17 @@ import TrainersPage from "./components/TrainersPage";
 import SignUpPage from './components/SignUpPage';
 import EnterPage from './components/EnterPage';
 import UserProfile from './components/UserProfile';
+import EnterError from "./components/EnterError";
 
 
 export const useRoutes = (isAuth, isAuthAdmin) => {
     return (
         <Switch>
-            {isAuthAdmin ? <Route path="/admin" component={AdminPage}/> :
+            {isAuthAdmin ?
+                <Route path="/admin" component={AdminPage}/> &&
+                <Route path="/adminLogin">
+                    <Redirect to="/admin"/>
+                </Route> :
                 <Route path="/adminLogin" component={AdminLoginPage}/>}
             <Route exact path="/">
                 <MainPage/>
@@ -27,7 +32,7 @@ export const useRoutes = (isAuth, isAuthAdmin) => {
                 <EnterPage/>
             </Route>
             <Route path="/profile">
-                <UserProfile/>
+                {isAuth ? <UserProfile/> : <EnterError/>}
             </Route>
         </Switch>
     );

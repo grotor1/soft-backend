@@ -20,10 +20,9 @@ const SignUpPage = () => {
         clearError()
     }, [error, message, clearError])
 
-    const submitHandler = () => {
+    const submitHandler = async () => {
         try {
-            const {success} = request("/api/auth/regUser", "POST", {...form})
-            console.log(success)
+            const {success} = await request("/api/auth/regUser", "POST", {...form})
             if (success) message("Вы успешно зарегистрировались")
         } catch (e) {
         }
