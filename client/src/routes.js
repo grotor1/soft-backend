@@ -8,7 +8,7 @@ import SignUpPage from './components/SignUpPage';
 import EnterPage from './components/EnterPage';
 import UserProfile from './components/UserProfile';
 import ChatPage from './components/ChatPage';
-
+import EnterError from './components/EnterError'
 
 export const useRoutes = (isAuth, isAuthAdmin) => {
     return (

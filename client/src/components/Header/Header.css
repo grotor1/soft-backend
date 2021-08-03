@@ -74,6 +74,9 @@
     padding: 14px 40px;
     margin-left: 22px;
 }
+.nav__list-item-menu{
+    padding-bottom: 40px;
+}
 @media (max-width: 1452px){
     .list-item:not(:last-child){
         margin-right: 50px;
