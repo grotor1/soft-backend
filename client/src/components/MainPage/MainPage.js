@@ -4,29 +4,16 @@ import './MainPage.css'
 import { BrowserRouter as Router, Link} from 'react-router-dom'
 import Footer from '../Footer'
 import Accordion from './Accordion'
+import Carousel from 'react-elastic-carousel'
+import Subscribe from '../Subscribe'
+
 
 const MainPage = () => {
-    const displayNextImage = () => {
-        let x = (x === images.length - 1) ? 0 : x + 1;
-        document.getElementById("img").src = images[x];
-    }
-
-    const displayPreviousImage = () => {
-         let x = (x <= 0) ? images.length - 1 : x - 1;
-        document.getElementById("img").src = images[x];
-    }
-
-    const startTimer = () =>  {
-        setInterval(displayNextImage, 3000);
-    }
-
-    const images = [], x = -1;
-    images[0] = "/about-image.png";
-    images[1] = "/about_2.png";
-    images[2] = "/about_3.png";
     return (
         <div>
-            <Header />
+            <div className="header-fixed">
+                <Header />
+            </div>
             <main>
                 <section className="hero">
                     <div className="container">
@@ -50,17 +37,40 @@ const MainPage = () => {
                     <div className="container">
                         <div className="about-soft__content">
                             <h2 className="section__title">Soft - это</h2>
-                            <ul className="about-us__list">
-                                <li className="about-us__item">
-                                    <div className="about-us__texts">
-                                        <span className="about-us__head">Удобная платформа для спорта все-в-одном</span>
-                                        <p className="about-us__desc">Всё проводится на нашей платформе. Вам не придётся заходить на сторонние сервисы</p>
-                                    </div>
-                                    <img src="/about-image.png" alt="" className="about-img" id="img" />
-                                    
-                                </li>
+                            {/* <ul className="about-us__list"> */}
+                                <Carousel itemsToShow={1} showArrows={false} enableAutoPlay={true} >
+                                        <div className="about-us__item">
+                                            <div className="about-us__texts">
+                                                <span className="about-us__head">Удобная платформа для спорта все-в-одном</span>
+                                                <p className="about-us__desc">Всё проводится на нашей платформе. Вам не придётся заходить на сторонние сервисы</p>
+                                            </div>
+                                            <img src="/about-image.png" alt="" className="about-img" />    
+                                        </div>
+                                        <div className="about-us__item">
+                                            <div className="about-us__texts">
+                                                <span className="about-us__head">1:1 Онлайн тренировки</span>
+                                                <p className="about-us__desc">Личные тренер подберёт все процессы индивидуально под вас</p>
+                                            </div>
+                                            <img src="/about_2.png" alt="" className="about-img"/>    
+                                        </div>
+                                        <div className="about-us__item">
+                                            <div className="about-us__texts">
+                                                <span className="about-us__head">Сертифицированные специалисты</span>
+                                                <p className="about-us__desc">На платформе специалисты с опытом работы более 2 лет</p>
+                                            </div>
+                                            <img src="/about_3.png" alt="" className="about-img"/>    
+                                        </div>
+                                        <div className="about-us__item">
+                                            <div className="about-us__texts">
+                                                <span className="about-us__head">Доступные цены</span>
+                                                <p className="about-us__desc">Онлайн-тренировки не только легче, но и дешевле. При этом вы не теряете эффективности тренировок.</p>
+                                            </div>
+                                            <img src="/about_4.png" alt="" className="about-img"/>    
+                                        </div>
+                                </Carousel>
                                 
-                            </ul>
+                                
+                            {/* </ul> */}
                         </div>
                     </div>
                 </section>
@@ -226,6 +236,7 @@ const MainPage = () => {
                     </div>
                 </section>
                 <Accordion />
+                <Subscribe />
             </main>
             <Footer />
         </div>

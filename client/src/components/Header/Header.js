@@ -23,16 +23,16 @@ const Header = () => {
                     <nav className="">
                         <ul className="nav__list-burger">
                             <li className="list-item-b">
-                                <Link to="/" className="nav__list-item">Главная</Link>
+                                <Link to="/" className="nav__list-item nav__list-item-menu">Главная</Link>
                             </li>
                             <li className="list-item-b">
-                                <Link to="/trainers" className="nav__list-item">Тренировки</Link>
+                                <Link to="/trainers" className="nav__list-item nav__list-item-menu">Тренировки</Link>
                             </li>
                             <li className="list-item-b">
-                                <a href="" className="nav__list-item">Стоимость</a>
+                                <a href="" className="nav__list-item nav__list-item-menu">Стоимость</a>
                             </li>
                             <li className="list-item-b">
-                                <Link to="/signup" className="nav__list-item">
+                                <Link to="/signup" className="nav__list-item nav__list-item-menu">
                                     <button className="sign-head-btn">Регистрация</button>
                                 </Link>
                             </li>
