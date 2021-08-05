@@ -15,11 +15,12 @@ export const useRoutes = (isAuth, isAuthAdmin) => {
     return (
         <Switch>
             {isAuthAdmin ?
-                <Route path="/admin" component={AdminPage}/> &&
                 <Route path="/adminLogin">
                     <Redirect to="/admin"/>
                 </Route> :
-                <Route path="/adminLogin" component={AdminLoginPage}/>}
+                <Route path="/adminLogin" component={AdminLoginPage}/>
+            }
+            {isAuthAdmin && <Route path="/admin" component={AdminPage}/>}
             <Route exact path="/">
                 <MainPage/>
             </Route>
@@ -36,7 +37,7 @@ export const useRoutes = (isAuth, isAuthAdmin) => {
                 {isAuth ? <UserProfile/> : <EnterError/>}
             </Route>
             <Route path="/chat">
-                <ChatPage/>
+                {isAuth ? <ChatPage/> : <EnterError/>}
             </Route>
         </Switch>
     );
