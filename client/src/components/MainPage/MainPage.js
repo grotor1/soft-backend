@@ -51,21 +51,21 @@ const MainPage = () => {
                                                 <span className="about-us__head">1:1 Онлайн тренировки</span>
                                                 <p className="about-us__desc">Личные тренер подберёт все процессы индивидуально под вас</p>
                                             </div>
-                                            <img src="/about_2.png" alt="" className="about-img"/>    
+                                            <img src="/about-image.png" alt="" className="about-img"/>    
                                         </div>
                                         <div className="about-us__item">
                                             <div className="about-us__texts">
                                                 <span className="about-us__head">Сертифицированные специалисты</span>
                                                 <p className="about-us__desc">На платформе специалисты с опытом работы более 2 лет</p>
                                             </div>
-                                            <img src="/about_3.png" alt="" className="about-img"/>    
+                                            <img src="/about-image.png" alt="" className="about-img"/>    
                                         </div>
                                         <div className="about-us__item">
                                             <div className="about-us__texts">
                                                 <span className="about-us__head">Доступные цены</span>
                                                 <p className="about-us__desc">Онлайн-тренировки не только легче, но и дешевле. При этом вы не теряете эффективности тренировок.</p>
                                             </div>
-                                            <img src="/about_4.png" alt="" className="about-img"/>    
+                                            <img src="/about-image.png" alt="" className="about-img"/>    
                                         </div>
                                 </Carousel>
                                 
@@ -91,12 +91,14 @@ const MainPage = () => {
                 <section className="comfort">
                     <div className="container">
                         <h2 className="section__title-black comfort-title">Почему с нами удобно?</h2>
+                        <div className="leaf-1"></div>
                         <ul className="comfort-list">
                             <li className="comfort-list__item">
                                 <img src="/comfort-1.png" />
                                 <p className="comfort-item__heading">Обзор тренировок с нескольких ракурсов.</p>
                                 <span className="comfort-item__desc">Вы сможете подключить дополнительные устройства (телефон или ноутбук) во время занятия и использовать их, как дополнительные камеры для нескольких ракурсов для тренера.</span>
                             </li>
+                            
                             <li className="comfort-list__item">
                                 <img src="/comfort-2.png" />
                                 <p className="comfort-item__heading">Синхронизация с фитнес-устройствами</p>
@@ -113,6 +115,7 @@ const MainPage = () => {
                                 <span className="comfort-item__desc">Для каждого вида тренировок вас ждет отдельный. С музыкой легче приступать к новым подходам!</span>
                             </li>
                         </ul>
+                        
                     </div>
                     
                 </section>
@@ -139,38 +142,70 @@ const MainPage = () => {
                 <section className="training-types">
                     <div className="">
                         <h2 className="section__title">Виды тренировок</h2>
-                        <ul className="train-list-l">
-                            <li className="train-list__item">
-                                <a>
-                                    <img className="train__img" src="/fitness.png"></img>
-                                    <h3 className="train__heading">Фитнес</h3>
-                                </a>
-                            </li>
-                            <li className="train-list__item">
-                                <a>
-                                    <img className="train__img" src="/kardio.png"></img>
-                                    <h3 className="train__heading">Кардио</h3>
-                                </a>
-                            </li>
-                            <li className="train-list__item">
-                                <a>
-                                    <img className="train__img" src="/yoga.png"></img>
-                                    <h3 className="train__heading">Йога</h3>
-                                </a>
-                            </li>
-                            <li className="train-list__item">
-                                <a>
-                                    <img className="train__img" src="/pilates.png"></img>
-                                    <h3 className="train__heading">Пилатес</h3>
-                                </a>
-                            </li>
-                            <li className="train-list__item">
-                                <a>
-                                    <img className="train__img" src="/family.png"></img>
-                                    <h3 className="train__heading">Для всей семьи</h3>
-                                </a>
-                            </li>
-                        </ul>
+                        <div className="train-list-l">
+                            <Carousel itemsToShow={5} className="train-list-l">
+                                <div className="train-list__item">
+                                    <a>
+                                        <img className="train__img" src="/fitness.png"></img>
+                                        <h3 className="train__heading">Фитнес</h3>
+                                    </a>
+                                </div>
+                                <div className="train-list__item">
+                                    <a>
+                                        <img className="train__img" src="/kardio.png"></img>
+                                        <h3 className="train__heading">Кардио</h3>
+                                    </a>
+                                </div>
+                                <div className="train-list__item">
+                                    <a>
+                                        <img className="train__img" src="/yoga.png"></img>
+                                        <h3 className="train__heading">Йога</h3>
+                                    </a>
+                                </div>
+                                <div className="train-list__item">
+                                    <a>
+                                        <img className="train__img" src="/pilates.png"></img>
+                                        <h3 className="train__heading">Пилатес</h3>
+                                    </a>
+                                </div>
+                                <div className="train-list__item">
+                                    <a>
+                                        <img className="train__img" src="/family.png"></img>
+                                        <h3 className="train__heading">Для всей семьи</h3>
+                                    </a>
+                                </div>
+                                <div className="train-list__item">
+                                    <a>
+                                        <img className="train__img" src="/choreo.png"></img>
+                                        <h3 className="train__heading">Хореография</h3>
+                                    </a>
+                                </div>
+                                <div className="train-list__item">
+                                    <a>
+                                        <img className="train__img" src="/group.png"></img>
+                                        <h3 className="train__heading">Групповые</h3>
+                                    </a>
+                                </div>
+                                <div className="train-list__item">
+                                    <a>
+                                        <img className="train__img" src="/kids.png"></img>
+                                        <h3 className="train__heading">Детский фитнес</h3>
+                                    </a>
+                                </div>
+                                <div className="train-list__item">
+                                    <a>
+                                        <img className="train__img" src="/ofp.png"></img>
+                                        <h3 className="train__heading">ОФП</h3>
+                                    </a>
+                                </div>
+                                <div className="train-list__item">
+                                    <a>
+                                        <img className="train__img" src="/lfp.png"></img>
+                                        <h3 className="train__heading">ЛФК</h3>
+                                    </a>
+                                </div>
+                            </Carousel>
+                        </div>
                     </div>
                 </section>
                 <section className="trainers">
