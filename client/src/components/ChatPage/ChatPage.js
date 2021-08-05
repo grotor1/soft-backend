@@ -50,10 +50,16 @@ const ChatPage = () => {
                 <div id="chatAndMessage">
                     <span className="message-date">Сегодня</span>
                     <div class="messageInChat">
-                        <div class="messageClient">Здравствуйте, Вероника. Когда будет готов наш заказ</div>
+                        <div class="messageClient">Здравствуйте, Вероника. Когда будет готов наш заказ
+                            <span className="time">21:00</span>
+                        </div>
+                        
                     </div>
                     <div class="messageInChat">
-                        <div class="messageManager">Здравствуйте, Вероника. Когда будет готов наш заказ</div>
+                        <div class="messageManager">Здравствуйте, Вероника. Когда будет готов наш заказ
+                            <span className="time">21:00</span>    
+                        </div>
+                        
                     </div>
                     
                 </div>
