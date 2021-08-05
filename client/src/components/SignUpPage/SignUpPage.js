@@ -62,7 +62,7 @@ const SignUpPage = () => {
                                     <p>
                                         <input type="radio" id="test1" name="target" value="Apple"
                                                onClick={changeHandler}/>
-                                        <label for="test1">Apple</label>
+                                        <label for="test1">Похудеть</label>
                                     </p>
                                 </li>
                                 <li className="sign-list__item">

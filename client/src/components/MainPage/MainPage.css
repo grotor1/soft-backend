@@ -95,13 +95,15 @@ body{
 }
 .ell-1{
     position: absolute;
-    top: 0;
+    top: 30px;
     right: 0;
+    width: 119px;
 }
 .ell-2{
     position: absolute;
     top: 30px;
     left: 50px;
+    width: 30px;
 }
 .enter-btn-hero{
     background: linear-gradient(95.6deg, #8DE885 14.17%, rgba(109, 255, 106, 0) 80.27%), #6ED98B;
@@ -241,8 +243,8 @@ body{
 .comfort-list{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: space-evenly;
 }
 .comfort-list__item{
     background: #FFFFFF;
@@ -468,7 +470,14 @@ body{
     text-align: center;
     color: #000000;
 }
-
+.rec.rec-arrow:hover {
+    outline: none;
+    box-shadow: inset 0 0 1px 1px #cacaca;
+}
+.rec-carousel-item:focus {
+    outline: none;
+    box-shadow: inset 0 0 1px 1px #cacaca;
+}
 
 @media (max-width: 1220px) {
     .train-list-l{
