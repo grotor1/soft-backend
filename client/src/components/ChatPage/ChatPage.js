@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useEffect, useRef, useState} from 'react'
 import './ChatPage.css'
 import Header from '../Header'
 import {Link} from 'react-router-dom'
@@ -16,6 +16,7 @@ const ChatPage = () => {
     const message = useMessage()
     const {request, error, clearError} = useHttp()
     const {_id_user} = useContext(AuthContext)
+    const scrollRef = useRef()
 
     useEffect(() => {
         const getConversations = async () => {
@@ -61,6 +62,10 @@ const ChatPage = () => {
         }
     };
 
+    useEffect(() => {
+        scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [messages])
+
     return (
         <div className="chat-page">
             <div className="chat-page-first">
@@ -93,7 +98,9 @@ const ChatPage = () => {
                 <div id="chatAndMessage">
                     {messages.map((m) => {
                         return (
-                            <Message message={m} own={m._id_sender === _id_user}/>
+                            <div ref={scrollRef}>
+                                <Message message={m} own={m._id_sender === _id_user}/>
+                            </div>
                         )
                     })}
                 </div>
