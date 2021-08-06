@@ -1,6 +1,6 @@
 const io = require("socket.io")(8900, {
     cors: {
-        origin: "http://localhost:3000",
+        origins: ["http://localhost:3000", "https://soft-spa.herokuapp.com", "http://localhost:5000"],
     },
 });
 
