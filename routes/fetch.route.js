@@ -230,8 +230,8 @@ router.post("/createMessage/", async (req, res) => {
     try {
         const {_id_conversation, _id_sender, text} = req.body
         const message = new Message({_id_conversation, _id_sender, text});
-        await message.save()
-        res.status(201).json({success: true});
+        const savedMessage = await message.save()
+        res.status(201).json({success: true, data: savedMessage});
     } catch (err) {
         res.status(500).json({message: "Что-то не так", error: e})
     }
