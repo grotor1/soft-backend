@@ -1,6 +1,7 @@
 const {Schema, model, Types} = require("mongoose");
 
 const TrainersSchema = new Schema({
+    _id_user: String,
     name: String,
     surname: String,
     isVacant: Boolean,

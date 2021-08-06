@@ -21,6 +21,7 @@ router.post("/addTrainer", (req, res) => {
             message: 'You must provide every parameter'
         })
     }
+    trainer._id_user = ""
     trainer.name = name
     trainer.surname = surname
     trainer.isVacant = true
@@ -113,6 +114,7 @@ router.patch('/updateTrainer/:_id_trainer', (req, res) => {
             message: 'You must provide every parameter'
         })
     }
+    trainer._id_user = ""
     trainer.name = name
     trainer.surname = surname
     trainer.isVacant = true
@@ -194,7 +196,7 @@ router.post("/createConversation", async (req, res) => {
         await conversation.save();
         res.status(201).json({success: true});
     } catch (e) {
-        res.status(500).json({message: "Что-то не так", error: e})
+        res.status(500).json({success: false, message: "Что-то не так", error: e})
     }
 });
 

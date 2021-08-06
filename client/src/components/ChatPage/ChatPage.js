@@ -7,16 +7,40 @@ import {useHttp} from "../../hooks/http.hook";
 import {AuthContext} from "../../context/AuthContext";
 import {Conversation} from "./Conversation/Conversation";
 import {Message} from "./Message/Message";
+import {io} from 'socket.io-client';
 
 const ChatPage = () => {
     const [conversations, setConversations] = useState([]);
     const [currentChat, setCurrentChat] = useState(null);
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState("");
+    const [arrivalMessage, setArrivalMessage] = useState(null);
+    const socket = useRef();
     const message = useMessage()
     const {request, error, clearError} = useHttp()
     const {_id_user} = useContext(AuthContext)
     const scrollRef = useRef()
+
+    useEffect(() => {
+        socket.current = io("ws://localhost:8900");
+        socket.current.on("getMessage", (data) => {
+            setArrivalMessage({
+                _id_sender: data._id_sender,
+                text: data.text,
+                createdAt: Date.now(),
+            });
+        });
+    }, []);
+
+    useEffect(() => {
+        arrivalMessage &&
+        currentChat?.members.includes(arrivalMessage._id_sender) &&
+        setMessages((prev) => [...prev, arrivalMessage]);
+    }, [arrivalMessage, currentChat]);
+
+    useEffect(() => {
+        socket.current.emit("addUser", _id_user);
+    }, [_id_user]);
 
     useEffect(() => {
         const getConversations = async () => {
@@ -53,6 +77,16 @@ const ChatPage = () => {
             _id_conversation: currentChat._id,
         };
 
+        const _id_receiver = currentChat.members.find(
+            (member) => member !== _id_user
+        );
+
+        socket.current.emit("sendMessage", {
+            _id_sender: _id_user,
+            _id_receiver,
+            text: newMessage,
+        });
+
         try {
             const {data} = await request("/api/fetch/createMessage", 'POST', message);
             setMessages([...messages, data]);
@@ -63,7 +97,7 @@ const ChatPage = () => {
     };
 
     useEffect(() => {
-        scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+        scrollRef.current?.scrollIntoView({behavior: "smooth"});
     }, [messages])
 
     return (
@@ -104,10 +138,11 @@ const ChatPage = () => {
                         )
                     })}
                 </div>
+                {currentChat &&
                 <div className="chat-form">
                     <input type="text" onChange={(e) => setNewMessage(e.target.value)} value={newMessage}/>
                     <button onClick={handleSubmit}>Отправить</button>
-                </div>
+                </div>}
             </div>
         </div>
     )

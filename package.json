@@ -7,7 +7,8 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "socket": "npm run start --prefix socket",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run socket\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "Varukhin Vladimir <varukhin04@mail.ru>",
@@ -28,6 +29,7 @@
     "nodemon": "^2.0.7",
     "react-elastic-carousel": "^0.11.5",
     "react-progressbar-line": "^1.0.2",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "socket.io": "^4.1.3"
   }
 }

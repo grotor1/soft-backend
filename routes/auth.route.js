@@ -57,7 +57,6 @@ router.post("/regUser",
             }
             const {email, password, passwordRep, name, surname, birthDate, phone, sex, target} = req.body;
             const candidate = await User.findOne({email})
-            console.log(birthDate)
             if (candidate) return res.status(400).json({message: "По этому адресу уже есть аккаунт"})
             if (password !== passwordRep) return res.status(400).json({message: "Пароли не совпадают"})
             const user = new User({email, password, name, surname, birthDate, phone, sex, target})
