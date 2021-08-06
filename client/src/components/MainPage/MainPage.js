@@ -143,66 +143,64 @@ const MainPage = () => {
                     <div className="">
                         <h2 className="section__title">Виды тренировок</h2>
                         <div className="train-list-l">
-                            <Carousel itemsToShow={5} className="train-list-l">
-                                <div className="train-list__item">
-                                    <a>
-                                        <img className="train__img" src="/fitness.png"></img>
+                            <Carousel itemsToShow={5} className="train-list-l" pagination={false}>
+                                <div className="train-list__item ">
+                                        <img className="train__img" src="/barbell.svg"></img>
                                         <h3 className="train__heading">Фитнес</h3>
-                                    </a>
                                 </div>
-                                <div className="train-list__item">
-                                    <a>
-                                        <img className="train__img" src="/kardio.png"></img>
+                                <div className="train-list__item ">
+                                
+                                        <img className="train__img" src="/heart.png"></img>
                                         <h3 className="train__heading">Кардио</h3>
-                                    </a>
+                                    
                                 </div>
-                                <div className="train-list__item">
-                                    <a>
-                                        <img className="train__img" src="/yoga.png"></img>
+                                <div className="train-list__item ">
+                                
+                                        <img className="train__img" src="/yoga-mat.png"></img>
                                         <h3 className="train__heading">Йога</h3>
-                                    </a>
+                                    
                                 </div>
-                                <div className="train-list__item">
-                                    <a>
+                                <div className="train-list__item ">
+                                
                                         <img className="train__img" src="/pilates.png"></img>
                                         <h3 className="train__heading">Пилатес</h3>
-                                    </a>
+                                    
                                 </div>
                                 <div className="train-list__item">
-                                    <a>
+                                
                                         <img className="train__img" src="/family.png"></img>
                                         <h3 className="train__heading">Для всей семьи</h3>
-                                    </a>
+                                    
                                 </div>
                                 <div className="train-list__item">
-                                    <a>
-                                        <img className="train__img" src="/choreo.png"></img>
+                                
+                                        <img className="train__img" src="/ballet.svg"></img>
                                         <h3 className="train__heading">Хореография</h3>
-                                    </a>
+                                    
                                 </div>
                                 <div className="train-list__item">
-                                    <a>
-                                        <img className="train__img" src="/group.png"></img>
+                                
+                                        <img className="train__img" src="/group2.png"></img>
                                         <h3 className="train__heading">Групповые</h3>
-                                    </a>
+                                    
                                 </div>
                                 <div className="train-list__item">
-                                    <a>
-                                        <img className="train__img" src="/kids.png"></img>
+                                
+                                        <img className="train__img" src="/baby.png"></img>
                                         <h3 className="train__heading">Детский фитнес</h3>
-                                    </a>
+                                    
                                 </div>
                                 <div className="train-list__item">
-                                    <a>
-                                        <img className="train__img" src="/ofp.png"></img>
+                                
+                                        <img className="train__img" src="/climb.png"></img>
                                         <h3 className="train__heading">ОФП</h3>
-                                    </a>
+                                    
                                 </div>
                                 <div className="train-list__item">
-                                    <a>
-                                        <img className="train__img" src="/lfp.png"></img>
+                                
+                                        <img className="train__img" src="/sport.png"></img>
                                         <h3 className="train__heading">ЛФК</h3>
-                                    </a>
+                                    
                                 </div>
                             </Carousel>
                         </div>

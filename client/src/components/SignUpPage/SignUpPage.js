@@ -60,7 +60,7 @@ const SignUpPage = () => {
                             <ul className="sign-list">
                                 <li className="sign-list__item">
                                     <p>
-                                        <input type="radio" id="test1" name="target" value="Apple"
+                                        <input type="radio" id="test1" name="target" value="Похудеть"
                                                onClick={changeHandler}/>
                                         <label for="test1">Похудеть</label>
                                     </p>
@@ -100,7 +100,7 @@ const SignUpPage = () => {
                         </div>
                     </div>
                     <div className="popup-image">
-                        <img src="/signimg.png" className="signup__img"/>
+                        <img src="/signimg.svg" className="signup__img"/>
                     </div>
                 </div>
             </div>

@@ -48,7 +48,7 @@ const UserProfile = () => {
                 <div className="useritem">
                     <div className="user-item__first">
                         <div className="user-item-flex">
-                            <img className="user-item-image" src="/profile.jpg"/>
+                            <img className="user-item-image" src="/profile.png"/>
                             <div>
                                 <p className="user-item-name">{initials.name + " " + initials.surname}</p>
                                 <p className="status-online">Сейчас в сети</p>
