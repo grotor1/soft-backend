@@ -1,8 +1,4 @@
-const io = require("socket.io")(8900, {
-    cors: {
-        origins: ["http://localhost:3000", "https://soft-spa.herokuapp.com", "http://localhost:5000"],
-    },
-});
+const io = require('../server.js').io
 
 const users = [];
 
@@ -23,7 +19,7 @@ const getUser = (_id_user) => {
     return users.find((user) => user._id_user === _id_user);
 };
 
-io.on("connection", (socket) => {
+module.exports = (socket) => {
     //when connect
     console.log("a user connected.");
 
@@ -50,4 +46,4 @@ io.on("connection", (socket) => {
         removeUser(socket.id);
         io.emit("getUsers", users);
     });
-});
+}
