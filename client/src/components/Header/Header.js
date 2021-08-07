@@ -26,7 +26,7 @@ const Header = () => {
                                 <Link to="/" className="nav__list-item nav__list-item-menu">Главная</Link>
                             </li>
                             <li className="list-item-b">
-                                <Link to="/trainers" className="nav__list-item nav__list-item-menu">Тренировки</Link>
+                                 <a className="nav__list-item nav__list-item-menu" href="#trainings"> Тренировки</a>
                             </li>
                             <li className="list-item-b">
                                 <a href="" className="nav__list-item nav__list-item-menu">Стоимость</a>
@@ -47,7 +47,7 @@ const Header = () => {
                                 <Link to="/" className="nav__list-item">Главная</Link>
                             </li>
                             <li className="list-item">
-                                <Link to="/trainers" className="nav__list-item">Тренировки</Link>
+                                <a className="nav__list-item" href="#trainings"> Тренировки</a>
                             </li>
                             <li className="list-item">
                                 <a href="" className="nav__list-item">Стоимость</a>

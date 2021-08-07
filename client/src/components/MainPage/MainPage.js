@@ -10,13 +10,7 @@ import Slider from "react-slick";
 
 
 const MainPage = () => {
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 1
-      };
+    
     return (
         <div>
             <div className="header-fixed">
@@ -87,7 +81,9 @@ const MainPage = () => {
                         <div className="mission-flex">
                             <div>
                                 <h2 className="section__title-black">Наша миссия: </h2>
-                                <span className="mission-text">Дать людям возможность тренироваться <span className="green-2">легче:</span></span>
+                                <span className="mission-text">Дать людям возможность тренироваться 
+                                    <span className="green-2"> легче:</span>
+                                </span>
                                 <p className="mission-text">где угодно и когда угодно</p>
                             </div>
                             <div>
@@ -147,7 +143,7 @@ const MainPage = () => {
                         </ul>
                     </div>
                 </section>
-                <section className="training-types">
+                <section className="training-types" id="trainings">
                     <div className="container">
                         <h2 className="section__title">Виды тренировок</h2>
                         <div className="train-list-l">
@@ -242,11 +238,9 @@ const MainPage = () => {
                                 </li>
                             </ul>
                         <div className="button-center">
-                            <Router>
                                 <Link to="trainers">
                                     <button className="show-tr">Все тренеры</button>
                                 </Link>
-                            </Router>
                         </div>
                         </div>
                     </div>
