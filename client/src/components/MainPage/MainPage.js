@@ -6,9 +6,17 @@ import Footer from '../Footer'
 import Accordion from './Accordion'
 import Carousel from 'react-elastic-carousel'
 import Subscribe from '../Subscribe'
+import Slider from "react-slick";
 
 
 const MainPage = () => {
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 1
+      };
     return (
         <div>
             <div className="header-fixed">
@@ -140,10 +148,10 @@ const MainPage = () => {
                     </div>
                 </section>
                 <section className="training-types">
-                    <div className="">
+                    <div className="container">
                         <h2 className="section__title">Виды тренировок</h2>
                         <div className="train-list-l">
-                            <Carousel itemsToShow={5} className="train-list-l" pagination={false}>
+                            
                                 <div className="train-list__item ">
                                         <img className="train__img" src="/barbell.svg"></img>
                                         <h3 className="train__heading">Фитнес</h3>
@@ -202,11 +210,11 @@ const MainPage = () => {
                                         <h3 className="train__heading">ЛФК</h3>
                                     
                                 </div>
-                            </Carousel>
+                            
                         </div>
                     </div>
                 </section>
-                <section className="trainers">
+                <section className="trainers-l">
                     <div className="container">
                         <div className="trainers-content">
                             <h2 className="section__title">Тренеры недели</h2>

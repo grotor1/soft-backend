@@ -35,9 +35,9 @@ const Accordion = () => {
                     <ul className="faq-list" id="accordion">
                         {data.map((item, i) => {
                             return (
-                                    <div>
+                                    <div >
                                         <h2 className="faq-list__item">
-                                            <button className="faq-list__title" onClick={() => {toggle(i)}}>{item.question}</button>
+                                            <button className={itemSelected === i ? "faq-list__title arrow-down" : "faq-list__title"} onClick={() => {toggle(i)}}>{item.question}</button>
                                         </h2>
                                         <p className={itemSelected === i ? "faq-item__content show" : "faq-item__content"}>{item.answer}</p>
                                     </div>

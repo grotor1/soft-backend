@@ -100,7 +100,7 @@ const SignUpPage = () => {
                         </div>
                     </div>
                     <div className="popup-image">
-                        <img src="/signimg.svg" className="signup__img"/>
+                        <img src="/hero-image.png" className="signup__img"/>
                     </div>
                 </div>
             </div>
