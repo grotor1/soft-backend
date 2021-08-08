@@ -8,7 +8,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "socket": "npm run start --prefix socket",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run socket\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "Varukhin Vladimir <varukhin04@mail.ru>",
