@@ -148,7 +148,12 @@
     width: 147px;
     margin: 40px auto;
 }
-
+.time{
+    display: block;
+    margin-top: 10px;
+    color: #cacaca;
+    font-size: 12px;
+}
 
 #chatAndMessage::-webkit-scrollbar {
     width: 6px;
