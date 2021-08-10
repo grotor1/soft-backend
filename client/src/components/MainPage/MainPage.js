@@ -10,7 +10,10 @@ import Slider from "react-slick";
 
 
 const MainPage = () => {
-    
+    const style = {
+        display: 'none'
+    }
+
     return (
         <div>
             <div className="header-fixed">
@@ -146,9 +149,12 @@ const MainPage = () => {
                 <section className="training-types" id="trainings">
                     <div className="container">
                         <h2 className="section__title">Виды тренировок</h2>
-                        <div className="train-list-l">
-                            
-                                <div className="train-list__item ">
+                        
+                        <Carousel className="train-list-l" pagination={false} breakPoints={[
+                            {width: 600, itemsToShow:1},
+                            {width: 1024, itemsToShow:4},
+                        ]}>
+                            <div className="train-list__item ">
                                         <img className="train__img" src="/barbell.svg"></img>
                                         <h3 className="train__heading">Фитнес</h3>
                                 </div>
@@ -206,8 +212,7 @@ const MainPage = () => {
                                         <h3 className="train__heading">ЛФК</h3>
                                     
                                 </div>
-                            
-                        </div>
+                        </Carousel>
                     </div>
                 </section>
                 <section className="trainers-l">
