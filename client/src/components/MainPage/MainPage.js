@@ -98,24 +98,24 @@ const MainPage = () => {
                         <div className="leaf-1"></div>
                         <ul className="comfort-list">
                             <li className="comfort-list__item">
-                                <img src="/comfort-1.png" />
+                                <img src="/c-1.jpg" />
                                 <p className="comfort-item__heading">Обзор тренировок с нескольких ракурсов.</p>
                                 <span className="comfort-item__desc">Вы сможете подключить дополнительные устройства (телефон или ноутбук) во время занятия и использовать их, как дополнительные камеры для нескольких ракурсов для тренера.</span>
                             </li>
                             
                             <li className="comfort-list__item">
-                                <img src="/comfort-2.png" />
+                                <img src="/c-2.jpg" />
                                 <p className="comfort-item__heading">Синхронизация с фитнес-устройствами</p>
                                 <span className="comfort-item__desc">Тренировки не заканчиваются только на звонках. Если у вас есть фитнес-устройство, то мы предлагаем подключить его у нашей платформе для лучшего отслеживания вашего прогресса.</span>
                             </li>
                             <li className="comfort-list__item">
-                                <img src="/comfort-3.png" />
+                                <img src="/c-3.jpg" />
                                 <p className="comfort-item__heading">История и рост развития</p>
                                 <span className="comfort-item__desc">Вы можете вести личный профиль  который открыт только вам, и добавлять все результаты, после чего отслеживать свои прогресс. Исходя из этих данных, тренеры смогут подстраивать более эффективные стратегии тренировок.</span>
                             </li>
                             <li className="comfort-list__item">
-                                <img src="/comfort-4.png" />
-                                <p className="comfort-item__heading">Музыка для тренировок.и</p>
+                                <img src="/c-4.jpg" />
+                                <p className="comfort-item__heading">Музыка для тренировок</p>
                                 <span className="comfort-item__desc">Для каждого вида тренировок вас ждет отдельный. С музыкой легче приступать к новым подходам!</span>
                             </li>
                         </ul>
