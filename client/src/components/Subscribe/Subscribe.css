@@ -23,6 +23,7 @@
     color: white;
     font-weight: bold;
     font-size: 40px;
+    text-align: center;
 }
 .subscribe-btn{
     color: #7CEC72;
@@ -59,5 +60,9 @@
 @media (max-width: 420px) {
     .subscribe-form input{
         width: 284px;
+    }
+    .subscribe-title{
+        font-size: 18px;
+        font-weight: normal;
     }
 }
