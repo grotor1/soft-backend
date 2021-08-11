@@ -97,37 +97,8 @@ router.delete("/deleteTrainer/:_id_trainer", (req, res) => {
 
 router.patch('/updateTrainer/:_id_trainer', (req, res) => {
     const {_id_trainer} = req.params
-    Trainer.deleteOne({_id: _id_trainer}, (err) => {
-        if (err) return res.json({success: false, message: err})
-    })
-    const trainer = new Trainer
-    const {
-        name, surname, avatar, workExp,
-        contacts, trainingTypes, aboutMyself,
-        educations, certificates, price, specialOffers
-    } = req.body
-    if (!name || !surname || !avatar || !workExp
-        || !contacts || !trainingTypes || !aboutMyself
-        || !educations || !price || !specialOffers) {
-        return res.status(400).json({
-            success: false,
-            message: 'You must provide every parameter'
-        })
-    }
-    trainer._id_user = ""
-    trainer.name = name
-    trainer.surname = surname
-    trainer.isVacant = true
-    trainer.avatar = avatar
-    trainer.workExp = workExp
-    trainer.contacts = contacts
-    trainer.trainingTypes = trainingTypes
-    trainer.aboutMyself = aboutMyself
-    trainer.educations = educations
-    trainer.certificates = certificates || []
-    trainer.price = price
-    trainer.specialOffers = specialOffers
-    trainer.save(err => {
+    const update = req.body
+    Trainer.findOneAndUpdate({_id: _id_trainer}, update, (err)=>{
         if (err) return res.json({success: false, message: err})
         return res.json({success: true})
     })
@@ -143,22 +114,10 @@ router.delete("/deleteTrainingType/:_id_trainingType", (req, res) => {
 
 router.patch("/updateTrainingType/:_id_trainingType", (req, res) => {
     const {_id_trainingType} = req.params
-    TrainingTypes.deleteOne({_id: _id_trainingType}, (err) => {
-        if (err) return res.json({success: false, message: err})
-    })
-    const trainingType = new TrainingTypes
-    const {name, img} = req.body
-    if (!name || !img) {
-        return res.status(400).json({
-            success: false,
-            message: 'You must provide name, img'
-        })
-    }
-    trainingType.name = name
-    trainingType.img = img
-    trainingType.save(err => {
-        if (err) return res.json({success: false, message: err})
-        return res.json({success: true})
+    const update = req.body
+    TrainingTypes.findOneAndUpdate({_id: _id_trainingType}, update, (err) =>{
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true});
     })
 })
 
