@@ -9,25 +9,25 @@ const Footer = () => {
                 <ul className="social-sites__list">
                     <li className="social-list__item">
                         
-                        <a className="social__link" href="https://www.instagram.com/soft_platform/">
+                        <a className="social__link" href="https://www.instagram.com/soft_platform/" target="_blank">
                             <img src="/inst.svg" />
                         </a>
                     </li>
                     <li className="social-list__item">
                         
-                        <a className="social__link" href="https://vm.tiktok.com/ZSJpP8Tew/">
+                        <a className="social__link" href="https://vm.tiktok.com/ZSJpP8Tew/" target="_blank">
                             <img src="/tiktok.svg"></img>
                         </a>
                     </li>
                     <li className="social-list__item">
                         
-                        <a className="social__link" href="soft.platform2020@gmail.com"> 
+                        <a className="social__link" href="soft.platform2020@gmail.com" target="_blank"> 
                              <img src="/mail.svg" />
                         </a>
                     </li>
                     <li className="social-list__item">
                         
-                        <a className="social__link" href="+79774821093">
+                        <a className="social__link" href="+79774821093" target="_blank">
                             <img src="/phone.svg" />
                         </a>
                     </li>

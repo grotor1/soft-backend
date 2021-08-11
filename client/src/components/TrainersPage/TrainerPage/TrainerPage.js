@@ -72,7 +72,7 @@ const TrainerPage = ({url, trainers, trainingTypes}) => {
                         )
                     })}
                 </div>
-                <button onClick={clickHandler}>
+                <button onClick={clickHandler} className="chat-btn">
                     Написать
                 </button>
             </div>
