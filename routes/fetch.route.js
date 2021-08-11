@@ -4,6 +4,7 @@ const TrainingTypes = require('../models/trainingTypes.model')
 const User = require("../models/user.model")
 const Conversation = require("../models/conversation.model")
 const Message = require("../models/message.model")
+const Subscribe = require("../models/subscribe.model")
 const router = Router()
 
 router.post("/addTrainer", (req, res) => {
@@ -194,7 +195,7 @@ router.post("/createMessage/", async (req, res) => {
         const savedMessage = await message.save()
         res.status(201).json({success: true, data: savedMessage});
     } catch (err) {
-        res.status(500).json({message: "Что-то не так", error: e})
+        res.status(500).json({message: "Что-то не так", error: err})
     }
 });
 
@@ -211,6 +212,16 @@ router.get("/getMessages/:_id_conversation", async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.post("/createSubscribe/", async(req,  res) => {
+    try{
+        const subscribe = Subscribe({email: req.body.email})
+        subscribe.save()
+        res.status(201).json({message: "Вы подписались на рассылку", success: true})
+    } catch (err) {
+        res.status(500).json({message: "Что-то не так", error: err})
+    }
+})
 
 
 
