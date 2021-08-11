@@ -83,6 +83,9 @@
     .faq-list__item:not(:first-child){
         margin-top: 30px;
     }
+    .faq-list__title:last-child{
+        margin-bottom: 20px;
+    }
 }
 
 

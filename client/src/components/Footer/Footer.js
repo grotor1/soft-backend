@@ -16,19 +16,19 @@ const Footer = () => {
                     <li className="social-list__item">
                         
                         <a className="social__link" href="https://vm.tiktok.com/ZSJpP8Tew/">
-                            <img src="/tiktok.png"></img>
+                            <img src="/tiktok.svg"></img>
                         </a>
                     </li>
                     <li className="social-list__item">
                         
                         <a className="social__link" href="soft.platform2020@gmail.com"> 
-                             <img src="/mail.png" />
+                             <img src="/mail.svg" />
                         </a>
                     </li>
                     <li className="social-list__item">
                         
                         <a className="social__link" href="+79774821093">
-                            <img src="/phone.png" />
+                            <img src="/phone.svg" />
                         </a>
                     </li>
                 </ul>
