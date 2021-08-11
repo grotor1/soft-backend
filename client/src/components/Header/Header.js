@@ -4,10 +4,7 @@ import './Header.css'
 import {BrowserRouter as Router} from 'react-router-dom'
 
 
-const Header = () => {
-    const state = {
-        isLoggedIn: false
-    }
+const Header = ({isAuth}) => {
     const [sidebar, setSidebar] = useState(false)
     const showSidebar = () => setSidebar
     (!sidebar)
@@ -29,8 +26,11 @@ const Header = () => {
                                  <a className="nav__list-item nav__list-item-menu" href="#trainings"> Тренировки</a>
                             </li>
                             <li className="list-item-b">
-                                <a href="" className="nav__list-item nav__list-item-menu">Стоимость</a>
+                                <Link to={"/trainers"} className="nav__list-item nav__list-item-menu">Стоимость</Link>
                             </li>
+                            s{isAuth ? <li className="list-item-b">
+                                <Link to={"/chat"} className="nav__list-item nav__list-item-menu">Мои чаты</Link>
+                            </li> : ''}
                             <li className="list-item-b">
                                 <Link to="/signup" className="nav__list-item nav__list-item-menu">
                                     <button className="sign-head-btn">Регистрация</button>

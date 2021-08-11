@@ -12,6 +12,10 @@ import {useMessage} from "../../hooks/message.hook";
 
 
 const MainPage = () => {
+    const style = {
+        display: 'none'
+    }
+
     return (
         <div>
             <div className="header-fixed">
@@ -41,40 +45,37 @@ const MainPage = () => {
                         <div className="about-soft__content">
                             <h2 className="section__title">Soft - это</h2>
                             {/* <ul className="about-us__list"> */}
-                            <Carousel itemsToShow={1} showArrows={false} enableAutoPlay={true}>
-                                <div className="about-us__item">
-                                    <div className="about-us__texts">
-                                        <span className="about-us__head">Удобная платформа для спорта все-в-одном</span>
-                                        <p className="about-us__desc">Всё проводится на нашей платформе. Вам не придётся
-                                            заходить на сторонние сервисы</p>
-                                    </div>
-                                    <img src="/about-image.png" alt="" className="about-img"/>
-                                </div>
-                                <div className="about-us__item">
-                                    <div className="about-us__texts">
-                                        <span className="about-us__head">1:1 Онлайн тренировки</span>
-                                        <p className="about-us__desc">Личные тренер подберёт все процессы индивидуально
-                                            под вас</p>
-                                    </div>
-                                    <img src="/about-image.png" alt="" className="about-img"/>
-                                </div>
-                                <div className="about-us__item">
-                                    <div className="about-us__texts">
-                                        <span className="about-us__head">Сертифицированные специалисты</span>
-                                        <p className="about-us__desc">На платформе специалисты с опытом работы более 2
-                                            лет</p>
-                                    </div>
-                                    <img src="/about-image.png" alt="" className="about-img"/>
-                                </div>
-                                <div className="about-us__item">
-                                    <div className="about-us__texts">
-                                        <span className="about-us__head">Доступные цены</span>
-                                        <p className="about-us__desc">Онлайн-тренировки не только легче, но и дешевле.
-                                            При этом вы не теряете эффективности тренировок.</p>
-                                    </div>
-                                    <img src="/about-image.png" alt="" className="about-img"/>
-                                </div>
-                            </Carousel>
+                                <Carousel itemsToShow={1} showArrows={false} enableAutoPlay={true} >
+                                        <div className="about-us__item">
+                                            <div className="about-us__texts">
+                                                <span className="about-us__head">Удобная платформа для спорта все-в-одном</span>
+                                                <p className="about-us__desc">Всё проводится на нашей платформе. Вам не придётся заходить на сторонние сервисы</p>
+                                            </div>
+                                            <img src="/about-image.png" alt="" className="about-img" />
+                                        </div>
+                                        <div className="about-us__item">
+                                            <div className="about-us__texts">
+                                                <span className="about-us__head">1:1 Онлайн тренировки</span>
+                                                <p className="about-us__desc">Личные тренер подберёт все процессы индивидуально под вас</p>
+                                            </div>
+                                            <img src="/about-image.png" alt="" className="about-img"/>
+                                        </div>
+                                        <div className="about-us__item">
+                                            <div className="about-us__texts">
+                                                <span className="about-us__head">Сертифицированные специалисты</span>
+                                                <p className="about-us__desc">На платформе специалисты с опытом работы более 2 лет</p>
+                                            </div>
+                                            <img src="/about-image.png" alt="" className="about-img"/>
+                                        </div>
+                                        <div className="about-us__item">
+                                            <div className="about-us__texts">
+                                                <span className="about-us__head">Доступные цены</span>
+                                                <p className="about-us__desc">Онлайн-тренировки не только легче, но и дешевле. При этом вы не теряете эффективности тренировок.</p>
+                                                <b className="about-us__desc">Тренировки от 600 руб!</b>
+                                            </div>
+                                            <img src="/about-image.png" alt="" className="about-img"/>
+                                        </div>
+                                </Carousel>
 
 
                             {/* </ul> */}
@@ -152,68 +153,70 @@ const MainPage = () => {
                 <section className="training-types" id="trainings">
                     <div className="container">
                         <h2 className="section__title">Виды тренировок</h2>
-                        <div className="train-list-l">
 
+                        <Carousel className="train-list-l" pagination={false} breakPoints={[
+                            {width: 600, itemsToShow:1},
+                            {width: 900, itemsToShow:4},
+                        ]} enableAutoPlay={true}>
                             <div className="train-list__item ">
-                                <img className="train__img" src="/barbell.svg"></img>
-                                <h3 className="train__heading">Фитнес</h3>
-                            </div>
-                            <div className="train-list__item ">
+                                        <img className="train__img" src="/barbell.svg"></img>
+                                        <h3 className="train__heading">Фитнес</h3>
+                                </div>
+                                <div className="train-list__item ">
 
-                                <img className="train__img" src="/heart.png"></img>
-                                <h3 className="train__heading">Кардио</h3>
+                                        <img className="train__img" src="/heart.png"></img>
+                                        <h3 className="train__heading">Кардио</h3>
 
-                            </div>
-                            <div className="train-list__item ">
+                                </div>
+                                <div className="train-list__item ">
 
-                                <img className="train__img" src="/yoga-mat.png"></img>
-                                <h3 className="train__heading">Йога</h3>
+                                        <img className="train__img" src="/yoga-mat.png"></img>
+                                        <h3 className="train__heading">Йога</h3>
 
-                            </div>
-                            <div className="train-list__item ">
+                                </div>
+                                <div className="train-list__item ">
 
-                                <img className="train__img" src="/pilates.png"></img>
-                                <h3 className="train__heading">Пилатес</h3>
+                                        <img className="train__img" src="/pilates.png"></img>
+                                        <h3 className="train__heading">Пилатес</h3>
 
-                            </div>
-                            <div className="train-list__item">
+                                </div>
+                                <div className="train-list__item">
 
-                                <img className="train__img" src="/family.png"></img>
-                                <h3 className="train__heading">Для всей семьи</h3>
+                                        <img className="train__img" src="/family.png"></img>
+                                        <h3 className="train__heading">Для всей семьи</h3>
 
-                            </div>
-                            <div className="train-list__item">
+                                </div>
+                                <div className="train-list__item">
 
-                                <img className="train__img" src="/ballet.svg"></img>
-                                <h3 className="train__heading">Хореография</h3>
+                                        <img className="train__img" src="/ballet.svg"></img>
+                                        <h3 className="train__heading">Хореография</h3>
 
-                            </div>
-                            <div className="train-list__item">
+                                </div>
+                                <div className="train-list__item">
 
-                                <img className="train__img" src="/group2.png"></img>
-                                <h3 className="train__heading">Групповые</h3>
+                                        <img className="train__img" src="/group2.png"></img>
+                                        <h3 className="train__heading">Групповые</h3>
 
-                            </div>
-                            <div className="train-list__item">
+                                </div>
+                                <div className="train-list__item">
 
-                                <img className="train__img" src="/baby.png"></img>
-                                <h3 className="train__heading">Детский фитнес</h3>
+                                        <img className="train__img" src="/baby.png"></img>
+                                        <h3 className="train__heading">Детский фитнес</h3>
 
-                            </div>
-                            <div className="train-list__item">
+                                </div>
+                                <div className="train-list__item">
 
-                                <img className="train__img" src="/climb.png"></img>
-                                <h3 className="train__heading">ОФП</h3>
+                                        <img className="train__img" src="/climb.png"></img>
+                                        <h3 className="train__heading">ОФП</h3>
 
-                            </div>
-                            <div className="train-list__item">
+                                </div>
+                                <div className="train-list__item">
 
-                                <img className="train__img" src="/sport.png"></img>
-                                <h3 className="train__heading">ЛФК</h3>
+                                        <img className="train__img" src="/sport.png"></img>
+                                        <h3 className="train__heading">ЛФК</h3>
 
-                            </div>
-
-                        </div>
+                                </div>
+                        </Carousel>
                     </div>
                 </section>
                 <section className="trainers-l">

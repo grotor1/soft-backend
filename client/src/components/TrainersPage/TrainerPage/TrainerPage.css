@@ -47,7 +47,16 @@ button.close {
     border-radius: 50%;
     margin-bottom: 18px;
 }
-
+.chat-btn{
+    padding: 23px 51px;
+    background: linear-gradient(95.6deg, #8DE885 14.17%, rgba(109, 255, 106, 0) 80.27%), #6ED98B;
+    box-shadow: 0px 7px 35px rgba(119, 219, 129, 0.6);
+    border-radius: 110px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    border: none
+}
 .status{
     margin-bottom: 21px;
     background: #BCFFB1;
@@ -151,7 +160,7 @@ button.close {
 .train-list__item-page{
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 45px;
-    /* padding: 16px; */
+    padding: 16px;
     background-color: #fff;
     width: 139px;
     height: 171px;
@@ -162,7 +171,9 @@ button.close {
 }
 .train__img-page{
     border-radius: 26px;
-    margin: 0 auto;
+    /* margin-bottom: 10px; */
+    width: 80px;
+    height: 80px;
 }
 .train__heading-page{
     font-weight: 600;
@@ -170,7 +181,6 @@ button.close {
     line-height: 22px;
     text-align: center;
     color: #000000;
-    padding: 0 16px 16px 16px;
 
 }
 .trainer__contacts{
@@ -229,6 +239,21 @@ button.close {
     }
     .trainer-desc__text{
         width: auto;
+    }
+    .trainer-page__flex{
+        display: block;
+        padding: 0;
+        max-width: 800px;
+        padding-right: 16px;
+        padding-left: 16px;
+        margin-right: 0;
+    }
+    .trainer-page__information-left{
+        width: 100%;
+    }
+    .social-site{
+        display: block;
+        max-width: 100%;
     }
 }
 

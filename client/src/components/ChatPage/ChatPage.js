@@ -140,7 +140,9 @@ const ChatPage = () => {
                 </div>
                 {currentChat &&
                 <div className="chat-form">
-                    <input type="text" onChange={(e) => setNewMessage(e.target.value)} value={newMessage}/>
+                    <input type="text" onChange={(e) => setNewMessage(e.target.value)} value={newMessage}
+                        className={"input-chat"}
+                    />
                     <button onClick={handleSubmit}>Отправить</button>
                 </div>}
             </div>
