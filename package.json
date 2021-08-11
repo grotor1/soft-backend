@@ -29,8 +29,8 @@
     "react-elastic-carousel": "^0.11.5",
     "react-progressbar-line": "^1.0.2",
     "react-router-dom": "^5.2.0",
-    "socket.io": "^4.1.3",
     "react-slick": "^0.28.1",
+    "socket.io": "^4.1.3",
     "use-resize-observer": "^7.0.1"
   }
 }

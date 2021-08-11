@@ -18,6 +18,7 @@ const TrainersPage = () => {
 
     const [trainers, setTrainers] = useState([])
     const [trainingTypes, setTrainingTypes] = useState([])
+    console.log(trainers)
 
     useEffect(() => {
         const dataFromServer = async () => {
@@ -61,6 +62,7 @@ const TrainersPage = () => {
                             </div>
                             <ul className="trainers__list">
                                 {trainers.map(trainer => {
+
                                     return (
                                         <Trainer avatar={trainer.avatar}
                                                  name={trainer.name + " " + trainer.surname}

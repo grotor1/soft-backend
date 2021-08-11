@@ -8,7 +8,7 @@ import {useMessage} from "../../../hooks/message.hook";
 
 const TrainerPage = ({url, trainers, trainingTypes}) => {
     const {_id_trainer} = useParams()
-    const trainer = trainers.find(trainer => trainer._id = _id_trainer)
+    const trainer = trainers.find(trainer => trainer._id === _id_trainer)
     const trainerTrainingTypes = trainer.trainingTypes.map(trainerTrainingType => {
         return trainingTypes.find(trainingType => trainingType._id === trainerTrainingType._id_training)
     })
