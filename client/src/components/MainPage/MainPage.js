@@ -152,8 +152,8 @@ const MainPage = () => {
                         
                         <Carousel className="train-list-l" pagination={false} breakPoints={[
                             {width: 600, itemsToShow:1},
-                            {width: 1024, itemsToShow:4},
-                        ]}>
+                            {width: 900, itemsToShow:4},
+                        ]} enableAutoPlay={true}>
                             <div className="train-list__item ">
                                         <img className="train__img" src="/barbell.svg"></img>
                                         <h3 className="train__heading">Фитнес</h3>

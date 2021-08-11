@@ -48,6 +48,9 @@ const TrainerPage = ({url, trainers, trainingTypes}) => {
                         )
                     })}
                 </div>
+                <Link to="/chat">
+                    <button className="chat-btn">Написать тренеру</button>
+                </Link>
             </div>
             <div className="trainer-page__information-right">
                 <div className="trainer__kredo">Для того, чтобы начать заниматься с тренером, необходимо написать ему
