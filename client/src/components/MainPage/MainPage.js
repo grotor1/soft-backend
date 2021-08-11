@@ -69,6 +69,7 @@ const MainPage = () => {
                                             <div className="about-us__texts">
                                                 <span className="about-us__head">Доступные цены</span>
                                                 <p className="about-us__desc">Онлайн-тренировки не только легче, но и дешевле. При этом вы не теряете эффективности тренировок.</p>
+                                                <b className="about-us__desc">Тренировки от 600 руб!</b>
                                             </div>
                                             <img src="/about-image.png" alt="" className="about-img"/>    
                                         </div>

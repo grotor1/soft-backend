@@ -64,7 +64,7 @@ const ChatPage = () => {
                     
                 </div>
                 <div className="chat-form">
-                    
+                    <input className="input-chat" />
                 </div>
             </div>
         </div>

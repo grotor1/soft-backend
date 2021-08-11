@@ -20,7 +20,7 @@ export const useRoutes = (isAuth, isAuthAdmin) => {
                 </Route> :
                 <Route path="/adminLogin" component={AdminLoginPage}/>}
             <Route exact path="/">
-                <MainPage/>
+                <MainPage isAuth={isAuth}/>
             </Route>
             <Route path="/trainers">
                 <TrainersPage/>

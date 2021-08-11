@@ -22,3 +22,15 @@
     color: #353535;
     margin-left: 21px;
 }
+@media (max-width: 768px){
+    .footer__title{
+        font-size: 18px;
+    }
+    .social__link img{
+        width: 30px;
+        height: 30px;
+    }
+    .social-sites__list{
+        margin-top: 20px;
+    }
+}

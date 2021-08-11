@@ -240,6 +240,21 @@ button.close {
     .trainer-desc__text{
         width: auto;
     }
+    .trainer-page__flex{
+        display: block;
+        padding: 0;
+        max-width: 800px;
+        padding-right: 16px;
+        padding-left: 16px;
+        margin-right: 0;
+    }
+    .trainer-page__information-left{
+        width: 100%;
+    }
+    .social-site{
+        display: block;
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 390px){

@@ -44,7 +44,7 @@ const TrainerPage = ({url, trainers, trainingTypes}) => {
                     <p className="trainer-desc__bold">Контакты:</p>
                     {trainer.contacts.map(contact => {
                         return (
-                            <a className={`social-site ${contact.name}`} href={contact.link}>{contact.link}</a>
+                            <a className={`social-site ${contact.name}`} href={contact.link}></a>
                         )
                     })}
                 </div>
