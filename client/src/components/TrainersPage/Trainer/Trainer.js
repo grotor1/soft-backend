@@ -4,7 +4,6 @@ import {Link} from "react-router-dom";
 
 
 const Trainer = (props) => {
-    console.log(props.info)
     return (
         <div className={`trainers-list__item bg-image`} style={{backgroundImage:`url(data:image/png;base64,${props.avatar})`}}>
             <div className="trainer__content">

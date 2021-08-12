@@ -41,8 +41,8 @@ export const useAuth = () => {
     }, [login])
     useEffect(() => {
         const dataAdmin = JSON.parse(localStorage.getItem(storageNameAdmin))
-        if (dataAdmin && dataAdmin.token) {
-            loginAdmin(dataAdmin.token)
+        if (dataAdmin && dataAdmin.tokenAdmin) {
+            loginAdmin(dataAdmin.tokenAdmin)
         }
     }, [loginAdmin])
 

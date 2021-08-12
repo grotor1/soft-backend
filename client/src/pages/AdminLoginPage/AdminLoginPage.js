@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react"
+import React, {useContext, useEffect, useState} from "react"
 import {useMessage} from "../../hooks/message.hook";
 import {AuthContext} from "../../context/AuthContext";
 import {useHttp} from "../../hooks/http.hook";
@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 export const AdminLoginPage = () => {
     const [password, setPassword] = useState()
     const auth = useContext(AuthContext)
-    const {request} = useHttp()
+    const {request, error, clearError} = useHttp()
     const message = useMessage()
     const changeHandler = event => {
         setPassword(event.target.value)
@@ -15,12 +15,15 @@ export const AdminLoginPage = () => {
     const clickHandle = async () => {
         try {
             const data = await request("/api/auth/loginAdmin", "POST", {password})
-            auth.loginAdmin(data.token)
+            if (!data.message) auth.loginAdmin(data.token)
         } catch (e) {
-            message(e)
         }
     }
-    return(
+    useEffect(() => {
+        message(error)
+        clearError()
+    }, [error, message, clearError])
+    return (
         <div className="login-wrapper">
             <div className="login-container">
                 <h1 className="login-container__header">
@@ -33,11 +36,9 @@ export const AdminLoginPage = () => {
                     placeholder="Пароль"
                     onChange={changeHandler}
                 />
-                <Link to={`/admin`}>
-                    <button className="login-container__button" onClick={clickHandle}>
-                        Войти
-                    </button>
-                </Link>
+                <button className="login-container__button" onClick={clickHandle}>
+                    Войти
+                </button>
             </div>
         </div>
     )

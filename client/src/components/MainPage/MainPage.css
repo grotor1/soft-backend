@@ -354,8 +354,9 @@ body{
 }
 .rec.rec-arrow{
     background-color: transparent;
-    box-shadow: none
-};
+    box-shadow: none;
+}
+
 .cGKbZh:hover:enabled, .cGKbZh:focus:enabled{
     background-color: #fff;
     color: #1c1c1c;

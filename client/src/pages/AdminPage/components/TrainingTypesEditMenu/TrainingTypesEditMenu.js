@@ -76,7 +76,7 @@ export const TrainingTypesEditMenu = () => {
                     type="file"
                     id="avatar"
                     name="avatar"
-                    accept='.png, .jpg, .jpeg'
+                    accept='.png, .jpg, .jpeg, .svg'
                     onChange={photoChangeHandler}
                 />
             </fieldset>

@@ -8,17 +8,19 @@ import SignUpPage from './components/SignUpPage';
 import EnterPage from './components/EnterPage';
 import UserProfile from './components/UserProfile';
 import ChatPage from './components/ChatPage';
-import EnterError from './components/EnterError'
+import EnterError from "./components/EnterError";
+
 
 export const useRoutes = (isAuth, isAuthAdmin) => {
     return (
         <Switch>
             {isAuthAdmin ?
-                <Route path="/admin" component={AdminPage}/> &&
                 <Route path="/adminLogin">
                     <Redirect to="/admin"/>
                 </Route> :
-                <Route path="/adminLogin" component={AdminLoginPage}/>}
+                <Route path="/adminLogin" component={AdminLoginPage}/>
+            }
+            {isAuthAdmin && <Route path="/admin" component={AdminPage}/>}
             <Route exact path="/">
                 <MainPage isAuth={isAuth}/>
             </Route>
@@ -35,7 +37,7 @@ export const useRoutes = (isAuth, isAuthAdmin) => {
                 {isAuth ? <UserProfile/> : <EnterError/>}
             </Route>
             <Route path="/chat">
-                <ChatPage/>
+                {isAuth ? <ChatPage/> : <EnterError/>}
             </Route>
         </Switch>
     );

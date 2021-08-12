@@ -1,14 +1,38 @@
-import React from 'react'
+import React, {useContext, useEffect} from 'react'
 import './TrainerPage.css'
-import {Link, useParams, useRouteMatch} from "react-router-dom";
+import {Link, useHistory, useParams, useRouteMatch} from "react-router-dom";
+import {AuthContext} from "../../../context/AuthContext";
+import {useHttp} from "../../../hooks/http.hook";
+import {useMessage} from "../../../hooks/message.hook";
 
 
 const TrainerPage = ({url, trainers, trainingTypes}) => {
     const {_id_trainer} = useParams()
-    const trainer = trainers.find(trainer => trainer._id = _id_trainer)
+    const trainer = trainers.find(trainer => trainer._id === _id_trainer)
     const trainerTrainingTypes = trainer.trainingTypes.map(trainerTrainingType => {
         return trainingTypes.find(trainingType => trainingType._id === trainerTrainingType._id_training)
     })
+    const {request, error, clearError} = useHttp()
+    const message = useMessage()
+    const {_id_user} = useContext(AuthContext)
+    const history = useHistory()
+
+    const clickHandler = async () => {
+        try {
+            const {success} = await request("/api/fetch/createConversation", 'POST', {
+                _id_trainer: trainer._id_user,
+                _id_user
+            })
+            if (success) history.push("/chat")
+        } catch (e) {
+        }
+    }
+
+    useEffect(() => {
+        message(error)
+        clearError()
+    }, [error, message, clearError])
+
     return (
         <div className="trainer-page__flex">
             <div className="trainer-page__information-left">
@@ -44,13 +68,13 @@ const TrainerPage = ({url, trainers, trainingTypes}) => {
                     <p className="trainer-desc__bold">Контакты:</p>
                     {trainer.contacts.map(contact => {
                         return (
-                            <a className={`social-site ${contact.name}`} href={contact.link}></a>
+                            <a className={`social-site ${contact.name}`} href={contact.link}>{contact.link}</a>
                         )
                     })}
                 </div>
-                <Link to="/chat">
-                    <button className="chat-btn">Написать тренеру</button>
-                </Link>
+                <button onClick={clickHandler} className="chat-btn">
+                    Написать
+                </button>
             </div>
             <div className="trainer-page__information-right">
                 {/* <div className="trainer__kredo">Для того, чтобы начать заниматься с тренером, необходимо написать ему
@@ -66,7 +90,8 @@ const TrainerPage = ({url, trainers, trainingTypes}) => {
                         {trainerTrainingTypes.map(trainerTrainingType => {
                             return (
                                 <li className="train-list__item-page">
-                                    <img className="train__img-page" src={`data:image/png;base64,${trainerTrainingType.img}`}/>
+                                    <img className="train__img-page"
+                                         src={`data:image/png;base64,${trainerTrainingType.img}`}/>
                                     <h3 className="train__heading-page">{trainerTrainingType.name}</h3>
                                 </li>
                             )
@@ -79,7 +104,7 @@ const TrainerPage = ({url, trainers, trainingTypes}) => {
                         {trainer.certificates.map(certificate => {
                             return (
                                 <li className="serteficates__list-item">
-                                    <img src={`data:image/png;base64,${certificate}`} />
+                                    <img src={`data:image/png;base64,${certificate}`}/>
                                 </li>
                             )
                         })}
