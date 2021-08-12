@@ -77,9 +77,9 @@ const TrainerPage = ({url, trainers, trainingTypes}) => {
                 </button>
             </div>
             <div className="trainer-page__information-right">
-                <div className="trainer__kredo">Для того, чтобы начать заниматься с тренером, необходимо написать ему
+                {/* <div className="trainer__kredo">Для того, чтобы начать заниматься с тренером, необходимо написать ему
                     напрямую через указанные контакты на странице.
-                </div>
+                </div> */}
                 <div className="trainer__about">
                     <p className="trainer-desc__bold">О себе</p>
                     <p className="trainer-desc__text">{trainer.aboutMyself}</p>

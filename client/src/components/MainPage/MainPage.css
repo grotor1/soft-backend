@@ -577,6 +577,10 @@ body{
     .mission-img{
         width: 100%;
     }
+    .about-us__head{
+        font-size: 24px;
+        line-height: 26px;
+    }
 }
 @media (max-width: 408px) {
     .comfort-list__item{
@@ -589,10 +593,10 @@ body{
         line-height: 34px;
         margin-bottom: 36px;
     }
-    .about-us__head{
+    /* .about-us__head{
         font-size: 30px;
         line-height: 32px;
-    }
+    } */
     .section__title-black, .section__title{
         margin-bottom: 40px;
         font-size: 30px;
@@ -644,5 +648,11 @@ body{
     .train-list__item{
         height: 120px;
         width: 120px;
+    }
+    .about-us__head{
+        font-size: 20px;
+    }
+    .about-us__desc{
+        margin-top: 20px;
     }
 }

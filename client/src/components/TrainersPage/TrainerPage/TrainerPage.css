@@ -4,12 +4,6 @@
     justify-content: space-between;
     align-items: flex-start;
 }
-/* .close{
-    background: #F5F5F5;
-    box-shadow: -7px -7px 24px rgba(255, 255, 255, 0.4), 7px 7px 24px rgba(182, 193, 211, 0.4);
-    border-radius: 15px;
-    padding: 15px;
-} */
 .trainer-page__information-left{
     background: #FAFAFA;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
@@ -220,6 +214,8 @@ button.close {
     .trainer-page__flex{  
         flex-direction: column;
         align-items: center;
+        padding-right: 16px;
+        padding-left: 16px;
     }
     .trainer-page__information-right{
         padding: 0;
@@ -244,9 +240,6 @@ button.close {
         display: block;
         padding: 0;
         max-width: 800px;
-        padding-right: 16px;
-        padding-left: 16px;
-        margin-right: 0;
     }
     .trainer-page__information-left{
         width: 100%;
