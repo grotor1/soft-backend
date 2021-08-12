@@ -28,7 +28,7 @@ const Header = ({isAuth}) => {
                             <li className="list-item-b">
                                 <Link to={"/trainers"} className="nav__list-item nav__list-item-menu">Стоимость</Link>
                             </li>
-                            s{isAuth ? <li className="list-item-b">
+                            {isAuth ? <li className="list-item-b">
                                 <Link to={"/chat"} className="nav__list-item nav__list-item-menu">Мои чаты</Link>
                             </li> : ''}
                             <li className="list-item-b">
