@@ -214,6 +214,8 @@ button.close {
     .trainer-page__flex{  
         flex-direction: column;
         align-items: center;
+        padding-right: 16px;
+        padding-left: 16px;
     }
     .trainer-page__information-right{
         padding: 0;
@@ -238,9 +240,6 @@ button.close {
         display: block;
         padding: 0;
         max-width: 800px;
-        padding-right: 16px;
-        padding-left: 16px;
-        margin-right: 0;
     }
     .trainer-page__information-left{
         width: 100%;
