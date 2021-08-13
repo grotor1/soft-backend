@@ -229,7 +229,7 @@ const MainPage = () => {
                                     <div className="trainer__content">
                                         <h3 className="trainer-heading">Сергей Крайнов</h3>
                                         <p className="trainer-desc">Фитнеc, кардио, детский фитнес, ЛФК.</p>
-                                        <Link to={"/trainers/6113aeb3da38c641a435dfc9"}>
+                                        <Link to={"/trainers"}>
                                             <a className="more">Подробнее</a>
                                         </Link>
                                     </div>
@@ -238,7 +238,7 @@ const MainPage = () => {
                                     <div className="trainer__content">
                                         <h3 className="trainer-heading">Екатерина Исаева</h3>
                                         <p className="trainer-desc">фитнес, хореография, Стретчинг, ОФП</p>
-                                        <Link to={"/trainers/6113aeb3da38c641a435dfc9"}>
+                                        <Link to={"/trainers"}>
                                             <a className="more">Подробнее</a>
                                         </Link>
                                     </div>
@@ -247,7 +247,7 @@ const MainPage = () => {
                                     <div className="trainer__content">
                                         <h3 className="trainer-heading">Наталья Краснова</h3>
                                         <p className="trainer-desc">Фитнеc, кардио, ЛФК, ОФП, для всей семьи</p>
-                                        <Link to={"/trainers/6113aec2da38c641a435dfd5"}>
+                                        <Link to={"/trainers"}>
                                             <a className="more">Подробнее</a>
                                         </Link>
                                     </div>
