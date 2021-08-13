@@ -4,12 +4,14 @@ import Header from '../Header'
 import {useHttp} from "../../hooks/http.hook";
 import {useMessage} from "../../hooks/message.hook";
 import {AuthContext} from "../../context/AuthContext";
+import {useHistory} from "react-router-dom";
 
 const EnterPage = () => {
     const auth = useContext(AuthContext)
     const [form, setForm] = useState()
     const {request, error, clearError} = useHttp()
     const message = useMessage()
+    const history = useHistory()
 
     const changeHandler = event => {
         setForm({...form, [event.target.name]: event.target.value})
@@ -19,7 +21,10 @@ const EnterPage = () => {
         try {
             const data = await request("/api/auth/loginUser", "POST", {...form})
             auth.login(data.token, data._id_user)
-            message("Вы успешно вошли")
+            if(data.success){
+                message("Вы успешно вошли")
+                history.push("/profile")
+            }
         } catch (e) {
         }
     }

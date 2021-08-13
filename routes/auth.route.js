@@ -91,7 +91,7 @@ router.post('/loginUser',
                 config.get('jwtSecret'),
                 {expiresIn: "1h"}
             )
-            res.json({token, _id_user: user._id})
+            res.json({token, _id_user: user._id, success: true})
         } catch (e) {
             res.status(500).json({message: "Что-то не так"})
         }

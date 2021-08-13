@@ -15,7 +15,6 @@ const MainPage = () => {
     const style = {
         display: 'none'
     }
-
     return (
         <div>
             <div className="header-fixed">
@@ -28,7 +27,7 @@ const MainPage = () => {
                             <div className="hero-texts">
                                 <h1 className="hero-title">Онлайн спорт с личным тренером.</h1>
                                 <span className="hero-description">Занимайтесь спортом, <span className="green-text">не выходя из дома,</span> по любой удобной программе</span>
-                                <Link to="/enter" className="nav__list-item">
+                                <Link to="/signup" className="nav__list-item">
                                     <button className="enter-btn-hero">Попробовать бесплатно</button>
                                 </Link>
                             </div>

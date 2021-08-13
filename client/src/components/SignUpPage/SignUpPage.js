@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './SignUpPage.css'
 import Header from '../Header'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import {useMessage} from "../../hooks/message.hook";
 import {useHttp} from "../../hooks/http.hook";
 
@@ -9,6 +9,7 @@ const SignUpPage = () => {
     const message = useMessage()
     const {request, error, clearError} = useHttp()
     const [form, setForm] = useState()
+    const history = useHistory()
 
 
     const changeHandler = event => {
@@ -23,7 +24,10 @@ const SignUpPage = () => {
     const submitHandler = async () => {
         try {
             const {success} = await request("/api/auth/regUser", "POST", {...form})
-            if (success) message("Вы успешно зарегистрировались")
+            if (success){
+                message("Вы успешно зарегистрировались")
+                history.push("/enter")
+            }
         } catch (e) {
         }
     }

@@ -1,11 +1,13 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import {Link} from 'react-router-dom'
 import './Header.css'
 import {BrowserRouter as Router} from 'react-router-dom'
+import {AuthContext} from "../../context/AuthContext";
 
 
-const Header = ({isAuth}) => {
+const Header = () => {
     const [sidebar, setSidebar] = useState(false)
+    const {isAuth} = useContext(AuthContext)
     const showSidebar = () => setSidebar
     (!sidebar)
     return (
@@ -23,7 +25,7 @@ const Header = ({isAuth}) => {
                                 <Link to="/" className="nav__list-item nav__list-item-menu">Главная</Link>
                             </li>
                             <li className="list-item-b">
-                                 <a className="nav__list-item nav__list-item-menu" href="#trainings"> Тренировки</a>
+                                <a className="nav__list-item nav__list-item-menu" href="#trainings"> Тренировки</a>
                             </li>
                             <li className="list-item-b">
                                 <Link to={"/trainers"} className="nav__list-item nav__list-item-menu">Стоимость</Link>
@@ -53,9 +55,15 @@ const Header = ({isAuth}) => {
                                 <a href="" className="nav__list-item">Стоимость</a>
                             </li>
                             <li className="list-item-b">
-                                <Link to="/signup" className="nav__list-item">
-                                    <button className="sign-head-btn">Регистрация</button>
-                                </Link>
+                                {
+                                    isAuth ?
+                                        <Link to="/profile" className="nav__list-item">
+                                            <button className="sign-head-btn">Профиль</button>
+                                        </Link> :
+                                        <Link to="/enter" className="nav__list-item">
+                                            <button className="sign-head-btn">Войти</button>
+                                        </Link>
+                                }
                             </li>
                         </ul>
                     </nav>
