@@ -26,7 +26,7 @@ const MainPage = () => {
                     <div className="container">
                         <div className="hero__content">
                             <div className="hero-texts">
-                                <h1 className="hero-title">Онлайн спорт с персональным тренером.</h1>
+                                <h1 className="hero-title">Онлайн спорт с личным тренером.</h1>
                                 <span className="hero-description">Занимайтесь спортом, <span className="green-text">не выходя из дома,</span> по любой удобной программе</span>
                                 <Link to="/enter" className="nav__list-item">
                                     <button className="enter-btn-hero">Попробовать бесплатно</button>
@@ -89,7 +89,7 @@ const MainPage = () => {
                             <div>
                                 <h2 className="section__title-black">Наша миссия: </h2>
                                 <span className="mission-text">Дать людям возможность тренироваться 
-                                    <span className=""> легче, качетсвеннее, в удовольствие:</span>
+                                    <span className=""> легче, качественнее, в удовольствие:</span>
                                 </span>
                                 <p className="mission-text">где угодно и когда угодно</p>
                             </div>

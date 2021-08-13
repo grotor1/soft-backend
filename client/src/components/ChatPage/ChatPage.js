@@ -113,7 +113,7 @@ const ChatPage = () => {
                         <h3 className="chat__heading">Мои чаты</h3>
                     </div>
                     <div className="chat-profile">
-                        <img className="user-image" src="/profile.jpg"/>
+                        <img className="user-image" src="/profile.png"/>
                         <span className="user-name">Мой профиль</span>
                     </div>
                 </div>
@@ -143,8 +143,9 @@ const ChatPage = () => {
                     <input type="text" onChange={(e) => setNewMessage(e.target.value)} value={newMessage}
                         className={"input-chat"}
                     />
-                    <button onClick={handleSubmit}>Отправить</button>
+                    <button onClick={handleSubmit} className="btn-send">Отправить</button>
                 </div>}
+                <div className="develop-text">В данной версии доступна только функция текстового чата с тренером. Платформа в разработке</div>
             </div>
         </div>
     )
