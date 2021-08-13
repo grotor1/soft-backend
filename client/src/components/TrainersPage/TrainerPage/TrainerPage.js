@@ -61,7 +61,7 @@ const TrainerPage = ({url, trainers, trainingTypes}) => {
                 <div className="trainer-price__info">
                     <p className="trainer-desc__bold">Цена</p>
                     <p className="trainer-desc__normal">{trainer.price}</p>
-                    <p className="trainer-desc__bold">При покупке:</p>
+                    <p className="trainer-desc__bold">Специальное предложение:</p>
                     <p className="trainer-desc__normal">{trainer.specialOffers}</p>
                 </div>
                 <div className="trainer__contacts">
