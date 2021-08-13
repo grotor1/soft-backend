@@ -21,14 +21,8 @@ const Footer = () => {
                     </li>
                     <li className="social-list__item">
                         
-                        <a className="social__link" href="soft.platform2020@gmail.com" target="_blank"> 
+                        <a className="social__link" href="mailto:soft.platform2020@gmail.com" target="_blank"> 
                              <img src="/mail.svg" />
-                        </a>
-                    </li>
-                    <li className="social-list__item">
-                        
-                        <a className="social__link" href="+79774821093" target="_blank">
-                            <img src="/phone.svg" />
                         </a>
                     </li>
                 </ul>
