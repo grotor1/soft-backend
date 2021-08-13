@@ -51,46 +51,30 @@ const MainPage = () => {
                                                 <span className="about-us__head">Удобная платформа для спорта все-в-одном</span>
                                                 <p className="about-us__desc">Всё проводится на нашей платформе. Вам не придётся заходить на сторонние сервисы</p>
                                             </div>
-<<<<<<< HEAD
                                             {/* <img src="/about-image.png" alt="" className="about-img" />     */}
-=======
-                                            <img src="/about-image.png" alt="" className="about-img" />
->>>>>>> b3dafg
                                         </div>
                                         <div className="about-us__item">
                                             <div className="about-us__texts">
                                                 <span className="about-us__head">1:1 Онлайн тренировки</span>
                                                 <p className="about-us__desc">Личные тренер подберёт все процессы индивидуально под вас</p>
                                             </div>
-<<<<<<< HEAD
                                             {/* <img src="/about-image.png" alt="" className="about-img"/>     */}
-=======
-                                            <img src="/about-image.png" alt="" className="about-img"/>
->>>>>>> b3dafg
                                         </div>
                                         <div className="about-us__item">
                                             <div className="about-us__texts">
                                                 <span className="about-us__head">Сертифицированные специалисты</span>
                                                 <p className="about-us__desc">На платформе специалисты с опытом работы более 2 лет</p>
                                             </div>
-<<<<<<< HEAD
                                             {/* <img src="/about-image.png" alt="" className="about-img"/>     */}
-=======
-                                            <img src="/about-image.png" alt="" className="about-img"/>
->>>>>>> b3dafg
                                         </div>
                                         <div className="about-us__item">
                                             <div className="about-us__texts">
                                                 <span className="about-us__head">Доступные цены</span>
                                                 <p className="about-us__desc">Онлайн-тренировки не только легче, но и дешевле. При этом вы не теряете эффективности тренировок.</p>
-                                                <b className="about-us__desc">Тренировки от 600 руб!</b>
-                                                <b className="about-us__desc">Попробовать бесплатно</b>
+                                                <b className="about-us__desc">Тренировки от 800 руб!</b>
+                                                <p className="about-us__desc">Первое занятие бесплатно</p>
                                             </div>
-<<<<<<< HEAD
                                             {/* <img src="/about-image.png" alt="" className="about-img"/>     */}
-=======
-                                            <img src="/about-image.png" alt="" className="about-img"/>
->>>>>>> b3dafg
                                         </div>
                                 </Carousel>
 
@@ -105,7 +89,7 @@ const MainPage = () => {
                             <div>
                                 <h2 className="section__title-black">Наша миссия: </h2>
                                 <span className="mission-text">Дать людям возможность тренироваться 
-                                    <span className="green-2"> легче:</span>
+                                    <span className=""> легче, качетсвеннее, в удовольствие:</span>
                                 </span>
                                 <p className="mission-text">где угодно и когда угодно</p>
                             </div>
@@ -123,7 +107,7 @@ const MainPage = () => {
                             <li className="comfort-list__item">
                                 <img src="/c-1.jpg"/>
                                 <p className="comfort-item__heading">Обзор тренировок с нескольких ракурсов.</p>
-                                <span className="comfort-item__desc">Вы сможете подключить дополнительные устройства (телефон или ноутбук) во время занятия и использовать их в качестве дополнительных камер для нескольких ракурсов перед тренеров</span>
+                                <span className="comfort-item__desc">Вы сможете подключить дополнительные устройства (телефон или ноутбук) во время занятия и использовать их в качестве дополнительных камер для нескольких ракурсов перед тренером</span>
                             </li>
 
                             <li className="comfort-list__item">
