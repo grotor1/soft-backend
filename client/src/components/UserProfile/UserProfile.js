@@ -4,11 +4,12 @@ import './UserProfile.css'
 import {AuthContext} from "../../context/AuthContext";
 import {useMessage} from "../../hooks/message.hook";
 import {useHttp} from "../../hooks/http.hook";
+import {Link} from "react-router-dom";
 
 const UserProfile = () => {
     const [profileData, setProfileData] = useState({})
     const [initials, setInitials] = useState({})
-    const {_id_user} = useContext(AuthContext)
+    const {_id_user, logout} = useContext(AuthContext)
     const message = useMessage()
     const {request, error, clearError} = useHttp()
 
@@ -78,7 +79,13 @@ const UserProfile = () => {
                                        type="email"/>
                             </li>
                         </ul>
-                        <button className="save-btn" onClick={submitHandler}>Сохранить</button>
+                        <div className={"btn-flex"}>
+                            <button className="save-btn" onClick={submitHandler}>Сохранить</button>
+                            <Link to={"/chat"}>
+                                <button className="save-btn">Чат</button>
+                            </Link>
+                            <button className="save-btn" onClick={logout}>Выход</button>
+                        </div>
                     </div>
                 </div>
             </div>
