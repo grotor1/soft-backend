@@ -266,6 +266,7 @@
     }
     .develop-text{
         top: 40px;
+        font-size: 14px;
     }
 }
 
@@ -279,6 +280,9 @@
     }
     .btn-send{
         font-size: 14px;
+    }
+    .develop-text{
+        top: 60px;
     }
 }
 @media (max-width: 338px) {
