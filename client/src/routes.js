@@ -9,6 +9,7 @@ import EnterPage from './components/EnterPage';
 import UserProfile from './components/UserProfile';
 import ChatPage from './components/ChatPage';
 import EnterError from "./components/EnterError";
+import LegacyPage from './components/LegacyPage';
 
 
 export const useRoutes = (isAuth, isAuthAdmin) => {
@@ -38,6 +39,9 @@ export const useRoutes = (isAuth, isAuthAdmin) => {
             </Route>
             <Route path="/chat">
                 {isAuth ? <ChatPage/> : <EnterError/>}
+            </Route>
+            <Route path="/pk">
+                <LegacyPage/>
             </Route>
         </Switch>
     );

@@ -73,6 +73,12 @@
     padding: 22px 48px;
     border: none;
 }
+.green{
+    color: #7CEC72;
+}
+.pk{
+    margin-bottom: 40px;
+}
 .signup__img{
     width: 600px;
 }
