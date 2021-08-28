@@ -9,16 +9,26 @@ import {useHttp} from "../../hooks/http.hook";
 import {useMessage} from "../../hooks/message.hook";
 import {Route, Switch, useRouteMatch} from "react-router-dom";
 import TrainerPage from "./TrainerPage";
+import {DotLoader} from "react-spinners";
 
 
 const TrainersPage = () => {
     const {url, path} = useRouteMatch()
     const {request, error, clearError} = useHttp()
     const message = useMessage()
-
     const [trainers, setTrainers] = useState([])
     const [trainingTypes, setTrainingTypes] = useState([])
-    console.log(trainers)
+
+    useEffect(() => {
+        const dataFromServer = async () => {
+            try {
+                const {data} = await request(`/api/fetch/getTrainersList`, 'GET')
+                setTrainers(data)
+            } catch (e) {
+            }
+        }
+        dataFromServer();
+    }, [request])
 
     useEffect(() => {
         const dataFromServer = async () => {
@@ -31,16 +41,7 @@ const TrainersPage = () => {
         dataFromServer();
     }, [request])
 
-    useEffect(() => {
-        const dataFromServer = async () => {
-            try {
-                const {data} = await request(`/api/fetch/getTrainersList`, 'GET')
-                setTrainers(data)
-            } catch (e) {
-            }
-        }
-        dataFromServer();
-    }, [request])
+
 
     useEffect(() => {
         message(error)
@@ -61,8 +62,8 @@ const TrainersPage = () => {
                                 <button className="btn__apply" onClick={() => setButtonPopup(true)}>Подать заявку</button>
                             </div>
                             <ul className="trainers__list">
+                                    <DotLoader loading={!trainers.length}/>
                                 {trainers.map(trainer => {
-
                                     return (
                                         <Trainer avatar={trainer.avatar}
                                                  name={trainer.name + " " + trainer.surname}
