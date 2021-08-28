@@ -96,6 +96,12 @@ const SignUpPage = () => {
                                onChange={changeHandler}/>
                         <input type="password" placeholder="Подтвердите пароль" name="passwordRep"
                                className="sign-up__input-2" onChange={changeHandler}/>
+                        <div className="pk">
+                            Регистрируясь, вы соглашаетесь с 
+                            <Link to="/pk">
+                                <span className="green"> Политикой обработки персональных данных</span>
+                            </Link>
+                        </div>
                         <div className="sign-flex">
                             <button className="signup-btn-2" onClick={submitHandler}>Завершить</button>
                             <Link to="/enter" className="enter-btn">

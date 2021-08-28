@@ -88,7 +88,7 @@ const MainPage = () => {
                             <div>
                                 <h2 className="section__title-black">Наша миссия: </h2>
                                 <span className="mission-text">Дать людям возможность тренироваться 
-                                    <span className=""> легче, качетсвеннее, в удовольствие:</span>
+                                    <span className=""> легче, качественнее, в удовольствие:</span>
                                 </span>
                                 <p className="mission-text">где угодно и когда угодно</p>
                             </div>
