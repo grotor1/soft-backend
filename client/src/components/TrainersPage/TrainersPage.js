@@ -42,7 +42,6 @@ const TrainersPage = () => {
     }, [request])
 
 
-
     useEffect(() => {
         message(error)
         clearError()
@@ -57,12 +56,8 @@ const TrainersPage = () => {
                     <div className="trainers">
                         <div className="container">
                             <h1 className="trainers__title">Тренеры</h1>
-                            <div className="trainers__description">
-                                <p className="trainers__text">Выберите тренера из предложеных или оставьте заявку</p>
-                                <button className="btn__apply" onClick={() => setButtonPopup(true)}>Подать заявку</button>
-                            </div>
                             <ul className="trainers__list">
-                                    <DotLoader loading={!trainers.length}/>
+                                <DotLoader loading={!trainers.length}/>
                                 {trainers.map(trainer => {
                                     return (
                                         <Trainer avatar={trainer.avatar}
@@ -88,7 +83,6 @@ const TrainersPage = () => {
                         </div>
                     </div>
                     <Footer/>
-                    <Apply trigger={buttonPopup} setTrigger={setButtonPopup}/>
                 </Route>
                 <Route path={`${path}/:_id_trainer`}>
                     <TrainerPage trainers={trainers} trainingTypes={trainingTypes} url={url}/>
