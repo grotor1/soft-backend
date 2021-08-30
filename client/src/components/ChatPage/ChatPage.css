@@ -155,7 +155,7 @@
     font-size: 12px;
 }
 .input-chat{
-    max-width: 600px;
+    width: 600px;
     height: 50px;
     margin-left: 20px;
     border: none;
@@ -197,18 +197,23 @@
 }
 .btn-send{
     background: linear-gradient(95.6deg, #8DE885 14.17%, rgba(109, 255, 106, 0) 80.27%), #6ED98B;
+    background-image: url('../../assets/bx-send.svg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     box-shadow: 0px 7px 35px rgba(119, 219, 129, 0.6);
-    border-radius: 110px;
+    border-radius: 20px;
     font-weight: 600;
     font-size: 16px;
     line-height: 18px;
     text-align: center;
     color: #FFFFFF;
     border: none;
-    padding: 20px;
+    padding: 20px 40px;
     position: absolute;
     top: 0;
     right: 0;
+    bottom: 0;
 }
 .develop-text{
     position: absolute;
@@ -232,6 +237,9 @@
     .messageManager, .messageClient{
         width: 400px;
     }
+    .input-chat{
+        width: 400px;
+    }
 }
 
 @media (max-width: 1106px) {
@@ -245,6 +253,9 @@
 @media (max-width: 996px) {
     #chatAndMessage{
         width: 680px;
+    }
+    .input-chat{
+        width: 300px;
     }
 }
 
