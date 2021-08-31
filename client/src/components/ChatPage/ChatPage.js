@@ -143,7 +143,7 @@ const ChatPage = () => {
                     <input type="text" onChange={(e) => setNewMessage(e.target.value)} value={newMessage}
                         className={"input-chat"}
                     />
-                    <button onClick={handleSubmit} className="btn-send">Отправить</button>
+                    <button onClick={handleSubmit} className="btn-send"></button>
                 </div>}
                 <div className="develop-text">В данной версии доступна только функция текстового чата с тренером. Платформа в разработке</div>
             </div>
