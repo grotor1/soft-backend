@@ -87,12 +87,13 @@
 }
 
 
-.chat-form{
+.input-chat{
     position: absolute;
     bottom: 24px;
     left: 53px;
     right: 53px;
     height: 56px;
+    width: 600px;
     background: #fff;
     border: 1px solid #EDEDED;
     box-sizing: border-box;
@@ -154,11 +155,14 @@
     color: #cacaca;
     font-size: 12px;
 }
-.input-chat{
+/* .input-chat{
     width: 600px;
     height: 50px;
     margin-left: 20px;
     border: none;
+} */
+.chat-form{
+    position: relative;
 }
 .input-chat:focus{
     border: none;
@@ -197,6 +201,25 @@
 }
 .btn-send{
     background: linear-gradient(95.6deg, #8DE885 14.17%, rgba(109, 255, 106, 0) 80.27%), #6ED98B;
+    /* background-image: url('../../assets/bx-send.svg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; */
+    box-shadow: 0px 7px 35px rgba(119, 219, 129, 0.6);
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+    padding: 20px 40px;
+    position: absolute;
+    right: 56px;
+    bottom: 20px;
+}
+.btn-send-mobile{
+    background: linear-gradient(95.6deg, #8DE885 14.17%, rgba(109, 255, 106, 0) 80.27%), #6ED98B;
     background-image: url('../../assets/bx-send.svg.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -211,15 +234,13 @@
     border: none;
     padding: 20px 40px;
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    right: 56px;
+    bottom: 20px;
+    display: none;
 }
 .develop-text{
-    position: absolute;
-    top: 100px;
-    left: 52px;
-    right: 52px;
+    margin-left: 20px;
+    margin-right: 20px;
     text-align: center;
     background: white;
     border-radius: 50px;
@@ -257,6 +278,11 @@
     .input-chat{
         width: 300px;
     }
+    /* .btn-send{
+        bottom: -20px;
+        left: 56px;
+        right: auto;
+    } */
 }
 
 @media (max-width: 876px) {
@@ -290,11 +316,26 @@
         width: 100%;
     }
     .btn-send{
-        font-size: 14px;
+        display: none;
+    }
+    .btn-send-mobile{
+        display: block;
+        bottom: 24px;
+        padding: 30px 30px;
+        right: 90px;
+        background-size: 24px;
     }
     .develop-text{
         top: 60px;
     }
+    #chatAndMessage{
+        width: 100%;
+    }
+}
+@media (max-width: 448px){
+  .btn-send-mobile{
+      right: 0;
+  }
 }
 @media (max-width: 338px) {
     #chatAndMessage{
