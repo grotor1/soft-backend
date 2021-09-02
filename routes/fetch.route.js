@@ -150,9 +150,8 @@ router.patch("/updateUser/:_id_user", (req, res) => {
 router.post("/createConversation", async (req, res) => {
     try {
         const {_id_trainer, _id_user} = req.body
-        await Conversation.findOne({members: {$all: [_id_trainer, _id_user]}}, () => {
-            return res.json({success: true, message: "Уже существует"});
-        });
+        const cand = await Conversation.findOne({members: {$all: [_id_trainer, _id_user]}});
+        if (cand) return res.status(200).json({success: true, message: "Уже существует"})
         const conversation = new Conversation({
             members: [_id_trainer, _id_user],
         });

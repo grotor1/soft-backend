@@ -9,27 +9,15 @@ import {useHttp} from "../../hooks/http.hook";
 import {useMessage} from "../../hooks/message.hook";
 import {Route, Switch, useRouteMatch} from "react-router-dom";
 import TrainerPage from "./TrainerPage";
+import {DotLoader} from "react-spinners";
 
 
 const TrainersPage = () => {
     const {url, path} = useRouteMatch()
     const {request, error, clearError} = useHttp()
     const message = useMessage()
-
     const [trainers, setTrainers] = useState([])
     const [trainingTypes, setTrainingTypes] = useState([])
-    console.log(trainers)
-
-    useEffect(() => {
-        const dataFromServer = async () => {
-            try {
-                const {data} = await request(`/api/fetch/getTrainingTypeList`, 'GET')
-                setTrainingTypes(data)
-            } catch (e) {
-            }
-        }
-        dataFromServer();
-    }, [request])
 
     useEffect(() => {
         const dataFromServer = async () => {
@@ -43,11 +31,23 @@ const TrainersPage = () => {
     }, [request])
 
     useEffect(() => {
+        const dataFromServer = async () => {
+            try {
+                const {data} = await request(`/api/fetch/getTrainingTypeList`, 'GET')
+                setTrainingTypes(data)
+            } catch (e) {
+            }
+        }
+        dataFromServer();
+    }, [request])
+
+
+    useEffect(() => {
         message(error)
         clearError()
     }, [error, message, clearError])
 
-    const [buttonPopup, setButtonPopup] = useState(false)
+    // const [buttonPopup, setButtonPopup] = useState(false)
     return (
         <div>
             <Switch>
@@ -60,9 +60,10 @@ const TrainersPage = () => {
                                 <p className="trainers__text">Выберите тренера из предложеных или оставьте заявку</p>
                                 {/* <button className="btn__apply" onClick={() => setButtonPopup(true)}>Подать заявку</button> */}
                             </div>
-                            <ul className="trainers__list">
-                                {trainers.map(trainer => {
 
+                            <ul className="trainers__list">
+                                <DotLoader loading={!trainers.length}/>
+                                {trainers.map(trainer => {
                                     return (
                                         <Trainer avatar={trainer.avatar}
                                                  name={trainer.name + " " + trainer.surname}
@@ -87,7 +88,6 @@ const TrainersPage = () => {
                         </div>
                     </div>
                     <Footer/>
-                    <Apply trigger={buttonPopup} setTrigger={setButtonPopup}/>
                 </Route>
                 <Route path={`${path}/:_id_trainer`}>
                     <TrainerPage trainers={trainers} trainingTypes={trainingTypes} url={url}/>
