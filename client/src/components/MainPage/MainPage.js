@@ -46,7 +46,7 @@ const MainPage = () => {
                         <div className="about-soft__content">
                             <h2 className="section__title">Soft - это</h2>
                             {/* <ul className="about-us__list"> */}
-                                <Carousel itemsToShow={1} showArrows={false} enableAutoPlay={true} interval={5000}>
+                                <Carousel itemsToShow={1} showArrows={false} enableAutoPlay={true} interval={10000}>
                                         <div className="about-us__item">
                                             <div className="about-us__texts">
                                                 <span className="about-us__head">Удобная платформа для спорта все-в-одном</span>
