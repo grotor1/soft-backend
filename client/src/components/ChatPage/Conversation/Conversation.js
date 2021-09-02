@@ -28,7 +28,7 @@ export const Conversation = ({ conversation, _id_user }) => {
 
     return (
         <li className="username-chat">
-            <img className="user-image-other"/>
+            <img className="user-image-other" src={user?.img}/>
             <div className="chat-flex-col">
                 <span className="user-name">{user?.name + " " + user?.surname}</span>
             </div>

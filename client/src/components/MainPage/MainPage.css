@@ -551,6 +551,7 @@ body{
 @media (max-width: 600px) {
     .steps__list{
         flex-wrap: wrap;
+        justify-content: space-around;
     }
     .steps__item{
         margin-top: 40px;
