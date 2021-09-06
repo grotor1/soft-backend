@@ -50,8 +50,7 @@ const TrainersPage = () => {
     const [buttonPopup, setButtonPopup] = useState(false)
     return (
         <div>
-            <Switch>
-                <Route exact path={`${path}`}>
+
                     <Header/>
                     <div className="trainers">
                         <div className="container">
@@ -83,11 +82,6 @@ const TrainersPage = () => {
                         </div>
                     </div>
                     <Footer/>
-                </Route>
-                <Route path={`${path}/:_id_trainer`}>
-                    <TrainerPage trainers={trainers} trainingTypes={trainingTypes} url={url}/>
-                </Route>
-            </Switch>
         </div>
     )
 }

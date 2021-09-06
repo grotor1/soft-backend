@@ -9,19 +9,7 @@ export const TrainerEditMenu = () => {
     const message = useMessage()
 
     const [trainingTypes, setTrainingTypes] = useState([])
-    const [form, setForm] = useState({
-        name: "",
-        surname: "",
-        avatar: "",
-        workExp: "",
-        contacts: [{},{},{},{}],
-        trainingTypes: [],
-        aboutMyself: "",
-        educations: "",
-        certificates: [],
-        price: "",
-        specialOffers: ""
-    })
+    const [form, setForm] = useState()
 
     useEffect(() => {
         const dataFromServer = async () => {
