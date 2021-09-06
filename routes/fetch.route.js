@@ -99,7 +99,7 @@ router.delete("/deleteTrainer/:_id_trainer", (req, res) => {
 router.patch('/updateTrainer/:_id_trainer', (req, res) => {
     const {_id_trainer} = req.params
     const update = req.body
-    Trainer.findOneAndUpdate({_id: _id_trainer}, update, (err)=>{
+    Trainer.findOneAndUpdate({_id: _id_trainer}, update, (err) => {
         if (err) return res.json({success: false, message: err})
         return res.json({success: true})
     })
@@ -116,7 +116,7 @@ router.delete("/deleteTrainingType/:_id_trainingType", (req, res) => {
 router.patch("/updateTrainingType/:_id_trainingType", (req, res) => {
     const {_id_trainingType} = req.params
     const update = req.body
-    TrainingTypes.findOneAndUpdate({_id: _id_trainingType}, update, (err) =>{
+    TrainingTypes.findOneAndUpdate({_id: _id_trainingType}, update, (err) => {
         if (err) return res.json({success: false, error: err});
         return res.json({success: true});
     })
@@ -129,6 +129,13 @@ router.get("/getUser/:_id_user", (req, res) => {
         return res.json({success: true, data: user});
     });
 });
+
+router.get("/getUserCount", (req, res) => {
+    User.countDocuments({phone: {$ne: "89990000000"}}, (err, count) => {
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true, count: count - 1});
+    })
+})
 
 router.delete("/deleteUser/:_id_user", (req, res) => {
     const {_id_user} = req.params;
@@ -206,7 +213,7 @@ router.post("/createMessage/", async (req, res) => {
 router.get("/getMessages/:_id_conversation", async (req, res) => {
     try {
         const {_id_conversation} = req.params
-        Message.find({_id_conversation},(err, messages) => {
+        Message.find({_id_conversation}, (err, messages) => {
             if (err) return res.json({success: false, error: err});
             return res.json({success: true, data: messages});
         });
@@ -215,8 +222,8 @@ router.get("/getMessages/:_id_conversation", async (req, res) => {
     }
 });
 
-router.post("/createSubscribe/", async(req,  res) => {
-    try{
+router.post("/createSubscribe/", async (req, res) => {
+    try {
         const subscribe = Subscribe({email: req.body.email})
         subscribe.save()
         res.status(201).json({message: "Вы подписались на рассылку", success: true})
@@ -224,7 +231,6 @@ router.post("/createSubscribe/", async(req,  res) => {
         res.status(500).json({message: "Что-то не так", error: err})
     }
 })
-
 
 
 module.exports = router
