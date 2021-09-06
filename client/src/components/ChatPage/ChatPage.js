@@ -129,6 +129,7 @@ const ChatPage = () => {
             </div>
             <div className="chat-page-second">
                 <Header/>
+                <div className="develop-text">В данной версии доступна только функция текстового чата с тренером. Платформа в разработке</div>
                 <div id="chatAndMessage">
                     {messages.map((m) => {
                         return (
@@ -144,8 +145,8 @@ const ChatPage = () => {
                         className={"input-chat"}
                     />
                     <button onClick={handleSubmit} className="btn-send">Отправить</button>
+                    <button onClick={handleSubmit} className="btn-send-mobile"></button>
                 </div>}
-                <div className="develop-text">В данной версии доступна только функция текстового чата с тренером. Платформа в разработке</div>
             </div>
         </div>
     )

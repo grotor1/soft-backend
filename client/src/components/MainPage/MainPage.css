@@ -436,7 +436,7 @@ body{
     backdrop-filter: blur(40px);
     border-radius: 28px;
     padding: 20px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     max-width: 278px;
 }
 .button-center{
@@ -551,6 +551,7 @@ body{
 @media (max-width: 600px) {
     .steps__list{
         flex-wrap: wrap;
+        justify-content: space-around;
     }
     .steps__item{
         margin-top: 40px;

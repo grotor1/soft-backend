@@ -28,8 +28,10 @@ const MainPage = () => {
                                 <h1 className="hero-title">Онлайн спорт с личным тренером.</h1>
                                 <span className="hero-description">Занимайтесь спортом, <span className="green-text">не выходя из дома,</span> по любой удобной программе</span>
                                 <Link to="/signup" className="nav__list-item">
-                                    <button className="enter-btn-hero">Попробовать бесплатно</button>
+                                    <button className="enter-btn-hero">Зарегистрироваться</button>
+                                    
                                 </Link>
+                                <p>Первая тренировка бесплатно!</p>
                             </div>
                             <div className="hero-images">
                                 <img src="/hero-image.png" alt="" className="hero-image"/>
@@ -44,7 +46,7 @@ const MainPage = () => {
                         <div className="about-soft__content">
                             <h2 className="section__title">Soft - это</h2>
                             {/* <ul className="about-us__list"> */}
-                                <Carousel itemsToShow={1} showArrows={false} enableAutoPlay={true} >
+                                <Carousel itemsToShow={1} showArrows={false} enableAutoPlay={true} interval={10000}>
                                         <div className="about-us__item">
                                             <div className="about-us__texts">
                                                 <span className="about-us__head">Удобная платформа для спорта все-в-одном</span>

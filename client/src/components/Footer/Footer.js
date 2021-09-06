@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import LegacyPage from '../LegacyPage'
 import './Footer.css'
 
 const Footer = () => {
@@ -26,6 +28,9 @@ const Footer = () => {
                         </a>
                     </li>
                 </ul>
+                <Link to="/pk" className="policy">
+                    Политика конфиденциальности
+                </Link>
             </div>
         </footer>
     )

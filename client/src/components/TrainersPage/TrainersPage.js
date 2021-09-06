@@ -47,7 +47,7 @@ const TrainersPage = () => {
         clearError()
     }, [error, message, clearError])
 
-    const [buttonPopup, setButtonPopup] = useState(false)
+    // const [buttonPopup, setButtonPopup] = useState(false)
     return (
         <div>
 
@@ -55,6 +55,11 @@ const TrainersPage = () => {
                     <div className="trainers">
                         <div className="container">
                             <h1 className="trainers__title">Тренеры</h1>
+                            <div className="trainers__description">
+                                <p className="trainers__text">Выберите тренера из предложеных или оставьте заявку</p>
+                                {/* <button className="btn__apply" onClick={() => setButtonPopup(true)}>Подать заявку</button> */}
+                            </div>
+
                             <ul className="trainers__list">
                                 <DotLoader loading={!trainers.length}/>
                                 {trainers.map(trainer => {
