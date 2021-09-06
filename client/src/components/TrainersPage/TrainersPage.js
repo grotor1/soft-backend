@@ -61,7 +61,7 @@ const TrainersPage = () => {
                             </div>
 
                             <ul className="trainers__list">
-                                <DotLoader loading={!trainers.length}/>
+                                <DotLoader loading={!trainers.length} css="margin-top: 20vh;"/>
                                 {trainers.map(trainer => {
                                     return (
                                         <Trainer avatar={trainer.avatar}
