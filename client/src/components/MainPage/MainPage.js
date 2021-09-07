@@ -16,21 +16,15 @@ const MainPage = () => {
     const style = {
         display: 'none'
     }
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //       return <Popup />
-    //     }, 5000);
-    //     // return () => clearTimeout(timer);
-    //   }, []);
-
+    const state = {
+        isVisible: false
+    }
+    useEffect(() => {
+        setTimeout(() => {<Popup />}, 1000);
+        return () => {state.isVisible && <Popup/>}
+    }, [])
     return (
         <div>
-            {
-                useEffect(() => {
-                    const timer = setTimeout(() => {<Popup />}, 1000);
-                    return () => clearTimeout(timer);
-                  }, [])
-            }
             <div className="header-fixed">
                 <Header/>
             </div>
