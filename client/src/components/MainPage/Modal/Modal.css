@@ -1,0 +1,33 @@
+.popup{
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background-color: #fff;
+}
+
+.heading-popup{
+    font-size: 36px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20px;
+    color: black;
+}
+.begin-btn{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    background: #7CEC72;
+    border-radius: 33px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 14px 40px;
+    border: none;
+}
