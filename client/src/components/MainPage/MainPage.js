@@ -9,12 +9,20 @@ import Subscribe from '../Subscribe'
 import Slider from "react-slick";
 import {useHttp} from "../../hooks/http.hook";
 import {useMessage} from "../../hooks/message.hook";
+import Popup from './Modal'
 
 
 const MainPage = () => {
     const style = {
         display: 'none'
     }
+    const state = {
+        isVisible: false
+    }
+    useEffect(() => {
+        setTimeout(() => {<Popup />}, 1000);
+        return () => {state.isVisible && <Popup/>}
+    }, [])
     return (
         <div>
             <div className="header-fixed">

@@ -3,7 +3,6 @@ import Header from '../Header/Header'
 import './TrainersPage.css'
 import Trainer from './Trainer'
 import Footer from '../Footer'
-import Apply from './ApplyPopup'
 import {useState} from 'react'
 import {useHttp} from "../../hooks/http.hook";
 import {useMessage} from "../../hooks/message.hook";

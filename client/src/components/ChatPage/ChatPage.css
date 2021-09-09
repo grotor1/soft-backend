@@ -247,6 +247,10 @@
     padding: 15px;
     max-height: 100px;
 }
+.display-block{
+    display: none;
+    margin-top: 40px;
+}
 
 @media (max-width: 1212px) {
     .chat__heading{
@@ -308,6 +312,12 @@
 }
 
 @media (max-width: 600px) {
+    .display-none{
+        display: none;
+    }
+    .display-block{
+        display: block;
+    }
     .chat-page{
         flex-direction: column;    
         align-items: center;
@@ -329,14 +339,28 @@
         top: 60px;
     }
     #chatAndMessage{
-        width: 100%;
+        width: 500px
     }
 }
 @media (max-width: 448px){
   .btn-send-mobile{
       right: 0;
   }
+  #chatAndMessage{
+    width: 400px
+    }
 }
+@media (max-width: 394px){
+    .chat-form{
+        right: 50px;
+    }
+    .btn-send-mobile{
+        right: -35px;
+    }
+    #chatAndMessage{
+      width: 320px
+      }
+  }
 @media (max-width: 338px) {
     #chatAndMessage{
         width: 300px;
