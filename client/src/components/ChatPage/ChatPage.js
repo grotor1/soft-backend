@@ -117,6 +117,7 @@ const ChatPage = () => {
                         <span className="user-name">Мой профиль</span>
                     </div>
                 </div>
+                <div className="develop-text display-block">В данной версии доступна только функция текстового чата с тренером. Платформа в разработке</div>
                 <ul className="chat-users__list" id="users-list">
                     {conversations.map((c) => {
                         return (
@@ -128,8 +129,10 @@ const ChatPage = () => {
                 </ul>
             </div>
             <div className="chat-page-second">
-                <Header/>
-                <div className="develop-text">В данной версии доступна только функция текстового чата с тренером. Платформа в разработке</div>
+                <div className="display-none">
+                    <Header />
+                </div>
+                <div className="develop-text display-none">В данной версии доступна только функция текстового чата с тренером. Платформа в разработке</div>
                 <div id="chatAndMessage">
                     {messages.map((m) => {
                         return (
