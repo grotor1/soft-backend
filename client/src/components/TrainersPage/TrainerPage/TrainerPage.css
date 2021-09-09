@@ -238,7 +238,7 @@ button.close {
     }
     .trainer-page__flex{
         display: block;
-        padding: 0;
+        padding: 0 20px;
         max-width: 800px;
     }
     .trainer-page__information-left{
