@@ -3,6 +3,7 @@ const express = require("express");
 const logger = require("morgan");
 const config = require("config");
 const mongoose = require("mongoose");
+const multer = require("multer")
 const app = express();
 
 require('dotenv').config()
@@ -12,6 +13,33 @@ app.get("*", function (req, res, next) {
         res.redirect("https://" + req.hostname + req.url);
     } else {
         next();
+    }
+});
+
+app.use("/images", express.static(path.join(__dirname, "public/images")));
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "public/images")
+    },
+    filename: (req, file, cb) => {
+        console.log(file)
+        cb(null, req.body.id
+            + "_"
+            + req.body.typeName
+            + (req.body.name ? "_" + req.body.name : "")
+            + "."
+            + file.originalname.split(".")[1])
+    }
+});
+
+const upload = multer({storage: storage});
+
+app.post("/api/upload", upload.single("file"), (req, res) => {
+    try {
+        return res.status(200).json("File uploaded successfully");
+    } catch (error) {
+        console.error(error);
     }
 });
 
@@ -38,15 +66,15 @@ io.on("connection", require("./socket/index"))
 
 const PORT = process.env.PORT || config.get('port') || 5000
 
-async function start () {
-    try{
+async function start() {
+    try {
         await mongoose.connect(config.get('mongoUri'), {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true
         })
         http.listen(PORT, () => console.log(`On air. Port: ${PORT}`))
-    }catch (e) {
+    } catch (e) {
         console.log('Error', e.message)
         process.exit(1);
     }
