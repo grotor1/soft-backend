@@ -7,7 +7,6 @@ export const TrainerEditMenu = () => {
     const {_id_trainer} = useParams()
     const {request, error, clearError} = useHttp()
     const message = useMessage()
-
     const [trainingTypes, setTrainingTypes] = useState([])
     const [form, setForm] = useState({
         name: "",
