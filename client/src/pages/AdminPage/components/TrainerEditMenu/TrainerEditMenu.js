@@ -109,8 +109,8 @@ export const TrainerEditMenu = () => {
             const id = String(Math.round(Math.random() * 1E9))
             dataElement.append("id", id)
             dataElement.append("typeName", typeName)
-            dataElement.append("file", photo)
             dataElement.append("index", String(i))
+            dataElement.append("file", photo)
             data.push(dataElement)
             names.push(id + "_" + typeName + "_" + String(i) + "." + photo.name.split(".")[1])
         }
