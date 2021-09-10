@@ -26,7 +26,7 @@ const storage = multer.diskStorage({
         cb(null, req.body.id
             + "_"
             + req.body.typeName
-            + (req.body.name ? "_" + req.body.name : "")
+            + (req.body.index ? "_" + req.body.index : "")
             + "."
             + file.originalname.split(".")[1])
     }
@@ -36,7 +36,7 @@ const upload = multer({storage: storage});
 
 app.post("/api/upload", upload.single("file"), (req, res) => {
     try {
-        return res.status(200).json("File uploaded successfully");
+        return res.status(200).json({success: true, message: "Файл загружен"});
     } catch (error) {
         console.error(error);
     }

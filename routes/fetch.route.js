@@ -10,11 +10,11 @@ const router = Router()
 router.post("/addTrainer", (req, res) => {
     const trainer = new Trainer
     const {
-        name, surname, avatar, workExp,
+        name, surname, bigAvatar,smallAvatar, workExp,
         contacts, trainingTypes, aboutMyself,
         educations, certificates, price, specialOffers
     } = req.body
-    if (!name || !surname || !avatar || !workExp
+    if (!name || !surname || !bigAvatar || !smallAvatar || !workExp
         || !contacts || !trainingTypes || !aboutMyself
         || !educations || !price || !specialOffers) {
         return res.status(400).json({
@@ -26,7 +26,8 @@ router.post("/addTrainer", (req, res) => {
     trainer.name = name
     trainer.surname = surname
     trainer.isVacant = true
-    trainer.avatar = avatar
+    trainer.bigAvatar = bigAvatar
+    trainer.smallAvatar = smallAvatar
     trainer.workExp = workExp
     trainer.contacts = contacts
     trainer.trainingTypes = trainingTypes
