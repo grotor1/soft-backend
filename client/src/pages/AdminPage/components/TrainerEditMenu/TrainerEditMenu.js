@@ -45,7 +45,8 @@ export const TrainerEditMenu = () => {
             try {
                 const {data} = await request(`/api/fetch/getTrainer/${_id_trainer}`, 'GET')
                 setForm(data)
-            } catch (e) {}
+            } catch (e) {
+            }
         }
         dataFromServer()
     }, [request])
@@ -55,11 +56,11 @@ export const TrainerEditMenu = () => {
         clearError()
     }, [error, message, clearError])
 
-    useEffect(()=>{
-        form.trainingTypes.map(element =>
+    useEffect(() => {
+        form.trainingTypes.map(element => {
             document.getElementById(element._id_training).checked = true
-        )
-    })
+        })
+    }, [trainingTypes, form])
 
     const changeHandler = event => {
         setForm({...form, [event.target.name]: event.target.value})
@@ -133,7 +134,8 @@ export const TrainerEditMenu = () => {
                 successCertificates.push(success)
             }
             return successBig && successSmall && successCertificates.every(Boolean);
-        } catch (e) {}
+        } catch (e) {
+        }
     }
 
     const submitHandler = async () => {
@@ -147,7 +149,7 @@ export const TrainerEditMenu = () => {
                     surname: "",
                     avatar: "",
                     workExp: "",
-                    contacts: [{},{},{},{}],
+                    contacts: [{}, {}, {}, {}],
                     trainingTypes: [],
                     aboutMyself: "",
                     educations: [],
@@ -156,7 +158,8 @@ export const TrainerEditMenu = () => {
                     specialOffers: ""
                 })
             }
-        } catch (e) {}
+        } catch (e) {
+        }
     }
 
     return (
