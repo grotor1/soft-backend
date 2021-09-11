@@ -10,6 +10,7 @@ import Slider from "react-slick";
 import {useHttp} from "../../hooks/http.hook";
 import {useMessage} from "../../hooks/message.hook";
 import Popup from './Modal'
+import Trainer from "../TrainersPage/Trainer";
 
 
 const MainPage = () => {
@@ -37,7 +38,6 @@ const MainPage = () => {
                                 <span className="hero-description">Занимайтесь спортом, <span className="green-text">не выходя из дома,</span> по любой удобной программе</span>
                                 <Link to="/signup" className="nav__list-item">
                                     <button className="enter-btn-hero">Зарегистрироваться</button>
-                                    
                                 </Link>
                                 <p>Первая тренировка бесплатно!</p>
                             </div>
@@ -234,33 +234,7 @@ const MainPage = () => {
                         <div className="trainers-content">
                             <h2 className="section__title">Тренеры недели</h2>
                             <ul className="trainers-list">
-                                <li className="trainers-list__item-l kraynov">
-                                    <div className="trainer__content">
-                                        <h3 className="trainer-heading">Сергей Крайнов</h3>
-                                        <p className="trainer-desc">Фитнеc, кардио, детский фитнес, ЛФК.</p>
-                                        <Link to={"/trainers"}>
-                                            <a className="more">Подробнее</a>
-                                        </Link>
-                                    </div>
-                                </li>
-                                <li className="trainers-list__item-l isaeva">
-                                    <div className="trainer__content">
-                                        <h3 className="trainer-heading">Екатерина Исаева</h3>
-                                        <p className="trainer-desc">фитнес, хореография, Стретчинг, ОФП</p>
-                                        <Link to={"/trainers"}>
-                                            <a className="more">Подробнее</a>
-                                        </Link>
-                                    </div>
-                                </li>
-                                <li className="trainers-list__item-l krasnova">
-                                    <div className="trainer__content">
-                                        <h3 className="trainer-heading">Наталья Краснова</h3>
-                                        <p className="trainer-desc">Фитнеc, кардио, ЛФК, ОФП, для всей семьи</p>
-                                        <Link to={"/trainers"}>
-                                            <a className="more">Подробнее</a>
-                                        </Link>
-                                    </div>
-                                </li>
+                               <Trainer isPropped = {false} _id={"613b522a9ff81a00041ce58b"}/>
                             </ul>
                             <div className="button-center">
                                 <Link to="trainers">

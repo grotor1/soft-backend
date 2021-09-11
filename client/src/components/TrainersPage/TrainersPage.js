@@ -49,43 +49,43 @@ const TrainersPage = () => {
     // const [buttonPopup, setButtonPopup] = useState(false)
     return (
         <div>
-
-                    <Header/>
-                    <div className="trainers">
-                        <div className="container">
-                            <h1 className="trainers__title">Тренеры</h1>
-                            <div className="trainers__description">
-                                <p className="trainers__text">Выберите тренера из предложеных или оставьте заявку</p>
-                                {/* <button className="btn__apply" onClick={() => setButtonPopup(true)}>Подать заявку</button> */}
-                            </div>
-
-                            <ul className="trainers__list">
-                                <DotLoader loading={!trainers.length} css="margin-top: 20vh;"/>
-                                {trainers.map(trainer => {
-                                    return (
-                                        <Trainer avatar={trainer.avatar}
-                                                 name={trainer.name + " " + trainer.surname}
-                                                 info={trainer.trainingTypes.map((trainerTrainingType, index) => {
-                                                     const trainingType = trainingTypes.find(trainingType => {
-                                                         return trainingType._id === trainerTrainingType._id_training
-                                                     })
-                                                     if (trainingType) {
-                                                         if (index + 1 !== trainer.trainingTypes.length) {
-                                                             return (trainingType.name + ", ")
-                                                         } else {
-                                                             return (trainingType.name)
-                                                         }
-                                                     }
-                                                 }).join("") + "."}
-                                                 url={url}
-                                                 _id={trainer._id}
-                                        />
-                                    );
-                                })}
-                            </ul>
-                        </div>
+            <Header/>
+            <div className="trainers">
+                <div className="container">
+                    <h1 className="trainers__title">Тренеры</h1>
+                    <div className="trainers__description">
+                        <p className="trainers__text">Выберите тренера из предложеных или оставьте заявку</p>
+                        {/* <button className="btn__apply" onClick={() => setButtonPopup(true)}>Подать заявку</button> */}
                     </div>
-                    <Footer/>
+
+                    <ul className="trainers__list">
+                        <DotLoader loading={!trainers.length} css="margin-top: 20vh;"/>
+                        {trainers.map(trainer => {
+                            return (
+                                <Trainer isPropped={true}
+                                         bigAvatar={trainer.bigAvatar}
+                                         name={trainer.name + " " + trainer.surname}
+                                         info={trainer.trainingTypes.map((trainerTrainingType, index) => {
+                                             const trainingType = trainingTypes.find(trainingType => {
+                                                 return trainingType._id === trainerTrainingType._id_training
+                                             })
+                                             if (trainingType) {
+                                                 if (index + 1 !== trainer.trainingTypes.length) {
+                                                     return (trainingType.name + ", ")
+                                                 } else {
+                                                     return (trainingType.name)
+                                                 }
+                                             }
+                                         }).join("") + "."}
+                                         url={url}
+                                         _id={trainer._id}
+                                />
+                            );
+                        })}
+                    </ul>
+                </div>
+            </div>
+            <Footer/>
         </div>
     )
 }

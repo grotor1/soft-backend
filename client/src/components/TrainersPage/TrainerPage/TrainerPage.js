@@ -68,7 +68,7 @@ const TrainerPage = () => {
                                 </Link>
                             </div>
                             <div className="trainer__person">
-                                <img className="trainer__image" src={`data:image/png;base64,${trainer.avatar}`}/>
+                                <img className="trainer__image" alt={"Изображение тренера"} src={`https://soft-platform.s3.amazonaws.com/${trainer.smallAvatar}`}/>
                                 <div className="status">
                                     <div className="status__circle-green"/>
                                     <span
@@ -128,7 +128,7 @@ const TrainerPage = () => {
                                 {trainer.certificates.map(certificate => {
                                     return (
                                         <li className="serteficates__list-item">
-                                            <img src={`data:image/png;base64,${certificate}`}/>
+                                            <img src={`https://soft-platform.s3.amazonaws.com/${certificate}`}/>
                                         </li>
                                     )
                                 })}
