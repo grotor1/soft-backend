@@ -115,7 +115,7 @@ const TrainerPage = () => {
                                     return (
                                         <li className="train-list__item-page">
                                             <img className="train__img-page"
-                                                 src={`data:image/png;base64,${trainerTrainingType.img}`}/>
+                                                 src={`https://soft-platform.s3.amazonaws.com/${trainerTrainingType.typeAvatar}`}/>
                                             <h3 className="train__heading-page">{trainerTrainingType.name}</h3>
                                         </li>
                                     )
@@ -123,7 +123,7 @@ const TrainerPage = () => {
                             </ul>
                         </div>
                         <div className="sertificates">
-                            <p className="trainer-desc__bold">Сертификаты</p>
+                            {!!trainer.certificates.length && <p className="trainer-desc__bold">Сертификаты</p>}
                             <ul className="sertificates__list">
                                 {trainer.certificates.map(certificate => {
                                     return (
