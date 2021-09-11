@@ -57,9 +57,13 @@ export const TrainerEditMenu = () => {
     }, [error, message, clearError])
 
     useEffect(() => {
-        form.trainingTypes.map(element => {
-            document.getElementById(element._id_training).checked = true
-        })
+        if (form.trainingTypes.length) {
+            form.trainingTypes.map(element => {
+                if (document.getElementById(element._id_training) !== null) {
+                    document.getElementById(element._id_training).checked = true
+                }
+            })
+        }
     }, [trainingTypes, form])
 
     const changeHandler = event => {
