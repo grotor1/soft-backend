@@ -236,6 +236,12 @@ const MainPage = () => {
                             <ul className="trainers-list">
                                <Trainer isPropped = {false} _id={"613b522a9ff81a00041ce58b"}/>
                             </ul>
+                            <ul className="trainers-list">
+                                <Trainer isPropped = {false} _id={"6113af0dda38c641a435dfed"}/>
+                            </ul>
+                            <ul className="trainers-list">
+                                <Trainer isPropped = {false} _id={"6113af28da38c641a435e001"}/>
+                            </ul>
                             <div className="button-center">
                                 <Link to="trainers">
                                     <button className="show-tr">Все тренеры</button>
