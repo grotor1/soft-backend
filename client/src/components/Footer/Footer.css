@@ -22,7 +22,7 @@
     color: #353535;
     margin-left: 21px;
 }
-.policy{
+.policy, .policy a{
     color: #1c1c1c;
 }
 @media (max-width: 768px){

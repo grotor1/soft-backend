@@ -32,6 +32,7 @@
     "react-bootstrap": "^1.6.1",
     "react-elastic-carousel": "^0.11.5",
     "react-progressbar-line": "^1.0.2",
+    "react-responsive-carousel": "^3.2.21",
     "react-router-dom": "^5.2.0",
     "react-slick": "^0.28.1",
     "react-spinners": "^0.11.0",
