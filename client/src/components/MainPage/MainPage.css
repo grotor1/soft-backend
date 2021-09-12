@@ -116,7 +116,13 @@ body{
     border: none;
     margin-top: 42px;
 }
-
+.first-train{
+    margin-top: 10px;
+    font-size: 14px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
 
 .about-soft{
     background-image: url('../../assets/Soft\ \(2\).svg');
@@ -279,7 +285,7 @@ body{
     justify-content: space-between;
 }
 .steps__item{
-    max-width: 180px;
+    width: 180px;
     text-align: center;
 }
 
@@ -302,12 +308,6 @@ body{
 }
 .four{
     background-image: url('../../assets/four.png');
-}
-.one::after{
-    content: '';
-    width: 223px;
-    height: 0px;
-    border: 1px solid #DADADA;
 }
 
 
@@ -639,6 +639,16 @@ body{
 }
 
 @media (max-width: 348px){
+    .hero-title{
+        font-size: 24px;
+    }
+    .hero-description{
+        font-size: 18px;
+    }
+    .enter-btn-hero{
+        font-size: 16px;
+        padding: 17px 51px;
+    }
     .train__heading{
         font-size: 14px;
     }

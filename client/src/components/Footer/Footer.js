@@ -31,6 +31,9 @@ const Footer = () => {
                 <Link to="/pk" className="policy">
                     Политика конфиденциальности
                 </Link>
+                <div className="policy">
+                    <a href="mailto:soft.platform2020@gmail.com">Сообщить о проблеме</a>
+                </div>
             </div>
         </footer>
     )
