@@ -13,6 +13,7 @@
   "author": "Varukhin Vladimir <varukhin04@mail.ru>",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.986.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^6.0.0",
@@ -25,6 +26,8 @@
     "materialize-css": "^1.0.0",
     "mongoose": "^5.11.15",
     "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "multer-s3": "^2.9.0",
     "nodemon": "^2.0.7",
     "react-bootstrap": "^1.6.1",
     "react-elastic-carousel": "^0.11.5",

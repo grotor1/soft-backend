@@ -2,7 +2,7 @@ const {Schema, model} = require("mongoose");
 
 const TrainingTypesSchema = new Schema({
     name: String,
-    img: String
+    typeAvatar: String
 }, {
     collection: "trainingTypes"
 })

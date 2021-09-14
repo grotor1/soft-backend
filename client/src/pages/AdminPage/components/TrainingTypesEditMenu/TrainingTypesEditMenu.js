@@ -12,6 +12,7 @@ export const TrainingTypesEditMenu = () => {
         name: "",
         img: ""
     })
+    const [photo, setPhoto] = useState([])
 
     useEffect(() => {
         const dataFromServer = async () => {
@@ -32,27 +33,39 @@ export const TrainingTypesEditMenu = () => {
         setForm({...form, [event.target.name]: event.target.value})
     }
 
-    const _handleReaderLoaded = readerEvt => {
-        let binaryString = readerEvt.target.result
-        setForm({...form, img: btoa(binaryString)})
-    }
-
     const photoChangeHandler = event => {
-        const file = event.target.files[0]
-        if (file) {
-            const reader = new FileReader()
-            reader.onload = _handleReaderLoaded.bind(this)
-            reader.readAsBinaryString(file)
-        }
+        const data = new FormData()
+        const photo = event.target.files[0]
+        const id = String(Math.round(Math.random() * 1E9))
+        const typeName = event.target.name
+        data.append("id", id)
+        data.append("typeName", typeName)
+        data.append("file", photo)
+        setPhoto(data)
+        setForm({
+            ...form, [typeName]: id + "_"
+            + typeName
+            + "."
+            + photo.name.split(".")[1]
+        })
     }
 
-    const submitHandler = async () =>{
+    const submitPhotoHandler = async () => {
+        try {
+            const {success} = await request('/api/upload', 'POST', photo)
+            return success
+        } catch (e) {}
+    }
+
+    const submitHandler = async () => {
         try {
             const {success} = await request(`/api/fetch/updateTrainingType/${_id_trainingType}`, 'PATCH', {...form})
-            if(success){
-                message("Тип тренировок изменен")
+            const successPhoto = await submitPhotoHandler()
+            if (success && successPhoto) {
+                message("Новый тип тренировок добавлен")
             }
-        } catch (e) {}
+        } catch (e) {
+        }
     }
 
     return (
@@ -74,8 +87,8 @@ export const TrainingTypesEditMenu = () => {
                 <legend>Фото</legend>
                 <input
                     type="file"
-                    id="avatar"
-                    name="avatar"
+                    id="typeAvatar"
+                    name="typeAvatar"
                     accept='.png, .jpg, .jpeg, .svg'
                     onChange={photoChangeHandler}
                 />

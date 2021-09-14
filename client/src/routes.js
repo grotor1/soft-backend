@@ -10,6 +10,7 @@ import UserProfile from './components/UserProfile';
 import ChatPage from './components/ChatPage';
 import EnterError from "./components/EnterError";
 import LegacyPage from './components/LegacyPage';
+import TrainerPage from "./components/TrainersPage/TrainerPage";
 
 
 export const useRoutes = (isAuth, isAuthAdmin) => {
@@ -25,8 +26,11 @@ export const useRoutes = (isAuth, isAuthAdmin) => {
             <Route exact path="/">
                 <MainPage/>
             </Route>
-            <Route path="/trainers">
+            <Route exact path="/trainers">
                 <TrainersPage/>
+            </Route>
+            <Route path="/trainers/:_id_trainer">
+                <TrainerPage/>
             </Route>
             <Route path="/signup">
                 <SignUpPage/>

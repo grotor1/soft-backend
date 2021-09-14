@@ -5,7 +5,8 @@ const TrainersSchema = new Schema({
     name: String,
     surname: String,
     isVacant: Boolean,
-    avatar: String,
+    bigAvatar: String,
+    smallAvatar: String,
     workExp: String,
     contacts: [{
         name: String,

@@ -266,3 +266,12 @@ button.close {
         margin-right: 0;
     }
 }
+
+.loader-wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}

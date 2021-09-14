@@ -7,20 +7,26 @@ export const TrainerEditMenu = () => {
     const {_id_trainer} = useParams()
     const {request, error, clearError} = useHttp()
     const message = useMessage()
-
     const [trainingTypes, setTrainingTypes] = useState([])
     const [form, setForm] = useState({
         name: "",
         surname: "",
-        avatar: "",
+        bigAvatar: "",
+        smallAvatar: "",
         workExp: "",
-        contacts: [{},{},{},{}],
+        contacts: [],
         trainingTypes: [],
         aboutMyself: "",
         educations: "",
         certificates: [],
         price: "",
         specialOffers: ""
+    })
+
+    const [photos, setPhotos] = useState({
+        bigAvatar: null,
+        smallAvatar: null,
+        certificates: []
     })
 
     useEffect(() => {
@@ -39,7 +45,8 @@ export const TrainerEditMenu = () => {
             try {
                 const {data} = await request(`/api/fetch/getTrainer/${_id_trainer}`, 'GET')
                 setForm(data)
-            } catch (e) {}
+            } catch (e) {
+            }
         }
         dataFromServer()
     }, [request])
@@ -49,11 +56,15 @@ export const TrainerEditMenu = () => {
         clearError()
     }, [error, message, clearError])
 
-    useEffect(()=>{
-        form.trainingTypes.map(element =>
-            document.getElementById(element._id_training).checked = true
-        )
-    })
+    useEffect(() => {
+        if (form.trainingTypes.length) {
+            form.trainingTypes.map(element => {
+                if (document.getElementById(element._id_training) !== null) {
+                    document.getElementById(element._id_training).checked = true
+                }
+            })
+        }
+    }, [trainingTypes, form])
 
     const changeHandler = event => {
         setForm({...form, [event.target.name]: event.target.value})
@@ -74,36 +85,41 @@ export const TrainerEditMenu = () => {
         }
     }
 
-    const _handleReaderLoaded = readerEvt => {
-        let binaryString = readerEvt.target.result
-        setForm({...form, avatar: btoa(binaryString)})
-    }
-
-    const _handleReaderLoadedMultiple = readerEvt => {
-        let binaryString = readerEvt.target.result
-        const certificates = form.certificates
-        certificates.push(btoa(binaryString))
-        setForm({...form, certificates: certificates})
-    }
-
     const photoChangeHandler = event => {
-        const file = event.target.files[0]
-        if (file) {
-            const reader = new FileReader()
-            reader.onload = _handleReaderLoaded.bind(this)
-            reader.readAsBinaryString(file)
-        }
+        const data = new FormData()
+        const photo = event.target.files[0]
+        const id = String(Math.round(Math.random() * 1E9))
+        const typeName = event.target.name
+        data.append("id", id)
+        data.append("typeName", typeName)
+        data.append("file", photo)
+        setPhotos({...photos, [typeName]: data})
+        setForm({
+            ...form, [typeName]: id + "_"
+            + typeName
+            + "."
+            + photo.name.split(".")[1]
+        })
     }
 
     const photoChangeHandlerMultiple = event => {
+        const data = []
+        const names = []
+        const typeName = event.target.name
+        console.log(event.target.files)
         for (let i = 0; i < event.target.files.length; i++) {
-            const file = event.target.files[i]
-            if (file) {
-                const reader = new FileReader()
-                reader.onload = _handleReaderLoadedMultiple.bind(this)
-                reader.readAsBinaryString(file)
-            }
+            const photo = event.target.files[i]
+            const dataElement = new FormData()
+            const id = String(Math.round(Math.random() * 1E9))
+            dataElement.append("id", id)
+            dataElement.append("typeName", typeName)
+            dataElement.append("index", String(i))
+            dataElement.append("file", photo)
+            data.push(dataElement)
+            names.push(id + "_" + typeName + "_" + String(i) + "." + photo.name.split(".")[1])
         }
+        setPhotos({...photos, [typeName]: data})
+        setForm({...form, [typeName]: names})
     }
 
     const contactChangeHandler = event => {
@@ -112,17 +128,32 @@ export const TrainerEditMenu = () => {
         setForm({...form, contacts: contacts})
     }
 
+    const submitPhotoHandler = async () => {
+        try {
+            const successBig = await request('/api/upload', 'POST', photos.bigAvatar).success
+            const successSmall = await request('/api/upload', 'POST', photos.smallAvatar).success
+            const successCertificates = []
+            for (let i = 0; i < photos.certificates.length; i++) {
+                const {success} = await request('/api/upload', 'POST', photos.certificates[i])
+                successCertificates.push(success)
+            }
+            return successBig && successSmall && successCertificates.every(Boolean);
+        } catch (e) {
+        }
+    }
+
     const submitHandler = async () => {
         try {
             const {success} = await request(`/api/fetch/updateTrainer/${_id_trainer}`, 'PATCH', {...form})
-            if (success) {
+            const successPhoto = submitPhotoHandler()
+            if (success && successPhoto) {
                 message("Тренер изменен")
                 setForm({
                     name: "",
                     surname: "",
                     avatar: "",
                     workExp: "",
-                    contacts: [{},{},{},{}],
+                    contacts: [{}, {}, {}, {}],
                     trainingTypes: [],
                     aboutMyself: "",
                     educations: [],
@@ -131,7 +162,8 @@ export const TrainerEditMenu = () => {
                     specialOffers: ""
                 })
             }
-        } catch (e) {}
+        } catch (e) {
+        }
     }
 
     return (
@@ -160,11 +192,21 @@ export const TrainerEditMenu = () => {
                 />
             </fieldset>
             <fieldset>
-                <legend>Фото</legend>
+                <legend>Большое фото</legend>
                 <input
                     type="file"
-                    id="avatar"
-                    name="avatar"
+                    id="bigAvatar"
+                    name="bigAvatar"
+                    accept='.png, .jpg, .jpeg'
+                    onChange={photoChangeHandler}
+                />
+            </fieldset>
+            <fieldset>
+                <legend>Маленькое фото</legend>
+                <input
+                    type="file"
+                    id="smallAvatar"
+                    name="smallAvatar"
                     accept='.png, .jpg, .jpeg'
                     onChange={photoChangeHandler}
                 />

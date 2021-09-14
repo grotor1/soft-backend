@@ -7,18 +7,24 @@ export const TrainerAddMenu = () => {
     const message = useMessage()
 
     const [form, setForm] = useState({
-            name: "",
-            surname: "",
-            avatar: "",
-            workExp: "",
-            contacts: [],
-            trainingTypes: [],
-            aboutMyself: "",
-            educations: "",
-            certificates: [],
-            price: "",
-            specialOffers: ""
-        })
+        name: "",
+        surname: "",
+        bigAvatar: "",
+        smallAvatar: "",
+        workExp: "",
+        contacts: [],
+        trainingTypes: [],
+        aboutMyself: "",
+        educations: "",
+        certificates: [],
+        price: "",
+        specialOffers: ""
+    })
+    const [photos, setPhotos] = useState({
+        bigAvatar: null,
+        smallAvatar: null,
+        certificates: []
+    })
     const [trainingTypes, setTrainingTypes] = useState([])
 
     useEffect(() => {
@@ -56,36 +62,41 @@ export const TrainerAddMenu = () => {
         }
     }
 
-    const _handleReaderLoaded = readerEvt => {
-        let binaryString = readerEvt.target.result
-        setForm({...form, avatar: btoa(binaryString)})
-    }
-
-    const _handleReaderLoadedMultiple = readerEvt => {
-        let binaryString = readerEvt.target.result
-        const certificates = form.certificates
-        certificates.push(btoa(binaryString))
-        setForm({...form, certificates: certificates})
-    }
-
     const photoChangeHandler = event => {
-        const file = event.target.files[0]
-        if (file) {
-            const reader = new FileReader()
-            reader.onload = _handleReaderLoaded.bind(this)
-            reader.readAsBinaryString(file)
-        }
+        const data = new FormData()
+        const photo = event.target.files[0]
+        const id = String(Math.round(Math.random() * 1E9))
+        const typeName = event.target.name
+        data.append("id", id)
+        data.append("typeName", typeName)
+        data.append("file", photo)
+        setPhotos({...photos, [typeName]: data})
+        setForm({
+            ...form, [typeName]: id + "_"
+            + typeName
+            + "."
+            + photo.name.split(".")[1]
+        })
     }
 
     const photoChangeHandlerMultiple = event => {
+        const data = []
+        const names = []
+        const typeName = event.target.name
+        console.log(event.target.files)
         for (let i = 0; i < event.target.files.length; i++) {
-            const file = event.target.files[i]
-            if (file) {
-                const reader = new FileReader()
-                reader.onload = _handleReaderLoadedMultiple.bind(this)
-                reader.readAsBinaryString(file)
-            }
+            const photo = event.target.files[i]
+            const dataElement = new FormData()
+            const id = String(Math.round(Math.random() * 1E9))
+            dataElement.append("id", id)
+            dataElement.append("typeName", typeName)
+            dataElement.append("index", String(i))
+            dataElement.append("file", photo)
+            data.push(dataElement)
+            names.push(id + "_" + typeName + "_" + String(i) + "." + photo.name.split(".")[1])
         }
+        setPhotos({...photos, [typeName]: data})
+        setForm({...form, [typeName]: names})
     }
 
     const contactChangeHandler = event => {
@@ -94,10 +105,25 @@ export const TrainerAddMenu = () => {
         setForm({...form, contacts: contacts})
     }
 
+    const submitPhotoHandler = async () => {
+        try {
+            const successBig = await request('/api/upload', 'POST', photos.bigAvatar).success
+            const successSmall = await request('/api/upload', 'POST', photos.smallAvatar).success
+            const successCertificates = []
+            for (let i = 0; i < photos.certificates.length; i++) {
+                const {success} = await request('/api/upload', 'POST', photos.certificates[i])
+                successCertificates.push(success)
+            }
+            return successBig && successSmall && successCertificates.every(Boolean);
+        } catch (e) {}
+    }
+
     const submitHandler = async () => {
         try {
             const {success} = await request('/api/fetch/addTrainer', 'POST', {...form})
-            if(success){
+            const successPhoto = submitPhotoHandler()
+            console.log(successPhoto)
+            if (success && successPhoto) {
                 message("Тренер создан")
                 setForm({
                     name: "",
@@ -113,8 +139,7 @@ export const TrainerAddMenu = () => {
                     specialOffers: ""
                 })
             }
-        } catch (e) {
-        }
+        } catch (e) {}
     }
 
     return (
@@ -122,6 +147,7 @@ export const TrainerAddMenu = () => {
             <h1>
                 Добавить тренера
             </h1>
+            <h3>Не забудьте нажать подтвердить у пунктов выбора фото</h3>
             <fieldset>
                 <legend>Имя</legend>
                 <input
@@ -141,11 +167,23 @@ export const TrainerAddMenu = () => {
                 />
             </fieldset>
             <fieldset>
-                <legend>Фото</legend>
+                <legend>Большое фото</legend>
                 <input
+                    formEncType="multipart/form-data"
                     type="file"
-                    id="avatar"
-                    name="avatar"
+                    id="bigAvatar"
+                    name="bigAvatar"
+                    accept='.png, .jpg, .jpeg'
+                    onChange={photoChangeHandler}
+                />
+            </fieldset>
+            <fieldset>
+                <legend>Маленькое фото</legend>
+                <input
+                    formEncType="multipart/form-data"
+                    type="file"
+                    id="smallAvatar"
+                    name="smallAvatar"
                     accept='.png, .jpg, .jpeg'
                     onChange={photoChangeHandler}
                 />
@@ -248,6 +286,7 @@ export const TrainerAddMenu = () => {
                 />
             </fieldset>
             <button onClick={submitHandler}>Потвердить</button>
+            <button onClick={submitPhotoHandler}>Проверка</button>
         </div>
     )
 }

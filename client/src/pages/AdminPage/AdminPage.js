@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Sidebar} from "./components/Sidebar/Sidebar";
 import {Route, Switch} from "react-router-dom";
 import './AdminPage.css'
@@ -8,9 +8,22 @@ import {TrainersListMenu} from "./components/TrainersListMenu/TrainersListMenu";
 import {TrainingTypesListMenu} from "./components/TrainingTypesListMenu/TrainingTypesListMenu";
 import {TrainerEditMenu} from './components/TrainerEditMenu/TrainerEditMenu'
 import {TrainingTypesEditMenu} from "./components/TrainingTypesEditMenu/TrainingTypesEditMenu";
+import {useHttp} from "../../hooks/http.hook";
 
 export const AdminPage = ({match}) => {
     const {path} = match
+    const [userCount, setUserCount] = useState()
+    const {request} = useHttp()
+    useEffect(() => {
+        const dataFromServer = async () => {
+            try {
+                const {count} = await request("/api/fetch/getUserCount", "GET")
+                setUserCount(count)
+            } catch (e) {
+            }
+        }
+        dataFromServer()
+    }, [])
     return (
         <div className="admin-page-wrapper">
             <Sidebar match={match}/>
@@ -18,7 +31,8 @@ export const AdminPage = ({match}) => {
                 <div className="right-section-wrapper">
                     <Route exact path={`${path}`}>
                         <h1>
-                            Добро пожаловать в админку
+                            Добро пожаловать в админку <br/>
+                            Пользователей зарегистрировано: {userCount}
                         </h1>
                     </Route>
                     <Route path={`${path}/trainingAdd`}>
