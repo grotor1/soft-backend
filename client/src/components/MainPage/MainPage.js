@@ -39,7 +39,6 @@ const MainPage = () => {
                                     </Link>
                                     <p className="first-train">Первая тренировка бесплатно!</p>
                                 </div>
-
                             </div>
                             <div className="hero-images">
                                 <img src="/hero-image.png" alt="" className="hero-image"/>
