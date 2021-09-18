@@ -6,9 +6,6 @@ import Footer from '../Footer'
 import Accordion from './Accordion'
 import Carousel from 'react-elastic-carousel'
 import Subscribe from '../Subscribe'
-import Slider from "react-slick";
-import {useHttp} from "../../hooks/http.hook";
-import {useMessage} from "../../hooks/message.hook";
 import Popup from './Modal'
 import Trainer from "../TrainersPage/Trainer";
 
