@@ -11,6 +11,7 @@ import ChatPage from './components/ChatPage';
 import EnterError from "./components/EnterError";
 import LegacyPage from './components/LegacyPage';
 import TrainerPage from "./components/TrainersPage/TrainerPage";
+import AboutPage from './components/AboutPage';
 
 
 export const useRoutes = (isAuth, isAuthAdmin) => {
@@ -46,6 +47,9 @@ export const useRoutes = (isAuth, isAuthAdmin) => {
             </Route>
             <Route path="/pk">
                 <LegacyPage/>
+            </Route>
+            <Route path="/about">
+                <AboutPage/>
             </Route>
         </Switch>
     );

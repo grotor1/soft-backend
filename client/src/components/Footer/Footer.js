@@ -32,7 +32,7 @@ const Footer = () => {
                     Политика конфиденциальности
                 </Link>
                 <div className="policy">
-                    <a href="mailto:soft.platform2020@gmail.com">Сообщить о проблеме</a>
+                    <Link to="/about">О нас</Link>
                 </div>
             </div>
         </footer>
