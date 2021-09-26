@@ -1,0 +1,123 @@
+.about__content{
+    padding-bottom: 116px;
+}
+.about__person{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 116px;
+    padding-top: 100px;
+}
+.person__image{
+    width: 444px;
+    height: 588px;
+}
+.person__contacts{
+    margin-top: 33px;
+    padding-left: 30px;
+    background-image: url('../../assets/inst-tr.png');
+    background-repeat: no-repeat;
+}
+.person__motto{
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 46px;
+    text-align: center;
+}
+.mt-92{
+    margin-top: 92px;
+}
+.person__text{
+    text-align: center;
+}
+.person-about__text{
+    margin-top: 27px;
+    font-size: 16px;
+    line-height: 20px;
+}
+.team__title{
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 46px;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 51px;
+}
+.team__list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.team__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 19px;
+    padding: 15px;
+    margin-top: 15px;
+    border: none;
+}
+/* .team__item:not(:nth-child(4n)){
+    margin-right: 43px;
+} */
+.team__image{
+    width: 100px;
+    height: 100px;
+}
+.team__right{
+    margin-left: 12px;
+}
+.team__name{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+.team__position{
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #787878;
+}
+
+
+@media (max-width: 948px){
+    .about__person{
+        gap: 60px;
+    }
+}
+
+@media (max-width: 849px){
+    .about__person{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center; 
+        gap: 20px;       
+    }
+    .person__block{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+@media (max-width: 525px){
+    .team__list{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .person__image{
+        width: 100%;
+        height: 100%;
+    }
+    .about__person{
+        padding-top: 20px;
+        display: block;
+    }
+    .person__motto{
+        font-size: 30px;
+    }
+}
