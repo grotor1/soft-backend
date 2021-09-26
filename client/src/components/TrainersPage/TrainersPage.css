@@ -29,9 +29,9 @@
 .trainers__text, .trainers__text a {
     font-weight: bold;
     font-size: 24px;
-    line-height: 18px;
+    line-height: 28px;
     color: #000000;
-    margin-right: 60px;
+    /* margin-right: 60px; */
 }
 
 .btn__apply {
@@ -64,6 +64,14 @@
 @media (max-width: 660px) {
     .trainers__list {
         justify-content: center;
+    }
+    .trainers__title{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .trainers__text, .trainers__text a{
+        font-size: 18px;
+        line-height: 22px;
     }
 }
 
