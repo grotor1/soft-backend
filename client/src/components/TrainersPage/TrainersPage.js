@@ -54,7 +54,7 @@ const TrainersPage = () => {
                 <div className="container">
                     <h1 className="trainers__title">Тренеры</h1>
                     <div className="trainers__description">
-                        <p className="trainers__text">Выберите тренера из предложеных или <a href="https://docs.google.com/forms/d/e/1FAIpQLSewKiUK4hdB3tA7GwreTRDctwxo4Xp_zzr1YDHOH6bguKEYLw/viewform?usp=sf_link" className="green-text">оставьте заявку</a></p>
+                        <p className="trainers__text">Выберите тренера из предложеных или <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSewKiUK4hdB3tA7GwreTRDctwxo4Xp_zzr1YDHOH6bguKEYLw/viewform?usp=sf_link" className="green-text">оставьте заявку</a></p>
                         {/* <button className="btn__apply" onClick={() => setButtonPopup(true)}>Подать заявку</button> */}
                     </div>
 
