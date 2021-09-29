@@ -3,6 +3,7 @@ import {useRoutes} from "./routes";
 import {AuthContext} from "./context/AuthContext"
 import {BrowserRouter as Router} from "react-router-dom"
 import {useAuth} from "./hooks/auth.hook";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
     const {token, login, logout, tokenAdmin, logoutAdmin, loginAdmin, userId} = useAuth()
@@ -14,9 +15,11 @@ function App() {
             token, login, logout, isAuth, _id_user: userId, tokenAdmin, loginAdmin, logoutAdmin, isAuthAdmin
         }}>
             <Router>
-                <div className="App">
-                    {routes}
-                </div>
+                <ScrollToTop>
+                    <div className="App">
+                        {routes}
+                    </div>
+                </ScrollToTop>
             </Router>
         </AuthContext.Provider>
     );
