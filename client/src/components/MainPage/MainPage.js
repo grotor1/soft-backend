@@ -11,16 +11,13 @@ import Trainer from "../TrainersPage/Trainer";
 
 
 const MainPage = () => {
-    const style = {
-        display: 'none'
-    }
-    const state = {
-        isVisible: false
-    }
+    const [isVisible, setIsVisible] = useState(false)
     useEffect(() => {
-        setTimeout(() => {<Popup />}, 1000);
-        return () => {state.isVisible && <Popup/>}
-    }, [])
+        const timer = setTimeout(() => {
+            setIsVisible(true)
+        }, 10000);
+        return () => clearTimeout(timer);
+    }, []);
     return (
         <div>
             <div className="header-fixed">
