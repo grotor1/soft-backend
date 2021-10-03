@@ -31,9 +31,7 @@ const Footer = () => {
                 <Link to="/pk" className="policy">
                     Политика конфиденциальности
                 </Link>
-                <div className="policy">
-                    <Link to="/about">О нас</Link>
-                </div>
+                
             </div>
         </footer>
     )

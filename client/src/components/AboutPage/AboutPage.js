@@ -30,14 +30,114 @@ const AboutPage = () => {
                    <div className="team">
                        <h1 className="person__motto" className="team__title">Наша команда</h1>
                        <ul className="team__list">
-                           <button className="team__item">
+                           <li className="team__item">
                                <img className="team__image" src="./Nurbek.png" />
                                <div className="team__right">
                                    <p className="team__name">Нурбек Бактыгали</p>
                                    <p className="team__position">COO</p>
+                                   <button className="team-link">
+                                       <a href="https://www.instagram.com/baktygalinurbek/" target="_blank">
+                                           <img className="team-link__img" src="./inst.svg" />
+                                       </a>
+                                   </button>
                                </div>
-                           </button>
-                           
+                           </li>
+                           <li className="team__item">
+                               <img className="team__image" src="./V.png" />
+                               <div className="team__right">
+                                   <p className="team__name">Владимир Варухин</p>
+                                   <p className="team__position">backend</p>
+                                   <button className="team-link">
+                                       <a href="https://www.instagram.com/grotor_peach/" target="_blank">
+                                           <img className="team-link__img" src="./inst.svg" />
+                                       </a>
+                                   </button>
+                               </div>
+                           </li>
+                           <li className="team__item">
+                               <img className="team__image" src="./Liliya.png" />
+                               <div className="team__right">
+                                   <p className="team__name">Жиркова Лилия</p>
+                                   <p className="team__position">Designer</p>
+                                   <button className="team-link">
+                                       <a href="https://www.instagram.com/grotor_peach/" target="_blank">
+                                           <img className="team-link__img" src="./inst.svg" />
+                                       </a>
+                                   </button>
+                               </div>
+                           </li>
+                           <li className="team__item">
+                               <img className="team__image" src="./Intersect.png" />
+                               <div className="team__right">
+                                   <p className="team__name">Валерия Варфоломеева</p>
+                                   <p className="team__position">Marketer</p>
+                                   <button className="team-link">
+                                       <a href="https://www.instagram.com/grotor_peach/" target="_blank">
+                                           <img className="team-link__img" src="./inst.svg" />
+                                       </a>
+                                   </button>
+                               </div>
+                           </li>
+                           <li className="team__item">
+                               <img className="team__image" src="./Masha.png" />
+                               <div className="team__right">
+                                   <p className="team__name">Колдубаева Мария</p>
+                                   <p className="team__position">seo, backend</p>
+                                   <button className="team-link">
+                                       <a href="https://www.instagram.com/grotor_peach/" target="_blank">
+                                           <img className="team-link__img" src="./inst.svg" />
+                                       </a>
+                                   </button>
+                               </div>
+                           </li>
+                           <li className="team__item">
+                               <img className="team__image" src="./Egor.png" />
+                               <div className="team__right">
+                                   <p className="team__name">Егор Аммосов</p>
+                                   <p className="team__position">frontend</p>
+                                   <button className="team-link">
+                                       <a href="https://www.instagram.com/grotor_peach/" target="_blank">
+                                           <img className="team-link__img" src="./inst.svg" />
+                                       </a>
+                                   </button>
+                               </div>
+                           </li>
+                           <li className="team__item">
+                               <img className="team__image" src="./Val.png" />
+                               <div className="team__right">
+                                   <p className="team__name">Валерия Цикало</p>
+                                   <p className="team__position">Designer</p>
+                                   <button className="team-link">
+                                       <a href="https://www.instagram.com/grotor_peach/" target="_blank">
+                                           <img className="team-link__img" src="./inst.svg" />
+                                       </a>
+                                   </button>
+                               </div>
+                           </li>
+                           <li className="team__item">
+                               <img className="team__image" src="./Alina.png" />
+                               <div className="team__right">
+                                   <p className="team__name">Алина Плющева</p>
+                                   <p className="team__position">SMM</p>
+                                   <button className="team-link">
+                                       <a href="https://www.instagram.com/grotor_peach/" target="_blank">
+                                           <img className="team-link__img" src="./inst.svg" />
+                                       </a>
+                                   </button>
+                               </div>
+                           </li>
+                           <li className="team__item">
+                               <img className="team__image" src="./Naf.png" />
+                               <div className="team__right">
+                                   <p className="team__name">Валиева Нафиса</p>
+                                   <p className="team__position">frontend</p>
+                                   <button className="team-link">
+                                       <a href="https://www.instagram.com/dweebishqys/" target="_blank">
+                                           <img className="team-link__img" src="./inst.svg" />
+                                       </a>
+                                   </button>
+                               </div>
+                           </li>
                        </ul>
                    </div>
                 </div>

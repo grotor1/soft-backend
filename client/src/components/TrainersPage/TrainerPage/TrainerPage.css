@@ -138,6 +138,7 @@ button.close {
     line-height: 20px;
     color: #000000;
     width: 787px;
+    white-space: pre-wrap
 }
 .trainer__about{
     margin-top: 43px;
