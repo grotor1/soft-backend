@@ -61,7 +61,7 @@ const MainPage = () => {
                                         <div className="about-us__item">
                                             <div className="about-us__texts">
                                                 <span className="about-us__head">1:1 Онлайн тренировки</span>
-                                                <p className="about-us__desc">Личные тренер подберёт все процессы индивидуально под вас</p>
+                                                <p className="about-us__desc">Личный тренер подберёт все процессы индивидуально под вас</p>
                                             </div>
                                             {/* <img src="/about-image.png" alt="" className="about-img"/>     */}
                                         </div>
