@@ -3,6 +3,7 @@ import {Link, useRouteMatch} from 'react-router-dom'
 import './Header.css'
 import {BrowserRouter as Router} from 'react-router-dom'
 import {AuthContext} from "../../context/AuthContext";
+import AboutPage from '../AboutPage/AboutPage';
 
 
 const Header = () => {
@@ -22,6 +23,11 @@ const Header = () => {
                         <ul className="nav__list-burger">
                             <li className="list-item-b">
                                 <Link to="/" className="nav__list-item nav__list-item-menu">Главная</Link>
+                            </li>
+                            <li className="list-item-b">
+                                <Link to="/about" className="nav__list-item nav__list-item-menu">
+                                    О нас
+                                </Link>
                             </li>
                             {path === "/" &&
                             <li className="list-item-b">
