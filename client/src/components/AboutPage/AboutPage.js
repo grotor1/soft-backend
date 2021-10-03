@@ -60,7 +60,7 @@ const AboutPage = () => {
                                    <p className="team__name">Жиркова Лилия</p>
                                    <p className="team__position">Designer</p>
                                    <button className="team-link">
-                                       <a href="https://www.instagram.com/grotor_peach/" target="_blank">
+                                       <a href="https://www.instagram.com/lilya_zee/?hl=ru" target="_blank">
                                            <img className="team-link__img" src="./inst.svg" />
                                        </a>
                                    </button>
@@ -72,7 +72,7 @@ const AboutPage = () => {
                                    <p className="team__name">Валерия Варфоломеева</p>
                                    <p className="team__position">Marketer</p>
                                    <button className="team-link">
-                                       <a href="https://www.instagram.com/grotor_peach/" target="_blank">
+                                       <a href="https://www.instagram.com/syirnichek/?hl=ru" target="_blank">
                                            <img className="team-link__img" src="./inst.svg" />
                                        </a>
                                    </button>
@@ -84,7 +84,7 @@ const AboutPage = () => {
                                    <p className="team__name">Колдубаева Мария</p>
                                    <p className="team__position">seo, backend</p>
                                    <button className="team-link">
-                                       <a href="https://www.instagram.com/grotor_peach/" target="_blank">
+                                       <a href="https://www.instagram.com/mashamellow4488/?hl=ru" target="_blank">
                                            <img className="team-link__img" src="./inst.svg" />
                                        </a>
                                    </button>
@@ -96,7 +96,7 @@ const AboutPage = () => {
                                    <p className="team__name">Егор Аммосов</p>
                                    <p className="team__position">frontend</p>
                                    <button className="team-link">
-                                       <a href="https://www.instagram.com/grotor_peach/" target="_blank">
+                                       <a href="https://www.instagram.com/ammosov2203/?hl=ru" target="_blank">
                                            <img className="team-link__img" src="./inst.svg" />
                                        </a>
                                    </button>
@@ -108,7 +108,7 @@ const AboutPage = () => {
                                    <p className="team__name">Валерия Цикало</p>
                                    <p className="team__position">Designer</p>
                                    <button className="team-link">
-                                       <a href="https://www.instagram.com/grotor_peach/" target="_blank">
+                                       <a href="https://www.instagram.com/lera.vts/?hl=ru" target="_blank">
                                            <img className="team-link__img" src="./inst.svg" />
                                        </a>
                                    </button>
@@ -120,7 +120,7 @@ const AboutPage = () => {
                                    <p className="team__name">Алина Плющева</p>
                                    <p className="team__position">SMM</p>
                                    <button className="team-link">
-                                       <a href="https://www.instagram.com/grotor_peach/" target="_blank">
+                                       <a href="https://www.instagram.com/allinapl/?hl=ru" target="_blank">
                                            <img className="team-link__img" src="./inst.svg" />
                                        </a>
                                    </button>
