@@ -26,7 +26,7 @@ const Header = () => {
                             </li>
                             <li className="list-item-b">
                                 <Link to="/about" className="nav__list-item nav__list-item-menu">
-                                    О нас
+                                    About us
                                 </Link>
                             </li>
                             {path === "/" &&
@@ -59,6 +59,11 @@ const Header = () => {
                         <ul className="nav__list">
                             <li className="list-item">
                                 <Link to="/" className="nav__list-item">Главная</Link>
+                            </li>
+                            <li className="list-item">
+                                <Link to="/about" className="nav__list-item">
+                                    About us
+                                </Link>
                             </li>
                             {path === "/" &&
                             <li className="list-item">
