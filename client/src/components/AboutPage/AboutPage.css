@@ -14,6 +14,7 @@
 .person__contacts{
     margin-top: 33px;
     padding-left: 30px;
+    padding-bottom: 5px;
     background-image: url('../../assets/inst-tr.png');
     background-repeat: no-repeat;
 }
