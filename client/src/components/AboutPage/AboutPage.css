@@ -17,6 +17,10 @@
     padding-bottom: 5px;
     background-image: url('../../assets/inst-tr.png');
     background-repeat: no-repeat;
+    color: #000;
+}
+.mt-33{
+    margin-top: 33px;
 }
 .person__motto{
     font-weight: bold;
@@ -34,6 +38,9 @@
     margin-top: 27px;
     font-size: 16px;
     line-height: 20px;
+}
+.person-about__text-center{
+    text-align: center;
 }
 .team__title{
     font-weight: bold;
