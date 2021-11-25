@@ -82,8 +82,8 @@ const MainPage = () => {
                                             {/* <img src="/about-image.png" alt="" className="about-img"/>     */}
                                         </div>
                                 </Carousel>
-                                
-                                
+
+
                             {/* </ul> */}
                         </div>
                     </div>
@@ -93,7 +93,7 @@ const MainPage = () => {
                         <div className="mission-flex">
                             <div>
                                 <h2 className="section__title-black">Наша миссия: </h2>
-                                <span className="mission-text">Дать людям возможность тренироваться 
+                                <span className="mission-text">Дать людям возможность тренироваться
                                     <span className=""> легче, качественнее, в удовольствие:</span>
                                 </span>
                                 <p className="mission-text">где угодно и когда угодно</p>
@@ -230,13 +230,13 @@ const MainPage = () => {
                         <div className="trainers-content">
                             <h2 className="section__title">Тренеры недели</h2>
                             <ul className="trainers-list">
-                               <Trainer isPropped = {false} _id={"613b522a9ff81a00041ce58b"}/>
+                               <Trainer isPropped = {false} _id={"6113af28da38c641a435e001"}/>
 
 
-                                <Trainer isPropped = {false} _id={"6113af0dda38c641a435dfed"}/>
+                                <Trainer isPropped = {false} _id={"613b522a9ff81a00041ce58b"}/>
 
 
-                                <Trainer isPropped = {false} _id={"6113af28da38c641a435e001"}/>
+                                <Trainer isPropped = {false} _id={"619f75f00ef42e0e2b741eee"}/>
                             </ul>
                             <div className="button-center">
                                 <Link to="trainers">
