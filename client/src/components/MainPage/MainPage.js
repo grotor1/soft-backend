@@ -28,7 +28,7 @@ const MainPage = () => {
                     <div className="container">
                         <div className="hero__content">
                             <div className="hero-texts">
-                                <h1 className="hero-title">Онлайн спорт с личным тренером.</h1>
+                                <h1 className="hero-title">Онлайн-спорт с личным тренером.</h1>
                                 <span className="hero-description">Занимайтесь спортом, <span className="green-text">не выходя из дома,</span> по любой удобной программе</span>
                                 <div>
                                     <Link to="/signup" className="nav__list-item">
