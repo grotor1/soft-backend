@@ -127,6 +127,9 @@ const ChatPage = () => {
                         )
                     })}
                 </ul>
+                <Link to={"/trainers"}>
+                    <button className="chat-btn chat-btn-1">Добавить тренера</button>
+                </Link>
             </div>
             <div className="chat-page-second">
                 <div className="display-none">

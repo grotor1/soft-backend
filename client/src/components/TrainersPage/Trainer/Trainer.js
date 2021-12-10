@@ -70,7 +70,8 @@ const Trainer = (props) => {
                     }
                 }).join("") + "."}</p>
                 <Link to={`${props.isPropped ? props.url : "/trainers"}/${props._id}`}>
-                    <span className="more">Подробнее</span>
+                    <span className="more">Подробнее <span>{trainer.price}</span></span>
+                    
                 </Link>
             </div>
         </div>
