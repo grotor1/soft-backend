@@ -54,6 +54,9 @@ const UserProfile = () => {
                                 <p className="user-item-name">{initials.name + " " + initials.surname}</p>
                                 <p className="status-online">Сейчас в сети</p>
                             </div>
+                            <Link to={"/trainers"}>
+                                <button className="chat-btn chat-btn-1">Добавить тренера</button>
+                            </Link>
                             <Link to={"/chat"}>
                                 <button className="chat-btn chat-btn-1">Чат</button>
                             </Link>
