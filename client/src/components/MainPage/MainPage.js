@@ -6,24 +6,18 @@ import Footer from '../Footer'
 import Accordion from './Accordion'
 import Carousel from 'react-elastic-carousel'
 import Subscribe from '../Subscribe'
-import Slider from "react-slick";
-import {useHttp} from "../../hooks/http.hook";
-import {useMessage} from "../../hooks/message.hook";
 import Popup from './Modal'
 import Trainer from "../TrainersPage/Trainer";
 
 
 const MainPage = () => {
-    const style = {
-        display: 'none'
-    }
-    const state = {
-        isVisible: false
-    }
+    const [isVisible, setIsVisible] = useState(false)
     useEffect(() => {
-        setTimeout(() => {<Popup />}, 1000);
-        return () => {state.isVisible && <Popup/>}
-    }, [])
+        const timer = setTimeout(() => {
+            setIsVisible(true)
+        }, 10000);
+        return () => clearTimeout(timer);
+    }, []);
     return (
         <div>
             <div className="header-fixed">
@@ -42,12 +36,6 @@ const MainPage = () => {
                                     </Link>
                                     <p className="first-train">Первая тренировка бесплатно!</p>
                                 </div>
-                            
-                                <Link to="/signup" className="nav__list-item">
-                                    <button className="enter-btn-hero">Зарегистрироваться</button>
-                                </Link>
-                                <p>Первая тренировка бесплатно!</p>
-
                             </div>
                             <div className="hero-images">
                                 <img src="/hero-image.png" alt="" className="hero-image"/>
@@ -94,8 +82,8 @@ const MainPage = () => {
                                             {/* <img src="/about-image.png" alt="" className="about-img"/>     */}
                                         </div>
                                 </Carousel>
-                                
-                                
+
+
                             {/* </ul> */}
                         </div>
                     </div>
@@ -105,7 +93,7 @@ const MainPage = () => {
                         <div className="mission-flex">
                             <div>
                                 <h2 className="section__title-black">Наша миссия: </h2>
-                                <span className="mission-text">Дать людям возможность тренироваться 
+                                <span className="mission-text">Дать людям возможность тренироваться
                                     <span className=""> легче, качественнее, в удовольствие:</span>
                                 </span>
                                 <p className="mission-text">где угодно и когда угодно</p>
@@ -242,13 +230,13 @@ const MainPage = () => {
                         <div className="trainers-content">
                             <h2 className="section__title">Тренеры недели</h2>
                             <ul className="trainers-list">
-                               <Trainer isPropped = {false} _id={"613b522a9ff81a00041ce58b"}/>
+                               <Trainer isPropped = {false} _id={"6113af28da38c641a435e001"}/>
 
 
-                                <Trainer isPropped = {false} _id={"6113af0dda38c641a435dfed"}/>
+                                <Trainer isPropped = {false} _id={"613b522a9ff81a00041ce58b"}/>
 
 
-                                <Trainer isPropped = {false} _id={"6113af28da38c641a435e001"}/>
+                                <Trainer isPropped = {false} _id={"619f75f00ef42e0e2b741eee"}/>
                             </ul>
                             <div className="button-center">
                                 <Link to="trainers">
