@@ -59,7 +59,7 @@ const UserProfile = () => {
                                     <button className="chat-btn chat-btn-1">Добавить тренера</button>
                                 </Link>
                                 <Link to={"/chat"}>
-                                    <button className="chat-btn chat-btn-1">Чат</button>
+                                    <button className="chat-btn chat-btn-2">Чат</button>
                                 </Link>
                             </div>
                         </div>
