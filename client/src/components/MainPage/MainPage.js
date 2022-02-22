@@ -34,11 +34,10 @@ const MainPage = () => {
                                     <Link to="/signup" className="nav__list-item">
                                         <button className="enter-btn-hero">Зарегистрироваться</button>
                                     </Link>
-                                    <Link className="first-train" to="/trainers">Новогоднее предложение</Link>
                                 </div>
                             </div>
                             <div className="hero-images">
-                                <img src="/hero-image.svg" alt="" className="hero-image"/>
+                                <img src="/main.svg" alt="" className="hero-image"/>
                                 <img src="/Ellipse 22.svg" alt="" className="ell-1"/>
                                 <img src="/Ellipse 28.svg" alt="" className="ell-2"/>
                             </div>
@@ -92,8 +91,6 @@ const MainPage = () => {
                     <div className="container">
                         <div className="mission-flex">
                             <div>
-                                <img className='snow' src='/snow.svg'/>
-                                <img className='snow snow-small' src='/snow.svg'/>
                                 <h2 className="section__title-black">Наша миссия: </h2>
                                 <span className="mission-text">Дать людям возможность тренироваться
                                     <span className=""> легче, качественнее, в удовольствие:</span>
@@ -274,7 +271,6 @@ const MainPage = () => {
                     </div>
                 </section>
                 <div className='acc-absolute'>
-                    <img className='ny-dec' src='/Frame.svg'/> 
                     <Accordion/>
                 </div>
                 <Subscribe/>
