@@ -10,13 +10,13 @@ const app = express();
 
 require('dotenv').config()
 
-app.get("*", function (req, res, next) {
-    if ("https" !== req.headers["x-forwarded-proto"] && "production" === process.env.NODE_ENV) {
-        res.redirect("https://" + req.hostname + req.url);
-    } else {
-        next();
-    }
-});
+// app.get("*", function (req, res, next) {
+//     if ("https" !== req.headers["x-forwarded-proto"] && "production" === process.env.NODE_ENV) {
+//         res.redirect("https://" + req.hostname + req.url);
+//     } else {
+//         next();
+//     }
+// });
 
 
 
